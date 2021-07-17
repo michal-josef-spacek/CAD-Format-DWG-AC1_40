@@ -43,3 +43,8 @@ types:
       ## 0x009ah
       - id: snap
         type: s1
+      - id: unknown3
+        size: 9
+      ## 0x00a4h
+      - id: grid
+        type: s1

@@ -79,6 +79,8 @@ sub _read {
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{unknown2} = $self->{_io}->read_bytes(112);
     $self->{snap} = $self->{_io}->read_s1();
+    $self->{unknown3} = $self->{_io}->read_bytes(9);
+    $self->{grid} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -109,6 +111,16 @@ sub unknown2 {
 sub snap {
     my ($self) = @_;
     return $self->{snap};
+}
+
+sub unknown3 {
+    my ($self) = @_;
+    return $self->{unknown3};
+}
+
+sub grid {
+    my ($self) = @_;
+    return $self->{grid};
 }
 
 1;
