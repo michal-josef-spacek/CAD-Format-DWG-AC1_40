@@ -48,3 +48,8 @@ types:
       ## 0x00a4h
       - id: grid
         type: s1
+      - id: unknown4
+        size: 9
+      ## 0x00aeh
+      - id: ortho
+        type: s1
