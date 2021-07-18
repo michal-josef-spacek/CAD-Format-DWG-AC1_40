@@ -22,3 +22,5 @@ $obj = CAD::Format::DWG::1_40->from_file(
 );
 is($obj->header->grid, 0, 'Grid on.');
 $data_dir->up;
+
+# TODO Hodnota grid
