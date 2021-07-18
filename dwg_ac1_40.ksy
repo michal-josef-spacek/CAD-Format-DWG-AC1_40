@@ -73,3 +73,8 @@ types:
       ## 0x00c6
       - id: actual_color
         type: s1
+      ## TODO Layers
+      - id: unknown8
+        size: 273
+      - id: units_type
+        type: s1

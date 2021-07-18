@@ -26,6 +26,7 @@ t/CAD-Format-DWG-1_40/07-header-magic.t
 t/CAD-Format-DWG-1_40/08-header-number_of_entities.t
 t/CAD-Format-DWG-1_40/09-header-ortho.t
 t/CAD-Format-DWG-1_40/10-header-snap.t
+t/CAD-Format-DWG-1_40/11-header-units_type.t
 t/data/blank/BLANK.DWG
 t/data/blank/BLANK.HD
 t/data/fill/FILL_OFF.DWG
@@ -46,5 +47,9 @@ t/data/ortho/ORTHO_OF.DWG
 t/data/ortho/ORTHO_ON.DWG
 t/data/snap/SNAP_OFF.DWG
 t/data/snap/SNAP_ON.DWG
+t/data/units/UNITS1.DWG
+t/data/units/UNITS2.DWG
+t/data/units/UNITS3.DWG
+t/data/units/UNITS4.DWG
 xt/CAD-Format-DWG-1_40/01-pod_coverage.t
 xt/CAD-Format-DWG-1_40/02-pod.t

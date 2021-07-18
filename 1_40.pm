@@ -90,6 +90,8 @@ sub _read {
     $self->{actual_layer} = $self->{_io}->read_s1();
     $self->{unknown7} = $self->{_io}->read_bytes(1);
     $self->{actual_color} = $self->{_io}->read_s1();
+    $self->{unknown8} = $self->{_io}->read_bytes(273);
+    $self->{units_type} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -175,6 +177,16 @@ sub unknown7 {
 sub actual_color {
     my ($self) = @_;
     return $self->{actual_color};
+}
+
+sub unknown8 {
+    my ($self) = @_;
+    return $self->{unknown8};
+}
+
+sub units_type {
+    my ($self) = @_;
+    return $self->{units_type};
 }
 
 1;
