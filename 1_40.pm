@@ -83,6 +83,8 @@ sub _read {
     $self->{grid} = $self->{_io}->read_s1();
     $self->{unknown4} = $self->{_io}->read_bytes(9);
     $self->{ortho} = $self->{_io}->read_s1();
+    $self->{unknown5} = $self->{_io}->read_bytes(3);
+    $self->{fill} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -133,6 +135,16 @@ sub unknown4 {
 sub ortho {
     my ($self) = @_;
     return $self->{ortho};
+}
+
+sub unknown5 {
+    my ($self) = @_;
+    return $self->{unknown5};
+}
+
+sub fill {
+    my ($self) = @_;
+    return $self->{fill};
 }
 
 1;

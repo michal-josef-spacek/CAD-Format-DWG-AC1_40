@@ -53,3 +53,8 @@ types:
       ## 0x00aeh
       - id: ortho
         type: s1
+      - id: unknown5
+        size: 3
+      ## 0x00b2
+      - id: fill
+        type: s1
