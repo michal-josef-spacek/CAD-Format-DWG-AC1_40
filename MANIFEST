@@ -21,7 +21,8 @@ t/CAD-Format-DWG-1_40/02-version.t
 t/CAD-Format-DWG-1_40/03-header-grid.t
 t/CAD-Format-DWG-1_40/04-header-magic.t
 t/CAD-Format-DWG-1_40/05-header-number_of_entities.t
-t/CAD-Format-DWG-1_40/06-header-snap.t
+t/CAD-Format-DWG-1_40/06-header-ortho.t
+t/CAD-Format-DWG-1_40/07-header-snap.t
 t/data/blank/BLANK.DWG
 t/data/blank/BLANK.HD
 t/data/grid/GRID_OFF.DWG
@@ -30,6 +31,8 @@ t/data/line/LINE1.DWG
 t/data/line/LINE1.HD
 t/data/line/LINE2.DWG
 t/data/line/LINE2.HD
+t/data/ortho/ORTHO_OF.DWG
+t/data/ortho/ORTHO_ON.DWG
 t/data/snap/SNAP_OFF.DWG
 t/data/snap/SNAP_ON.DWG
 xt/CAD-Format-DWG-1_40/01-pod_coverage.t
