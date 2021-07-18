@@ -76,5 +76,11 @@ types:
       ## TODO Layers
       - id: unknown8
         size: 273
+      ## 0x01d8
       - id: units_type
+        type: s1
+      - id: unknown9
+        size: 1
+      ## 0x01da
+      - id: number_of_digits
         type: s1

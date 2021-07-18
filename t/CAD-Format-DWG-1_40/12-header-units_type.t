@@ -32,5 +32,3 @@ $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('UNITS4.DWG')->s,
 );
 is($obj->header->units_type, 4, 'Units type is 4.');
-
-# TODO: presision

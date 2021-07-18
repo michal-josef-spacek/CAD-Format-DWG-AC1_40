@@ -92,6 +92,8 @@ sub _read {
     $self->{actual_color} = $self->{_io}->read_s1();
     $self->{unknown8} = $self->{_io}->read_bytes(273);
     $self->{units_type} = $self->{_io}->read_s1();
+    $self->{unknown9} = $self->{_io}->read_bytes(1);
+    $self->{number_of_digits} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -187,6 +189,16 @@ sub unknown8 {
 sub units_type {
     my ($self) = @_;
     return $self->{units_type};
+}
+
+sub unknown9 {
+    my ($self) = @_;
+    return $self->{unknown9};
+}
+
+sub number_of_digits {
+    my ($self) = @_;
+    return $self->{number_of_digits};
 }
 
 1;
