@@ -84,3 +84,8 @@ types:
       ## 0x01da
       - id: number_of_digits
         type: s1
+      - id: unknown10
+        size: 5
+      ## 0x01e0
+      - id: axis
+        type: s1

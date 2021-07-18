@@ -94,6 +94,8 @@ sub _read {
     $self->{units_type} = $self->{_io}->read_s1();
     $self->{unknown9} = $self->{_io}->read_bytes(1);
     $self->{number_of_digits} = $self->{_io}->read_s1();
+    $self->{unknown10} = $self->{_io}->read_bytes(5);
+    $self->{axis} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -199,6 +201,16 @@ sub unknown9 {
 sub number_of_digits {
     my ($self) = @_;
     return $self->{number_of_digits};
+}
+
+sub unknown10 {
+    my ($self) = @_;
+    return $self->{unknown10};
+}
+
+sub axis {
+    my ($self) = @_;
+    return $self->{axis};
 }
 
 1;
