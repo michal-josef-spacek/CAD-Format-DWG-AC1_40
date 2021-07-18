@@ -29,6 +29,7 @@ t/CAD-Format-DWG-1_40/10-header-number_of_entities.t
 t/CAD-Format-DWG-1_40/11-header-ortho.t
 t/CAD-Format-DWG-1_40/12-header-snap.t
 t/CAD-Format-DWG-1_40/13-header-units_type.t
+t/CAD-Format-DWG-1_40/14-header-zeros.t
 t/data/axis/AXIS_0.DWG
 t/data/axis/AXIS_1.DWG
 t/data/axis/AXIS_OFF.DWG
