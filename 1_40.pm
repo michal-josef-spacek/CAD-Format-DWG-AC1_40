@@ -85,6 +85,8 @@ sub _read {
     $self->{ortho} = $self->{_io}->read_s1();
     $self->{unknown5} = $self->{_io}->read_bytes(3);
     $self->{fill} = $self->{_io}->read_s1();
+    $self->{unknown6} = $self->{_io}->read_bytes(17);
+    $self->{actual_layer} = $self->{_io}->read_s1();
 }
 
 sub magic {
@@ -145,6 +147,16 @@ sub unknown5 {
 sub fill {
     my ($self) = @_;
     return $self->{fill};
+}
+
+sub unknown6 {
+    my ($self) = @_;
+    return $self->{unknown6};
+}
+
+sub actual_layer {
+    my ($self) = @_;
+    return $self->{actual_layer};
 }
 
 1;
