@@ -13,10 +13,12 @@ my $data_dir = File::Object->new->up->dir('data/snap')->set;
 my $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('SNAP_ON.DWG')->s,
 );
-is($obj->header->snap, 1, 'Snap ON');
+is($obj->header->snap, 1, 'Snap on.');
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('SNAP_OFF.DWG')->s,
 );
-is($obj->header->snap, 0, 'Snap OFF');
+is($obj->header->snap, 0, 'Snap off.');
+
+# TODO Snap with value.
