@@ -35,22 +35,22 @@ types:
         size: 5
       - id: unknown1
         size: 29
-      ## 0x0028h
+      ## 0x0028
       - id: number_of_entities
         type: s2
       - id: unknown2
         size: 112
-      ## 0x009ah
+      ## 0x009a
       - id: snap
         type: s1
       - id: unknown3
         size: 9
-      ## 0x00a4h
+      ## 0x00a4
       - id: grid
         type: s1
       - id: unknown4
         size: 9
-      ## 0x00aeh
+      ## 0x00ae
       - id: ortho
         type: s1
       - id: unknown5
