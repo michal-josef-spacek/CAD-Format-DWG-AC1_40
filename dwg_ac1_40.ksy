@@ -43,8 +43,13 @@ types:
       ## 0x009a
       - id: snap
         type: s1
+      ## TODO Part of snap?
       - id: unknown3
-        size: 9
+        size: 1
+      ## TODO How to decode?
+      ## 0x009c-0x00a3
+      - id: snap_value
+        size: 8
       ## 0x00a4
       - id: grid
         type: s1

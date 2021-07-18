@@ -79,7 +79,8 @@ sub _read {
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{unknown2} = $self->{_io}->read_bytes(112);
     $self->{snap} = $self->{_io}->read_s1();
-    $self->{unknown3} = $self->{_io}->read_bytes(9);
+    $self->{unknown3} = $self->{_io}->read_bytes(1);
+    $self->{snap_value} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s1();
     $self->{unknown4} = $self->{_io}->read_bytes(9);
     $self->{ortho} = $self->{_io}->read_s1();
@@ -122,6 +123,11 @@ sub snap {
 sub unknown3 {
     my ($self) = @_;
     return $self->{unknown3};
+}
+
+sub snap_value {
+    my ($self) = @_;
+    return $self->{snap_value};
 }
 
 sub grid {
