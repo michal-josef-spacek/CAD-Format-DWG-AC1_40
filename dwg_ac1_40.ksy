@@ -79,6 +79,7 @@ types:
       ## 0x01d8
       - id: units_type
         type: s1
+        enum: unit_types
       - id: unknown9
         size: 1
       ## 0x01da
@@ -89,3 +90,9 @@ types:
       ## 0x01e0
       - id: axis
         type: s1
+enums:
+  unit_types:
+    1: scientific
+    2: decimal
+    3: engineering
+    4: architectural

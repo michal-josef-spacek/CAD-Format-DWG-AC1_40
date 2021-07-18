@@ -19,6 +19,11 @@ sub from_file {
     return new($class, IO::KaitaiStruct::Stream->new($fd));
 }
 
+our $UNIT_TYPES_SCIENTIFIC = 1;
+our $UNIT_TYPES_DECIMAL = 2;
+our $UNIT_TYPES_ENGINEERING = 3;
+our $UNIT_TYPES_ARCHITECTURAL = 4;
+
 sub new {
     my ($class, $_io, $_parent, $_root) = @_;
     my $self = IO::KaitaiStruct::Struct->new($_io);
