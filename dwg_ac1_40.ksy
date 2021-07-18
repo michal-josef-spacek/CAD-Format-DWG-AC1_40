@@ -68,3 +68,8 @@ types:
       ## 0x00c4
       - id: actual_layer
         type: s1
+      - id: unknown7
+        size: 1
+      ## 0x00c6
+      - id: actual_color
+        type: s1
