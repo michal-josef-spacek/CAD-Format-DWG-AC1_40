@@ -90,6 +90,16 @@ types:
       ## 0x01e0
       - id: axis
         type: s1
+    instances:
+      layer:
+        pos: 202
+        type: layer_type
+  layer_type:
+    seq:
+      - id: layer
+        type: s1
+      - id: color
+        type: s1
 enums:
   unit_types:
     1: scientific
