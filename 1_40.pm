@@ -106,6 +106,7 @@ sub _read {
     $self->{number_of_digits} = $self->{_io}->read_s1();
     $self->{unknown11} = $self->{_io}->read_bytes(5);
     $self->{axis} = $self->{_io}->read_s1();
+    $self->{axis_value} = $self->{_io}->read_bytes(8);
 }
 
 sub layer {
@@ -258,6 +259,10 @@ sub axis {
     return $self->{axis};
 }
 
+sub axis_value {
+    my ($self) = @_;
+    return $self->{axis_value};
+}
 
 ########################################################################
 package CAD::Format::DWG::1_40::LayerType;

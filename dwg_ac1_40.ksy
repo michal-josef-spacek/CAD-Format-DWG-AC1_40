@@ -104,6 +104,9 @@ types:
       ## 0x01e0
       - id: axis
         type: s1
+      ## 0x01e2-0x01e9
+      - id: axis_value
+        size: 8
     instances:
       layer:
         pos: 202
