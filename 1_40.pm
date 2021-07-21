@@ -82,25 +82,40 @@ sub _read {
     $self->{zeros} = $self->{_io}->read_bytes(5);
     $self->{unknown1} = $self->{_io}->read_bytes(29);
     $self->{number_of_entities} = $self->{_io}->read_s2le();
-    $self->{unknown2} = $self->{_io}->read_bytes(112);
+    $self->{unknown2} = $self->{_io}->read_bytes(48);
+    $self->{limits_min_x} = $self->{_io}->read_bytes(8);
+    $self->{limits_min_y} = $self->{_io}->read_bytes(8);
+    $self->{limits_max_x} = $self->{_io}->read_bytes(8);
+    $self->{limits_max_y} = $self->{_io}->read_bytes(8);
+    $self->{unknown3} = $self->{_io}->read_bytes(32);
     $self->{snap} = $self->{_io}->read_s1();
-    $self->{unknown3} = $self->{_io}->read_bytes(1);
+    $self->{unknown4} = $self->{_io}->read_bytes(1);
     $self->{snap_value} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s1();
-    $self->{unknown4} = $self->{_io}->read_bytes(9);
+    $self->{unknown5} = $self->{_io}->read_bytes(9);
     $self->{ortho} = $self->{_io}->read_s1();
-    $self->{unknown5} = $self->{_io}->read_bytes(3);
+    $self->{unknown6} = $self->{_io}->read_bytes(3);
     $self->{fill} = $self->{_io}->read_s1();
-    $self->{unknown6} = $self->{_io}->read_bytes(17);
+    $self->{unknown7} = $self->{_io}->read_bytes(17);
     $self->{actual_layer} = $self->{_io}->read_s1();
-    $self->{unknown7} = $self->{_io}->read_bytes(1);
+    $self->{unknown8} = $self->{_io}->read_bytes(1);
     $self->{actual_color} = $self->{_io}->read_s1();
-    $self->{unknown8} = $self->{_io}->read_bytes(273);
+    $self->{unknown9} = $self->{_io}->read_bytes(273);
     $self->{units_type} = $self->{_io}->read_s1();
-    $self->{unknown9} = $self->{_io}->read_bytes(1);
+    $self->{unknown10} = $self->{_io}->read_bytes(1);
     $self->{number_of_digits} = $self->{_io}->read_s1();
-    $self->{unknown10} = $self->{_io}->read_bytes(5);
+    $self->{unknown11} = $self->{_io}->read_bytes(5);
     $self->{axis} = $self->{_io}->read_s1();
+}
+
+sub layer {
+    my ($self) = @_;
+    return $self->{layer} if ($self->{layer});
+    my $_pos = $self->{_io}->pos();
+    $self->{_io}->seek(202);
+    $self->{layer} = CAD::Format::DWG::1_40::LayerType->new($self->{_io}, $self, $self->{_root});
+    $self->{_io}->seek($_pos);
+    return $self->{layer};
 }
 
 sub magic {
@@ -128,14 +143,39 @@ sub unknown2 {
     return $self->{unknown2};
 }
 
-sub snap {
+sub limits_min_x {
     my ($self) = @_;
-    return $self->{snap};
+    return $self->{limits_min_x};
+}
+
+sub limits_min_y {
+    my ($self) = @_;
+    return $self->{limits_min_y};
+}
+
+sub limits_max_x {
+    my ($self) = @_;
+    return $self->{limits_max_x};
+}
+
+sub limits_max_y {
+    my ($self) = @_;
+    return $self->{limits_max_y};
 }
 
 sub unknown3 {
     my ($self) = @_;
     return $self->{unknown3};
+}
+
+sub snap {
+    my ($self) = @_;
+    return $self->{snap};
+}
+
+sub unknown4 {
+    my ($self) = @_;
+    return $self->{unknown4};
 }
 
 sub snap_value {
@@ -148,9 +188,9 @@ sub grid {
     return $self->{grid};
 }
 
-sub unknown4 {
+sub unknown5 {
     my ($self) = @_;
-    return $self->{unknown4};
+    return $self->{unknown5};
 }
 
 sub ortho {
@@ -158,9 +198,9 @@ sub ortho {
     return $self->{ortho};
 }
 
-sub unknown5 {
+sub unknown6 {
     my ($self) = @_;
-    return $self->{unknown5};
+    return $self->{unknown6};
 }
 
 sub fill {
@@ -168,9 +208,9 @@ sub fill {
     return $self->{fill};
 }
 
-sub unknown6 {
+sub unknown7 {
     my ($self) = @_;
-    return $self->{unknown6};
+    return $self->{unknown7};
 }
 
 sub actual_layer {
@@ -178,9 +218,9 @@ sub actual_layer {
     return $self->{actual_layer};
 }
 
-sub unknown7 {
+sub unknown8 {
     my ($self) = @_;
-    return $self->{unknown7};
+    return $self->{unknown8};
 }
 
 sub actual_color {
@@ -188,9 +228,9 @@ sub actual_color {
     return $self->{actual_color};
 }
 
-sub unknown8 {
+sub unknown9 {
     my ($self) = @_;
-    return $self->{unknown8};
+    return $self->{unknown9};
 }
 
 sub units_type {
@@ -198,9 +238,9 @@ sub units_type {
     return $self->{units_type};
 }
 
-sub unknown9 {
+sub unknown10 {
     my ($self) = @_;
-    return $self->{unknown9};
+    return $self->{unknown10};
 }
 
 sub number_of_digits {
@@ -208,14 +248,59 @@ sub number_of_digits {
     return $self->{number_of_digits};
 }
 
-sub unknown10 {
+sub unknown11 {
     my ($self) = @_;
-    return $self->{unknown10};
+    return $self->{unknown11};
 }
 
 sub axis {
     my ($self) = @_;
     return $self->{axis};
+}
+
+
+########################################################################
+package CAD::Format::DWG::1_40::LayerType;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{layer} = $self->{_io}->read_s1();
+    $self->{color} = $self->{_io}->read_s1();
+}
+
+sub layer {
+    my ($self) = @_;
+    return $self->{layer};
+}
+
+sub color {
+    my ($self) = @_;
+    return $self->{color};
 }
 
 1;

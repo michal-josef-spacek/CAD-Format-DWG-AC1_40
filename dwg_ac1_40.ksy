@@ -39,12 +39,26 @@ types:
       - id: number_of_entities
         type: s2
       - id: unknown2
-        size: 112
+        size: 48
+      # 0x005a-0x0061
+      - id: limits_min_x
+        size: 8
+      # 0x0062-0x0069
+      - id: limits_min_y
+        size: 8
+      # 0x006a-0x0071
+      - id: limits_max_x
+        size: 8
+      # 0x0072-0x0079
+      - id: limits_max_y
+        size: 8
+      - id: unknown3
+        size: 32
       ## 0x009a
       - id: snap
         type: s1
       ## TODO Part of snap?
-      - id: unknown3
+      - id: unknown4
         size: 1
       ## TODO How to decode?
       ## 0x009c-0x00a3
@@ -53,39 +67,39 @@ types:
       ## 0x00a4
       - id: grid
         type: s1
-      - id: unknown4
+      - id: unknown5
         size: 9
       ## 0x00ae
       - id: ortho
         type: s1
-      - id: unknown5
+      - id: unknown6
         size: 3
       ## 0x00b2
       - id: fill
         type: s1
-      - id: unknown6
+      - id: unknown7
         size: 17
       ## 0x00c4
       - id: actual_layer
         type: s1
-      - id: unknown7
+      - id: unknown8
         size: 1
       ## 0x00c6
       - id: actual_color
         type: s1
       ## TODO Layers
-      - id: unknown8
+      - id: unknown9
         size: 273
       ## 0x01d8
       - id: units_type
         type: s1
         enum: unit_types
-      - id: unknown9
+      - id: unknown10
         size: 1
       ## 0x01da
       - id: number_of_digits
         type: s1
-      - id: unknown10
+      - id: unknown11
         size: 5
       ## 0x01e0
       - id: axis
