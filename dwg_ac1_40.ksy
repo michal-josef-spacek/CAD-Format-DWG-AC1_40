@@ -104,6 +104,8 @@ types:
       ## 0x01e0
       - id: axis
         type: s1
+      - id: unknown12
+        size: 1
       ## 0x01e2-0x01e9
       - id: axis_value
         size: 8

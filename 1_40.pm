@@ -106,6 +106,7 @@ sub _read {
     $self->{number_of_digits} = $self->{_io}->read_s1();
     $self->{unknown11} = $self->{_io}->read_bytes(5);
     $self->{axis} = $self->{_io}->read_s1();
+    $self->{unknown12} = $self->{_io}->read_bytes(1);
     $self->{axis_value} = $self->{_io}->read_bytes(8);
 }
 
@@ -257,6 +258,11 @@ sub unknown11 {
 sub axis {
     my ($self) = @_;
     return $self->{axis};
+}
+
+sub unknown12 {
+    my ($self) = @_;
+    return $self->{unknown12};
 }
 
 sub axis_value {
