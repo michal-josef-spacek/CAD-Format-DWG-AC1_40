@@ -92,7 +92,8 @@ sub _read {
     $self->{unknown4} = $self->{_io}->read_bytes(1);
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s1();
-    $self->{unknown5} = $self->{_io}->read_bytes(9);
+    $self->{unknown5} = $self->{_io}->read_bytes(1);
+    $self->{grid_value} = $self->{_io}->read_bytes(8);
     $self->{ortho} = $self->{_io}->read_s1();
     $self->{unknown6} = $self->{_io}->read_bytes(3);
     $self->{fill} = $self->{_io}->read_s1();
@@ -193,6 +194,11 @@ sub grid {
 sub unknown5 {
     my ($self) = @_;
     return $self->{unknown5};
+}
+
+sub grid_value {
+    my ($self) = @_;
+    return $self->{grid_value};
 }
 
 sub ortho {

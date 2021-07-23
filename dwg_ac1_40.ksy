@@ -67,7 +67,10 @@ types:
       - id: grid
         type: s1
       - id: unknown5
-        size: 9
+        size: 1
+      ## 0x00a6-0x00ad
+      - id: grid_value
+        size: 8
       ## 0x00ae
       - id: ortho
         type: s1
