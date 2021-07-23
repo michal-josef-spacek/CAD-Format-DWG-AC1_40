@@ -60,9 +60,8 @@ types:
       ## TODO Part of snap?
       - id: unknown4
         size: 1
-      ## TODO How to decode?
       ## 0x009c-0x00a3
-      - id: snap_value
+      - id: snap_resolution
         size: 8
       ## 0x00a4
       - id: grid

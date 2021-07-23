@@ -1,5 +1,6 @@
 1_40.pm
 Changes
+edit
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
@@ -23,13 +24,15 @@ t/CAD-Format-DWG-1_40/04-header-actual_layer.t
 t/CAD-Format-DWG-1_40/05-header-axis.t
 t/CAD-Format-DWG-1_40/06-header-fill.t
 t/CAD-Format-DWG-1_40/07-header-grid.t
-t/CAD-Format-DWG-1_40/08-header-magic.t
-t/CAD-Format-DWG-1_40/09-header-number_of_digits.t
-t/CAD-Format-DWG-1_40/10-header-number_of_entities.t
-t/CAD-Format-DWG-1_40/11-header-ortho.t
-t/CAD-Format-DWG-1_40/12-header-snap.t
-t/CAD-Format-DWG-1_40/13-header-units_type.t
-t/CAD-Format-DWG-1_40/14-header-zeros.t
+t/CAD-Format-DWG-1_40/08-header-layer.t
+t/CAD-Format-DWG-1_40/09-header-magic.t
+t/CAD-Format-DWG-1_40/10-header-number_of_digits.t
+t/CAD-Format-DWG-1_40/11-header-number_of_entities.t
+t/CAD-Format-DWG-1_40/12-header-ortho.t
+t/CAD-Format-DWG-1_40/13-header-snap.t
+t/CAD-Format-DWG-1_40/14-header-snap_resolution.t
+t/CAD-Format-DWG-1_40/15-header-units_type.t
+t/CAD-Format-DWG-1_40/16-header-zeros.t
 t/data/axis/AXIS_0.DWG
 t/data/axis/AXIS_1.DWG
 t/data/axis/AXIS_OFF.DWG
@@ -52,6 +55,7 @@ t/data/line/LINE2.DWG
 t/data/line/LINE2.HD
 t/data/ortho/ORTHO_OF.DWG
 t/data/ortho/ORTHO_ON.DWG
+t/data/snap/SNAP_BIG.DWG
 t/data/snap/SNAP_OFF.DWG
 t/data/snap/SNAP_ON.DWG
 t/data/units/DEC0.DWG

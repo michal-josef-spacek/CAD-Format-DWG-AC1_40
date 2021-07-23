@@ -20,5 +20,3 @@ $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('SNAP_OFF.DWG')->s,
 );
 is($obj->header->snap, 0, 'Snap off.');
-
-# TODO Snap with value.
