@@ -46,8 +46,18 @@ types:
       ## 0x0028
       - id: number_of_entities
         type: s2
+      - id: drawing_min_x
+        size: 8
+      - id: drawing_max_x
+        size: 8
       - id: unknown3
-        size: 48
+        size: 8
+      - id: drawing_min_y
+        size: 8
+      - id: drawing_max_y
+        size: 8
+      - id: unknown3a
+        size: 8
       # 0x005a-0x0061
       - id: limits_min_x
         size: 8
