@@ -80,7 +80,10 @@ sub _read {
 
     $self->{magic} = Encode::decode("ascii", IO::KaitaiStruct::Stream::bytes_terminate($self->{_io}->read_bytes(6), 0, 0));
     $self->{zeros} = $self->{_io}->read_bytes(5);
-    $self->{unknown1} = $self->{_io}->read_bytes(29);
+    $self->{unknown1} = $self->{_io}->read_bytes(1);
+    $self->{insertion_base_x} = $self->{_io}->read_bytes(8);
+    $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
+    $self->{unknown1a} = $self->{_io}->read_bytes(12);
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{unknown2} = $self->{_io}->read_bytes(48);
     $self->{limits_min_x} = $self->{_io}->read_bytes(8);
@@ -134,6 +137,21 @@ sub zeros {
 sub unknown1 {
     my ($self) = @_;
     return $self->{unknown1};
+}
+
+sub insertion_base_x {
+    my ($self) = @_;
+    return $self->{insertion_base_x};
+}
+
+sub insertion_base_y {
+    my ($self) = @_;
+    return $self->{insertion_base_y};
+}
+
+sub unknown1a {
+    my ($self) = @_;
+    return $self->{unknown1a};
 }
 
 sub number_of_entities {

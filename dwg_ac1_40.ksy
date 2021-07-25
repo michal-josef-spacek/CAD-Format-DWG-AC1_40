@@ -34,7 +34,15 @@ types:
       - id: zeros
         size: 5
       - id: unknown1
-        size: 29
+        size: 1
+      ## 0x000c-0x0013
+      - id: insertion_base_x
+        size: 8
+      ## 0x0014-0x001b
+      - id: insertion_base_y
+        size: 8
+      - id: unknown1a
+        size: 12
       ## 0x0028
       - id: number_of_entities
         type: s2
