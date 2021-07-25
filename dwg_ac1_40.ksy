@@ -41,12 +41,12 @@ types:
       ## 0x0014-0x001b
       - id: insertion_base_y
         size: 8
-      - id: unknown1a
+      - id: unknown2
         size: 12
       ## 0x0028
       - id: number_of_entities
         type: s2
-      - id: unknown2
+      - id: unknown3
         size: 48
       # 0x005a-0x0061
       - id: limits_min_x
@@ -60,13 +60,13 @@ types:
       # 0x0072-0x0079
       - id: limits_max_y
         size: 8
-      - id: unknown3
+      - id: unknown4
         size: 32
       ## 0x009a
       - id: snap
         type: s1
       ## TODO Part of snap?
-      - id: unknown4
+      - id: unknown5
         size: 1
       ## 0x009c-0x00a3
       - id: snap_resolution
@@ -74,7 +74,7 @@ types:
       ## 0x00a4
       - id: grid
         type: s1
-      - id: unknown5
+      - id: unknown6
         size: 1
       ## 0x00a6-0x00ad
       - id: grid_value
@@ -82,39 +82,39 @@ types:
       ## 0x00ae
       - id: ortho
         type: s1
-      - id: unknown6
+      - id: unknown7
         size: 3
       ## 0x00b2
       - id: fill
         type: s1
-      - id: unknown7
+      - id: unknown8
         size: 17
       ## 0x00c4
       - id: actual_layer
         type: s1
-      - id: unknown8
+      - id: unknown9
         size: 1
       ## 0x00c6
       - id: actual_color
         type: s1
       ## TODO Layers
-      - id: unknown9
+      - id: unknown10
         size: 273
       ## 0x01d8
       - id: units_type
         type: s1
         enum: unit_types
-      - id: unknown10
+      - id: unknown11
         size: 1
       ## 0x01da
       - id: number_of_digits
         type: s1
-      - id: unknown11
+      - id: unknown12
         size: 5
       ## 0x01e0
       - id: axis
         type: s1
-      - id: unknown12
+      - id: unknown13
         size: 1
       ## 0x01e2-0x01e9
       - id: axis_value

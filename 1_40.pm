@@ -83,34 +83,34 @@ sub _read {
     $self->{unknown1} = $self->{_io}->read_bytes(1);
     $self->{insertion_base_x} = $self->{_io}->read_bytes(8);
     $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown1a} = $self->{_io}->read_bytes(12);
+    $self->{unknown2} = $self->{_io}->read_bytes(12);
     $self->{number_of_entities} = $self->{_io}->read_s2le();
-    $self->{unknown2} = $self->{_io}->read_bytes(48);
+    $self->{unknown3} = $self->{_io}->read_bytes(48);
     $self->{limits_min_x} = $self->{_io}->read_bytes(8);
     $self->{limits_min_y} = $self->{_io}->read_bytes(8);
     $self->{limits_max_x} = $self->{_io}->read_bytes(8);
     $self->{limits_max_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown3} = $self->{_io}->read_bytes(32);
+    $self->{unknown4} = $self->{_io}->read_bytes(32);
     $self->{snap} = $self->{_io}->read_s1();
-    $self->{unknown4} = $self->{_io}->read_bytes(1);
+    $self->{unknown5} = $self->{_io}->read_bytes(1);
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s1();
-    $self->{unknown5} = $self->{_io}->read_bytes(1);
+    $self->{unknown6} = $self->{_io}->read_bytes(1);
     $self->{grid_value} = $self->{_io}->read_bytes(8);
     $self->{ortho} = $self->{_io}->read_s1();
-    $self->{unknown6} = $self->{_io}->read_bytes(3);
+    $self->{unknown7} = $self->{_io}->read_bytes(3);
     $self->{fill} = $self->{_io}->read_s1();
-    $self->{unknown7} = $self->{_io}->read_bytes(17);
+    $self->{unknown8} = $self->{_io}->read_bytes(17);
     $self->{actual_layer} = $self->{_io}->read_s1();
-    $self->{unknown8} = $self->{_io}->read_bytes(1);
+    $self->{unknown9} = $self->{_io}->read_bytes(1);
     $self->{actual_color} = $self->{_io}->read_s1();
-    $self->{unknown9} = $self->{_io}->read_bytes(273);
+    $self->{unknown10} = $self->{_io}->read_bytes(273);
     $self->{units_type} = $self->{_io}->read_s1();
-    $self->{unknown10} = $self->{_io}->read_bytes(1);
+    $self->{unknown11} = $self->{_io}->read_bytes(1);
     $self->{number_of_digits} = $self->{_io}->read_s1();
-    $self->{unknown11} = $self->{_io}->read_bytes(5);
+    $self->{unknown12} = $self->{_io}->read_bytes(5);
     $self->{axis} = $self->{_io}->read_s1();
-    $self->{unknown12} = $self->{_io}->read_bytes(1);
+    $self->{unknown13} = $self->{_io}->read_bytes(1);
     $self->{axis_value} = $self->{_io}->read_bytes(8);
 }
 
@@ -149,9 +149,9 @@ sub insertion_base_y {
     return $self->{insertion_base_y};
 }
 
-sub unknown1a {
+sub unknown2 {
     my ($self) = @_;
-    return $self->{unknown1a};
+    return $self->{unknown2};
 }
 
 sub number_of_entities {
@@ -159,9 +159,9 @@ sub number_of_entities {
     return $self->{number_of_entities};
 }
 
-sub unknown2 {
+sub unknown3 {
     my ($self) = @_;
-    return $self->{unknown2};
+    return $self->{unknown3};
 }
 
 sub limits_min_x {
@@ -184,9 +184,9 @@ sub limits_max_y {
     return $self->{limits_max_y};
 }
 
-sub unknown3 {
+sub unknown4 {
     my ($self) = @_;
-    return $self->{unknown3};
+    return $self->{unknown4};
 }
 
 sub snap {
@@ -194,9 +194,9 @@ sub snap {
     return $self->{snap};
 }
 
-sub unknown4 {
+sub unknown5 {
     my ($self) = @_;
-    return $self->{unknown4};
+    return $self->{unknown5};
 }
 
 sub snap_resolution {
@@ -209,9 +209,9 @@ sub grid {
     return $self->{grid};
 }
 
-sub unknown5 {
+sub unknown6 {
     my ($self) = @_;
-    return $self->{unknown5};
+    return $self->{unknown6};
 }
 
 sub grid_value {
@@ -224,9 +224,9 @@ sub ortho {
     return $self->{ortho};
 }
 
-sub unknown6 {
+sub unknown7 {
     my ($self) = @_;
-    return $self->{unknown6};
+    return $self->{unknown7};
 }
 
 sub fill {
@@ -234,9 +234,9 @@ sub fill {
     return $self->{fill};
 }
 
-sub unknown7 {
+sub unknown8 {
     my ($self) = @_;
-    return $self->{unknown7};
+    return $self->{unknown8};
 }
 
 sub actual_layer {
@@ -244,9 +244,9 @@ sub actual_layer {
     return $self->{actual_layer};
 }
 
-sub unknown8 {
+sub unknown9 {
     my ($self) = @_;
-    return $self->{unknown8};
+    return $self->{unknown9};
 }
 
 sub actual_color {
@@ -254,9 +254,9 @@ sub actual_color {
     return $self->{actual_color};
 }
 
-sub unknown9 {
+sub unknown10 {
     my ($self) = @_;
-    return $self->{unknown9};
+    return $self->{unknown10};
 }
 
 sub units_type {
@@ -264,9 +264,9 @@ sub units_type {
     return $self->{units_type};
 }
 
-sub unknown10 {
+sub unknown11 {
     my ($self) = @_;
-    return $self->{unknown10};
+    return $self->{unknown11};
 }
 
 sub number_of_digits {
@@ -274,9 +274,9 @@ sub number_of_digits {
     return $self->{number_of_digits};
 }
 
-sub unknown11 {
+sub unknown12 {
     my ($self) = @_;
-    return $self->{unknown11};
+    return $self->{unknown12};
 }
 
 sub axis {
@@ -284,9 +284,9 @@ sub axis {
     return $self->{axis};
 }
 
-sub unknown12 {
+sub unknown13 {
     my ($self) = @_;
-    return $self->{unknown12};
+    return $self->{unknown13};
 }
 
 sub axis_value {
