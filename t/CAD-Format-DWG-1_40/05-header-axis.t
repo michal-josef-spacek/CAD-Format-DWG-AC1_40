@@ -32,5 +32,3 @@ $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('AXIS_1.DWG')->s,
 );
 is($obj->header->axis, 1, 'Axis on.');
-
-# TODO Hodnota axis
