@@ -85,11 +85,11 @@ sub _read {
     $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
     $self->{unknown2} = $self->{_io}->read_bytes(12);
     $self->{number_of_entities} = $self->{_io}->read_s2le();
-    $self->{drawing_min_x} = $self->{_io}->read_bytes(8);
-    $self->{drawing_max_x} = $self->{_io}->read_bytes(8);
+    $self->{drawing_first_x} = $self->{_io}->read_bytes(8);
+    $self->{drawing_first_y} = $self->{_io}->read_bytes(8);
     $self->{unknown3} = $self->{_io}->read_bytes(8);
-    $self->{drawing_min_y} = $self->{_io}->read_bytes(8);
-    $self->{drawing_max_y} = $self->{_io}->read_bytes(8);
+    $self->{drawing_second_x} = $self->{_io}->read_bytes(8);
+    $self->{drawing_second_y} = $self->{_io}->read_bytes(8);
     $self->{unknown3a} = $self->{_io}->read_bytes(8);
     $self->{limits_min_x} = $self->{_io}->read_bytes(8);
     $self->{limits_min_y} = $self->{_io}->read_bytes(8);
@@ -164,14 +164,14 @@ sub number_of_entities {
     return $self->{number_of_entities};
 }
 
-sub drawing_min_x {
+sub drawing_first_x {
     my ($self) = @_;
-    return $self->{drawing_min_x};
+    return $self->{drawing_first_x};
 }
 
-sub drawing_max_x {
+sub drawing_first_y {
     my ($self) = @_;
-    return $self->{drawing_max_x};
+    return $self->{drawing_first_y};
 }
 
 sub unknown3 {
@@ -179,14 +179,14 @@ sub unknown3 {
     return $self->{unknown3};
 }
 
-sub drawing_min_y {
+sub drawing_second_x {
     my ($self) = @_;
-    return $self->{drawing_min_y};
+    return $self->{drawing_second_x};
 }
 
-sub drawing_max_y {
+sub drawing_second_y {
     my ($self) = @_;
-    return $self->{drawing_max_y};
+    return $self->{drawing_second_y};
 }
 
 sub unknown3a {
