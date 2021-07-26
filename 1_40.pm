@@ -110,22 +110,19 @@ sub _read {
     $self->{trace_width} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
-    $self->{unknown9} = $self->{_io}->read_bytes(272);
+    $self->{unknown9} = $self->{_io}->read_bytes(2);
+    $self->{layers} = ();
+    my $n_layers = 127;
+    for (my $i = 0; $i < $n_layers; $i++) {
+        $self->{layers}[$i] = $self->{_io}->read_s2le();
+    }
+    $self->{unknown10} = $self->{_io}->read_bytes(8);
+    $self->{unknown11} = $self->{_io}->read_bytes(8);
     $self->{units_type} = $self->{_io}->read_s2le();
     $self->{number_of_digits} = $self->{_io}->read_s2le();
-    $self->{unknown10} = $self->{_io}->read_bytes(4);
+    $self->{unknown12} = $self->{_io}->read_bytes(4);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
-}
-
-sub layer {
-    my ($self) = @_;
-    return $self->{layer} if ($self->{layer});
-    my $_pos = $self->{_io}->pos();
-    $self->{_io}->seek(202);
-    $self->{layer} = CAD::Format::DWG::1_40::LayerType->new($self->{_io}, $self, $self->{_root});
-    $self->{_io}->seek($_pos);
-    return $self->{layer};
 }
 
 sub magic {
@@ -293,6 +290,21 @@ sub unknown9 {
     return $self->{unknown9};
 }
 
+sub layers {
+    my ($self) = @_;
+    return $self->{layers};
+}
+
+sub unknown10 {
+    my ($self) = @_;
+    return $self->{unknown10};
+}
+
+sub unknown11 {
+    my ($self) = @_;
+    return $self->{unknown11};
+}
+
 sub units_type {
     my ($self) = @_;
     return $self->{units_type};
@@ -303,9 +315,9 @@ sub number_of_digits {
     return $self->{number_of_digits};
 }
 
-sub unknown10 {
+sub unknown12 {
     my ($self) = @_;
-    return $self->{unknown10};
+    return $self->{unknown12};
 }
 
 sub axis {
@@ -316,50 +328,6 @@ sub axis {
 sub axis_value {
     my ($self) = @_;
     return $self->{axis_value};
-}
-
-########################################################################
-package CAD::Format::DWG::1_40::LayerType;
-
-our @ISA = 'IO::KaitaiStruct::Struct';
-
-sub from_file {
-    my ($class, $filename) = @_;
-    my $fd;
-
-    open($fd, '<', $filename) or return undef;
-    binmode($fd);
-    return new($class, IO::KaitaiStruct::Stream->new($fd));
-}
-
-sub new {
-    my ($class, $_io, $_parent, $_root) = @_;
-    my $self = IO::KaitaiStruct::Struct->new($_io);
-
-    bless $self, $class;
-    $self->{_parent} = $_parent;
-    $self->{_root} = $_root || $self;;
-
-    $self->_read();
-
-    return $self;
-}
-
-sub _read {
-    my ($self) = @_;
-
-    $self->{layer} = $self->{_io}->read_s1();
-    $self->{color} = $self->{_io}->read_s1();
-}
-
-sub layer {
-    my ($self) = @_;
-    return $self->{layer};
-}
-
-sub color {
-    my ($self) = @_;
-    return $self->{color};
 }
 
 1;

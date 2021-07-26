@@ -32,7 +32,7 @@ t/CAD-Format-DWG-1_40/12-header-grid.t
 t/CAD-Format-DWG-1_40/13-header-grid_value.t
 t/CAD-Format-DWG-1_40/14-header-insertion_base_x.t
 t/CAD-Format-DWG-1_40/15-header-insertion_base_y.t
-t/CAD-Format-DWG-1_40/16-header-layer.t
+t/CAD-Format-DWG-1_40/16-header-layers.t
 t/CAD-Format-DWG-1_40/17-header-limits_min_x.t
 t/CAD-Format-DWG-1_40/17-header-limits_min_y.t
 t/CAD-Format-DWG-1_40/19-header-limits_max_x.t

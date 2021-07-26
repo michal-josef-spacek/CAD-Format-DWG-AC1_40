@@ -110,9 +110,16 @@ types:
       ## 0x00c6
       - id: actual_color
         type: s2
-      ## TODO Layers
       - id: unknown9
-        size: 272
+        size: 2
+      - id: layers
+        type: s2
+        repeat: expr
+        repeat-expr: 127
+      - id: unknown10
+        size: 8
+      - id: unknown11
+        size: 8
       ## 0x01d8
       - id: units_type
         type: s2
@@ -120,7 +127,7 @@ types:
       ## 0x01da
       - id: number_of_digits
         type: s2
-      - id: unknown10
+      - id: unknown12
         size: 4
       ## 0x01e0
       - id: axis
@@ -128,16 +135,6 @@ types:
       ## 0x01e2-0x01e9
       - id: axis_value
         size: 8
-    instances:
-      layer:
-        pos: 202
-        type: layer_type
-  layer_type:
-    seq:
-      - id: layer
-        type: s1
-      - id: color
-        type: s1
 enums:
   unit_types:
     1: scientific
