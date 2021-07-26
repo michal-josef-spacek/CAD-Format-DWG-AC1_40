@@ -1,6 +1,5 @@
 1_40.pm
 Changes
-edit
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
