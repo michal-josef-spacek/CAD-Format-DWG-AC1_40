@@ -103,13 +103,14 @@ sub _read {
     $self->{ortho} = $self->{_io}->read_s2le();
     $self->{unknown6} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
-    $self->{unknown7} = $self->{_io}->read_bytes(16);
+    $self->{unknown7} = $self->{_io}->read_bytes(8);
+    $self->{unknown8} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
-    $self->{unknown8} = $self->{_io}->read_bytes(272);
+    $self->{unknown9} = $self->{_io}->read_bytes(272);
     $self->{units_type} = $self->{_io}->read_s2le();
-    $self->{number_of_digits} = $self->{_io}->read_s1();
-    $self->{unknown9} = $self->{_io}->read_bytes(5);
+    $self->{number_of_digits} = $self->{_io}->read_s2le();
+    $self->{unknown10} = $self->{_io}->read_bytes(4);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
 }
@@ -254,6 +255,11 @@ sub unknown7 {
     return $self->{unknown7};
 }
 
+sub unknown8 {
+    my ($self) = @_;
+    return $self->{unknown8};
+}
+
 sub actual_layer {
     my ($self) = @_;
     return $self->{actual_layer};
@@ -264,9 +270,9 @@ sub actual_color {
     return $self->{actual_color};
 }
 
-sub unknown8 {
+sub unknown9 {
     my ($self) = @_;
-    return $self->{unknown8};
+    return $self->{unknown9};
 }
 
 sub units_type {
@@ -279,9 +285,9 @@ sub number_of_digits {
     return $self->{number_of_digits};
 }
 
-sub unknown9 {
+sub unknown10 {
     my ($self) = @_;
-    return $self->{unknown9};
+    return $self->{unknown10};
 }
 
 sub axis {

@@ -93,7 +93,9 @@ types:
       - id: fill
         type: s2
       - id: unknown7
-        size: 16
+        size: 8
+      - id: unknown8
+        size: 8
       ## 0x00c4
       - id: actual_layer
         type: s2
@@ -101,7 +103,7 @@ types:
       - id: actual_color
         type: s2
       ## TODO Layers
-      - id: unknown8
+      - id: unknown9
         size: 272
       ## 0x01d8
       - id: units_type
@@ -109,9 +111,9 @@ types:
         enum: unit_types
       ## 0x01da
       - id: number_of_digits
-        type: s1
-      - id: unknown9
-        size: 5
+        type: s2
+      - id: unknown10
+        size: 4
       ## 0x01e0
       - id: axis
         type: s2
