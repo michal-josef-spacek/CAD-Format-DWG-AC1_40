@@ -56,7 +56,7 @@ types:
         size: 8
       - id: drawing_second_y
         size: 8
-      - id: unknown3a
+      - id: unknown4
         size: 8
       # 0x005a-0x0061
       - id: limits_min_x
@@ -70,7 +70,7 @@ types:
       # 0x0072-0x0079
       - id: limits_max_y
         size: 8
-      - id: unknown4
+      - id: unknown5
         size: 32
       ## 0x009a
       - id: snap
@@ -87,12 +87,12 @@ types:
       ## 0x00ae
       - id: ortho
         type: s2
-      - id: unknown7
+      - id: unknown6
         size: 2
       ## 0x00b2
       - id: fill
         type: s2
-      - id: unknown8
+      - id: unknown7
         size: 16
       ## 0x00c4
       - id: actual_layer
@@ -101,7 +101,7 @@ types:
       - id: actual_color
         type: s2
       ## TODO Layers
-      - id: unknown10
+      - id: unknown8
         size: 272
       ## 0x01d8
       - id: units_type
@@ -110,7 +110,7 @@ types:
       ## 0x01da
       - id: number_of_digits
         type: s1
-      - id: unknown12
+      - id: unknown9
         size: 5
       ## 0x01e0
       - id: axis
