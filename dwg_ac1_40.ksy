@@ -93,9 +93,11 @@ types:
       ## 0x00ae
       - id: ortho
         type: s2
+      ## XXX Could be ffff
       - id: unknown6
         size: 2
       ## 0x00b2
+      ## XXX Could be ffff
       - id: fill
         type: s2
       - id: unknown7
