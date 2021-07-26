@@ -106,8 +106,8 @@ sub _read {
     $self->{ortho} = $self->{_io}->read_s2le();
     $self->{unknown6} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
-    $self->{unknown7} = $self->{_io}->read_bytes(8);
-    $self->{unknown8} = $self->{_io}->read_bytes(8);
+    $self->{txt_size} = $self->{_io}->read_bytes(8);
+    $self->{trace_width} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
     $self->{unknown9} = $self->{_io}->read_bytes(272);
@@ -268,14 +268,14 @@ sub fill {
     return $self->{fill};
 }
 
-sub unknown7 {
+sub txt_size {
     my ($self) = @_;
-    return $self->{unknown7};
+    return $self->{txt_size};
 }
 
-sub unknown8 {
+sub trace_width {
     my ($self) = @_;
-    return $self->{unknown8};
+    return $self->{trace_width};
 }
 
 sub actual_layer {

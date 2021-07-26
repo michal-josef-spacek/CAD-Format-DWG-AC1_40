@@ -100,9 +100,9 @@ types:
       ## XXX Could be ffff
       - id: fill
         type: s2
-      - id: unknown7
+      - id: txt_size
         size: 8
-      - id: unknown8
+      - id: trace_width
         size: 8
       ## 0x00c4
       - id: actual_layer
