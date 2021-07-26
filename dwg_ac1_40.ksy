@@ -70,13 +70,13 @@ types:
       # 0x0072-0x0079
       - id: limits_max_y
         size: 8
-      - id: unknown5a
+      - id: dwgview1
         size: 8
-      - id: unknown5b
+      - id: dwgview2
         size: 8
-      - id: unknown5c
+      - id: unknown5
         size: 8
-      - id: unknown5d
+      - id: dwgview3
         size: 8
       ## 0x009a
       - id: snap

@@ -95,10 +95,10 @@ sub _read {
     $self->{limits_min_y} = $self->{_io}->read_bytes(8);
     $self->{limits_max_x} = $self->{_io}->read_bytes(8);
     $self->{limits_max_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown5a} = $self->{_io}->read_bytes(8);
-    $self->{unknown5b} = $self->{_io}->read_bytes(8);
-    $self->{unknown5c} = $self->{_io}->read_bytes(8);
-    $self->{unknown5d} = $self->{_io}->read_bytes(8);
+    $self->{dwgview1} = $self->{_io}->read_bytes(8);
+    $self->{dwgview2} = $self->{_io}->read_bytes(8);
+    $self->{unknown5} = $self->{_io}->read_bytes(8);
+    $self->{dwgview3} = $self->{_io}->read_bytes(8);
     $self->{snap} = $self->{_io}->read_s2le();
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s2le();
@@ -213,24 +213,24 @@ sub limits_max_y {
     return $self->{limits_max_y};
 }
 
-sub unknown5a {
+sub dwgview1 {
     my ($self) = @_;
-    return $self->{unknown5a};
+    return $self->{dwgview1};
 }
 
-sub unknown5b {
+sub dwgview2 {
     my ($self) = @_;
-    return $self->{unknown5b};
+    return $self->{dwgview2};
 }
 
-sub unknown5c {
+sub unknown5 {
     my ($self) = @_;
-    return $self->{unknown5c};
+    return $self->{unknown5};
 }
 
-sub unknown5d {
+sub dwgview3 {
     my ($self) = @_;
-    return $self->{unknown5d};
+    return $self->{dwgview3};
 }
 
 sub snap {
