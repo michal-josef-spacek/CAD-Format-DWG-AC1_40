@@ -7,20 +7,13 @@ meta:
   license: CC0-1.0
   xref:
     justsolve: DWG
-    loc: fdd/fdd000445
     pronom:
-      fmt: 54
+      fmt: 24
     mime:
       - application/x-dwg
       - image/vnd.dwg
-    wikidata: Q1053358
+    wikidata: Q27863111
   endian: le
-doc: |
-  AutoCAD 2D blueprint.
-doc-ref: |
-    https://github.com/LibreCAD/libdxfrw
-    https://git.savannah.gnu.org/cgit/libredwg.git/tree/
-    https://www.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf
 seq:
   - id: header
     type: header
