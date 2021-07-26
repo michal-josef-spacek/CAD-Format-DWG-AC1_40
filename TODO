@@ -2,7 +2,10 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 5. Co s display? v DXF souboru jsou tri hodnoty.
-6.
+6. Testy pro dwgview 1,2,3
+7. Testy pro text_size
+8. Testy pro trace_width
+9.
 
 Applied
 =======
