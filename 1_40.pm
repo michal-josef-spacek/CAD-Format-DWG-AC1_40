@@ -95,7 +95,10 @@ sub _read {
     $self->{limits_min_y} = $self->{_io}->read_bytes(8);
     $self->{limits_max_x} = $self->{_io}->read_bytes(8);
     $self->{limits_max_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown5} = $self->{_io}->read_bytes(32);
+    $self->{unknown5a} = $self->{_io}->read_bytes(8);
+    $self->{unknown5b} = $self->{_io}->read_bytes(8);
+    $self->{unknown5c} = $self->{_io}->read_bytes(8);
+    $self->{unknown5d} = $self->{_io}->read_bytes(8);
     $self->{snap} = $self->{_io}->read_s2le();
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s2le();
@@ -210,9 +213,24 @@ sub limits_max_y {
     return $self->{limits_max_y};
 }
 
-sub unknown5 {
+sub unknown5a {
     my ($self) = @_;
-    return $self->{unknown5};
+    return $self->{unknown5a};
+}
+
+sub unknown5b {
+    my ($self) = @_;
+    return $self->{unknown5b};
+}
+
+sub unknown5c {
+    my ($self) = @_;
+    return $self->{unknown5c};
+}
+
+sub unknown5d {
+    my ($self) = @_;
+    return $self->{unknown5d};
 }
 
 sub snap {

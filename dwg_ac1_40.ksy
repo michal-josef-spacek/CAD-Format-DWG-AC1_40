@@ -70,8 +70,14 @@ types:
       # 0x0072-0x0079
       - id: limits_max_y
         size: 8
-      - id: unknown5
-        size: 32
+      - id: unknown5a
+        size: 8
+      - id: unknown5b
+        size: 8
+      - id: unknown5c
+        size: 8
+      - id: unknown5d
+        size: 8
       ## 0x009a
       - id: snap
         type: s2
