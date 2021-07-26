@@ -74,48 +74,39 @@ types:
         size: 32
       ## 0x009a
       - id: snap
-        type: s1
-      ## TODO Part of snap?
-      - id: unknown5
-        size: 1
+        type: s2
       ## 0x009c-0x00a3
       - id: snap_resolution
         size: 8
       ## 0x00a4
       - id: grid
-        type: s1
-      - id: unknown6
-        size: 1
+        type: s2
       ## 0x00a6-0x00ad
       - id: grid_value
         size: 8
       ## 0x00ae
       - id: ortho
-        type: s1
+        type: s2
       - id: unknown7
-        size: 3
+        size: 2
       ## 0x00b2
       - id: fill
-        type: s1
+        type: s2
       - id: unknown8
-        size: 17
+        size: 16
       ## 0x00c4
       - id: actual_layer
-        type: s1
-      - id: unknown9
-        size: 1
+        type: s2
       ## 0x00c6
       - id: actual_color
-        type: s1
+        type: s2
       ## TODO Layers
       - id: unknown10
-        size: 273
+        size: 272
       ## 0x01d8
       - id: units_type
-        type: s1
+        type: s2
         enum: unit_types
-      - id: unknown11
-        size: 1
       ## 0x01da
       - id: number_of_digits
         type: s1
@@ -123,9 +114,7 @@ types:
         size: 5
       ## 0x01e0
       - id: axis
-        type: s1
-      - id: unknown13
-        size: 1
+        type: s2
       ## 0x01e2-0x01e9
       - id: axis_value
         size: 8

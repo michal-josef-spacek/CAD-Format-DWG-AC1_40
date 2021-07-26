@@ -96,26 +96,21 @@ sub _read {
     $self->{limits_max_x} = $self->{_io}->read_bytes(8);
     $self->{limits_max_y} = $self->{_io}->read_bytes(8);
     $self->{unknown4} = $self->{_io}->read_bytes(32);
-    $self->{snap} = $self->{_io}->read_s1();
-    $self->{unknown5} = $self->{_io}->read_bytes(1);
+    $self->{snap} = $self->{_io}->read_s2le();
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
-    $self->{grid} = $self->{_io}->read_s1();
-    $self->{unknown6} = $self->{_io}->read_bytes(1);
+    $self->{grid} = $self->{_io}->read_s2le();
     $self->{grid_value} = $self->{_io}->read_bytes(8);
-    $self->{ortho} = $self->{_io}->read_s1();
-    $self->{unknown7} = $self->{_io}->read_bytes(3);
-    $self->{fill} = $self->{_io}->read_s1();
-    $self->{unknown8} = $self->{_io}->read_bytes(17);
-    $self->{actual_layer} = $self->{_io}->read_s1();
-    $self->{unknown9} = $self->{_io}->read_bytes(1);
-    $self->{actual_color} = $self->{_io}->read_s1();
-    $self->{unknown10} = $self->{_io}->read_bytes(273);
-    $self->{units_type} = $self->{_io}->read_s1();
-    $self->{unknown11} = $self->{_io}->read_bytes(1);
+    $self->{ortho} = $self->{_io}->read_s2le();
+    $self->{unknown7} = $self->{_io}->read_bytes(2);
+    $self->{fill} = $self->{_io}->read_s2le();
+    $self->{unknown8} = $self->{_io}->read_bytes(16);
+    $self->{actual_layer} = $self->{_io}->read_s2le();
+    $self->{actual_color} = $self->{_io}->read_s2le();
+    $self->{unknown10} = $self->{_io}->read_bytes(272);
+    $self->{units_type} = $self->{_io}->read_s2le();
     $self->{number_of_digits} = $self->{_io}->read_s1();
     $self->{unknown12} = $self->{_io}->read_bytes(5);
-    $self->{axis} = $self->{_io}->read_s1();
-    $self->{unknown13} = $self->{_io}->read_bytes(1);
+    $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
 }
 
@@ -224,11 +219,6 @@ sub snap {
     return $self->{snap};
 }
 
-sub unknown5 {
-    my ($self) = @_;
-    return $self->{unknown5};
-}
-
 sub snap_resolution {
     my ($self) = @_;
     return $self->{snap_resolution};
@@ -237,11 +227,6 @@ sub snap_resolution {
 sub grid {
     my ($self) = @_;
     return $self->{grid};
-}
-
-sub unknown6 {
-    my ($self) = @_;
-    return $self->{unknown6};
 }
 
 sub grid_value {
@@ -274,11 +259,6 @@ sub actual_layer {
     return $self->{actual_layer};
 }
 
-sub unknown9 {
-    my ($self) = @_;
-    return $self->{unknown9};
-}
-
 sub actual_color {
     my ($self) = @_;
     return $self->{actual_color};
@@ -294,11 +274,6 @@ sub units_type {
     return $self->{units_type};
 }
 
-sub unknown11 {
-    my ($self) = @_;
-    return $self->{unknown11};
-}
-
 sub number_of_digits {
     my ($self) = @_;
     return $self->{number_of_digits};
@@ -312,11 +287,6 @@ sub unknown12 {
 sub axis {
     my ($self) = @_;
     return $self->{axis};
-}
-
-sub unknown13 {
-    my ($self) = @_;
-    return $self->{unknown13};
 }
 
 sub axis_value {
