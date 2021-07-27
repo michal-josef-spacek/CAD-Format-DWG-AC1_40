@@ -94,24 +94,24 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{entity_layer} = $self->{_io}->read_s2le();
-    $self->{point_x} = $self->{_io}->read_bytes(8);
-    $self->{point_y} = $self->{_io}->read_bytes(8);
+    $self->{layer} = $self->{_io}->read_s2le();
+    $self->{x} = $self->{_io}->read_bytes(8);
+    $self->{y} = $self->{_io}->read_bytes(8);
 }
 
-sub entity_layer {
+sub layer {
     my ($self) = @_;
-    return $self->{entity_layer};
+    return $self->{layer};
 }
 
-sub point_x {
+sub x {
     my ($self) = @_;
-    return $self->{point_x};
+    return $self->{x};
 }
 
-sub point_y {
+sub y {
     my ($self) = @_;
-    return $self->{point_y};
+    return $self->{y};
 }
 
 ########################################################################
@@ -144,48 +144,48 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{entity_layer} = $self->{_io}->read_s2le();
-    $self->{text_x} = $self->{_io}->read_bytes(8);
-    $self->{text_y} = $self->{_io}->read_bytes(8);
-    $self->{text_height} = $self->{_io}->read_bytes(8);
-    $self->{text_angle} = $self->{_io}->read_bytes(8);
-    $self->{text_size} = $self->{_io}->read_s2le();
-    $self->{text_value} = $self->{_io}->read_bytes($self->text_size());
+    $self->{layer} = $self->{_io}->read_s2le();
+    $self->{x} = $self->{_io}->read_bytes(8);
+    $self->{y} = $self->{_io}->read_bytes(8);
+    $self->{height} = $self->{_io}->read_bytes(8);
+    $self->{angle} = $self->{_io}->read_bytes(8);
+    $self->{size} = $self->{_io}->read_s2le();
+    $self->{value} = $self->{_io}->read_bytes($self->size());
 }
 
-sub entity_layer {
+sub layer {
     my ($self) = @_;
-    return $self->{entity_layer};
+    return $self->{layer};
 }
 
-sub text_x {
+sub x {
     my ($self) = @_;
-    return $self->{text_x};
+    return $self->{x};
 }
 
-sub text_y {
+sub y {
     my ($self) = @_;
-    return $self->{text_y};
+    return $self->{y};
 }
 
-sub text_height {
+sub height {
     my ($self) = @_;
-    return $self->{text_height};
+    return $self->{height};
 }
 
-sub text_angle {
+sub angle {
     my ($self) = @_;
-    return $self->{text_angle};
+    return $self->{angle};
 }
 
-sub text_size {
+sub size {
     my ($self) = @_;
-    return $self->{text_size};
+    return $self->{size};
 }
 
-sub text_value {
+sub value {
     my ($self) = @_;
-    return $self->{text_value};
+    return $self->{value};
 }
 
 ########################################################################
@@ -219,11 +219,11 @@ sub _read {
     my ($self) = @_;
 
     $self->{entity_layer} = $self->{_io}->read_s2le();
-    $self->{arc_x} = $self->{_io}->read_bytes(8);
-    $self->{arc_y} = $self->{_io}->read_bytes(8);
-    $self->{arc_radius} = $self->{_io}->read_bytes(8);
-    $self->{arc_angle_from} = $self->{_io}->read_bytes(8);
-    $self->{arc_angle_to} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_bytes(8);
+    $self->{y} = $self->{_io}->read_bytes(8);
+    $self->{radius} = $self->{_io}->read_bytes(8);
+    $self->{angle_from} = $self->{_io}->read_bytes(8);
+    $self->{angle_to} = $self->{_io}->read_bytes(8);
 }
 
 sub entity_layer {
@@ -231,29 +231,29 @@ sub entity_layer {
     return $self->{entity_layer};
 }
 
-sub arc_x {
+sub x {
     my ($self) = @_;
-    return $self->{arc_x};
+    return $self->{x};
 }
 
-sub arc_y {
+sub y {
     my ($self) = @_;
-    return $self->{arc_y};
+    return $self->{y};
 }
 
-sub arc_radius {
+sub radius {
     my ($self) = @_;
-    return $self->{arc_radius};
+    return $self->{radius};
 }
 
-sub arc_angle_from {
+sub angle_from {
     my ($self) = @_;
-    return $self->{arc_angle_from};
+    return $self->{angle_from};
 }
 
-sub arc_angle_to {
+sub angle_to {
     my ($self) = @_;
-    return $self->{arc_angle_to};
+    return $self->{angle_to};
 }
 
 ########################################################################
@@ -645,36 +645,36 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{entity_layer} = $self->{_io}->read_s2le();
-    $self->{circle_x1} = $self->{_io}->read_bytes(8);
-    $self->{circle_y1} = $self->{_io}->read_bytes(8);
-    $self->{circle_x2} = $self->{_io}->read_bytes(8);
-    $self->{circle_y2} = $self->{_io}->read_bytes(8);
+    $self->{layer} = $self->{_io}->read_s2le();
+    $self->{x1} = $self->{_io}->read_bytes(8);
+    $self->{y1} = $self->{_io}->read_bytes(8);
+    $self->{x2} = $self->{_io}->read_bytes(8);
+    $self->{y2} = $self->{_io}->read_bytes(8);
 }
 
-sub entity_layer {
+sub layer {
     my ($self) = @_;
-    return $self->{entity_layer};
+    return $self->{layer};
 }
 
-sub circle_x1 {
+sub x1 {
     my ($self) = @_;
-    return $self->{circle_x1};
+    return $self->{x1};
 }
 
-sub circle_y1 {
+sub y1 {
     my ($self) = @_;
-    return $self->{circle_y1};
+    return $self->{y1};
 }
 
-sub circle_x2 {
+sub x2 {
     my ($self) = @_;
-    return $self->{circle_x2};
+    return $self->{x2};
 }
 
-sub circle_y2 {
+sub y2 {
     my ($self) = @_;
-    return $self->{circle_y2};
+    return $self->{y2};
 }
 
 ########################################################################
@@ -707,36 +707,36 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{entity_layer} = $self->{_io}->read_s2le();
-    $self->{line_x1} = $self->{_io}->read_bytes(8);
-    $self->{line_y1} = $self->{_io}->read_bytes(8);
-    $self->{line_x2} = $self->{_io}->read_bytes(8);
-    $self->{line_y2} = $self->{_io}->read_bytes(8);
+    $self->{layer} = $self->{_io}->read_s2le();
+    $self->{x1} = $self->{_io}->read_bytes(8);
+    $self->{y1} = $self->{_io}->read_bytes(8);
+    $self->{x2} = $self->{_io}->read_bytes(8);
+    $self->{y2} = $self->{_io}->read_bytes(8);
 }
 
-sub entity_layer {
+sub layer {
     my ($self) = @_;
-    return $self->{entity_layer};
+    return $self->{layer};
 }
 
-sub line_x1 {
+sub x1 {
     my ($self) = @_;
-    return $self->{line_x1};
+    return $self->{x1};
 }
 
-sub line_y1 {
+sub y1 {
     my ($self) = @_;
-    return $self->{line_y1};
+    return $self->{y1};
 }
 
-sub line_x2 {
+sub x2 {
     my ($self) = @_;
-    return $self->{line_x2};
+    return $self->{x2};
 }
 
-sub line_y2 {
+sub y2 {
     my ($self) = @_;
-    return $self->{line_y2};
+    return $self->{y2};
 }
 
 1;

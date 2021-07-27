@@ -159,74 +159,74 @@ types:
     seq:
       - id: entity_layer
         type: s2
-      - id: arc_x
+      - id: x
         size: 8
-      - id: arc_y
+      - id: y
         size: 8
-      - id: arc_radius
+      - id: radius
         size: 8
-      - id: arc_angle_from
+      - id: angle_from
         size: 8
-      - id: arc_angle_to
+      - id: angle_to
         size: 8
   entity_circle:
     seq:
-      - id: entity_layer
+      - id: layer
         type: s2
       ## circle x1
-      - id: circle_x1
+      - id: x1
         size: 8
       ## circle y1
-      - id: circle_y1
+      - id: y1
         size: 8
       ## circle x2
-      - id: circle_x2
+      - id: x2
         size: 8
       ## circle y2
-      - id: circle_y2
+      - id: y2
         size: 8
   entity_line:
     seq:
-      - id: entity_layer
+      - id: layer
         type: s2
       ## line x1
-      - id: line_x1
+      - id: x1
         size: 8
       ## line y1
-      - id: line_y1
+      - id: y1
         size: 8
       ## line x2
-      - id: line_x2
+      - id: x2
         size: 8
       ## line y2
-      - id: line_y2
+      - id: y2
         size: 8
   entity_point:
     seq:
-      - id: entity_layer
+      - id: layer
         type: s2
-      - id: point_x
+      - id: x
         size: 8
-      - id: point_y
+      - id: y
         size: 8
   entity_text:
     seq:
-      - id: entity_layer
+      - id: layer
         type: s2
-      - id: text_x
+      - id: x
         size: 8
-      - id: text_y
+      - id: y
         size: 8
       ## TODO opravdu?
-      - id: text_height
+      - id: height
         size: 8
       ## TODO opravdu?
-      - id: text_angle
+      - id: angle
         size: 8
-      - id: text_size
+      - id: size
         type: s2
-      - id: text_value
-        size: text_size
+      - id: value
+        size: size
 enums:
   entities:
     1: line
