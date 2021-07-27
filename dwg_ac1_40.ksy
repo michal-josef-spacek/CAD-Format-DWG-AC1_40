@@ -97,7 +97,7 @@ types:
       ## XXX Could be ffff
       - id: fill
         type: s2
-      - id: txt_size
+      - id: text_size
         size: 8
       - id: trace_width
         size: 8

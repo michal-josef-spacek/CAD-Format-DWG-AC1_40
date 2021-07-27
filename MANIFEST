@@ -42,8 +42,9 @@ t/CAD-Format-DWG-1_40/23-header-number_of_entities.t
 t/CAD-Format-DWG-1_40/24-header-ortho.t
 t/CAD-Format-DWG-1_40/25-header-snap.t
 t/CAD-Format-DWG-1_40/26-header-snap_resolution.t
-t/CAD-Format-DWG-1_40/27-header-units_type.t
-t/CAD-Format-DWG-1_40/28-header-zeros.t
+t/CAD-Format-DWG-1_40/27-header-text_size.t
+t/CAD-Format-DWG-1_40/28-header-units_type.t
+t/CAD-Format-DWG-1_40/29-header-zeros.t
 t/data/axis/AXIS_0.DWG
 t/data/axis/AXIS_1.DWG
 t/data/axis/AXIS_BIG.DWG
@@ -78,6 +79,7 @@ t/data/ortho/ORTHO_ON.DWG
 t/data/snap/SNAP_BIG.DWG
 t/data/snap/SNAP_OFF.DWG
 t/data/snap/SNAP_ON.DWG
+t/data/text_size/TXTSIZE.DWG
 t/data/units/DEC0.DWG
 t/data/units/DEC1.DWG
 t/data/units/DEC8.DWG

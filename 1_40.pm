@@ -373,7 +373,7 @@ sub _read {
     $self->{ortho} = $self->{_io}->read_s2le();
     $self->{unknown6} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
-    $self->{txt_size} = $self->{_io}->read_bytes(8);
+    $self->{text_size} = $self->{_io}->read_bytes(8);
     $self->{trace_width} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
@@ -535,9 +535,9 @@ sub fill {
     return $self->{fill};
 }
 
-sub txt_size {
+sub text_size {
     my ($self) = @_;
-    return $self->{txt_size};
+    return $self->{text_size};
 }
 
 sub trace_width {
