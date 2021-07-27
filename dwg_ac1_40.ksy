@@ -171,32 +171,24 @@ types:
     seq:
       - id: layer
         type: s2
-      ## circle x1
       - id: x1
         size: 8
-      ## circle y1
       - id: y1
         size: 8
-      ## circle x2
       - id: x2
         size: 8
-      ## circle y2
       - id: y2
         size: 8
   entity_line:
     seq:
       - id: layer
         type: s2
-      ## line x1
       - id: x1
         size: 8
-      ## line y1
       - id: y1
         size: 8
-      ## line x2
       - id: x2
         size: 8
-      ## line y2
       - id: y2
         size: 8
   entity_point:
@@ -215,12 +207,12 @@ types:
         size: 8
       - id: y
         size: 8
-      ## TODO opravdu?
       - id: height
         size: 8
-      ## TODO opravdu?
+        doc: TODO right?
       - id: angle
         size: 8
+        doc: TODO right?
       - id: size
         type: s2
       - id: value
