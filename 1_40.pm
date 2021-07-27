@@ -25,6 +25,7 @@ our $UNIT_TYPES_ENGINEERING = 3;
 our $UNIT_TYPES_ARCHITECTURAL = 4;
 
 our $ENTITIES_LINE = 1;
+our $ENTITIES_POINT = 2;
 our $ENTITIES_CIRCLE = 3;
 our $ENTITIES_TEXT = 7;
 our $ENTITIES_ARC = 8;
@@ -61,6 +62,56 @@ sub header {
 sub entities {
     my ($self) = @_;
     return $self->{entities};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::EntityPoint;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{point_x} = $self->{_io}->read_bytes(8);
+    $self->{point_y} = $self->{_io}->read_bytes(8);
+}
+
+sub entity_layer {
+    my ($self) = @_;
+    return $self->{entity_layer};
+}
+
+sub point_x {
+    my ($self) = @_;
+    return $self->{point_x};
+}
+
+sub point_y {
+    my ($self) = @_;
+    return $self->{point_y};
 }
 
 ########################################################################
@@ -237,17 +288,20 @@ sub _read {
 
     $self->{entity_type} = $self->{_io}->read_s2le();
     my $_on = $self->entity_type();
-    if ($_on == $CAD::Format::DWG::1_40::ENTITIES_ARC) {
-        $self->{data} = CAD::Format::DWG::1_40::EntityArc->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_CIRCLE) {
-        $self->{data} = CAD::Format::DWG::1_40::EntityCircle->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_LINE) {
+    if ($_on == $CAD::Format::DWG::1_40::ENTITIES_LINE) {
         $self->{data} = CAD::Format::DWG::1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_TEXT) {
         $self->{data} = CAD::Format::DWG::1_40::EntityText->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_CIRCLE) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityCircle->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_ARC) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityArc->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_POINT) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityPoint->new($self->{_io}, $self, $self->{_root});
     }
 }
 

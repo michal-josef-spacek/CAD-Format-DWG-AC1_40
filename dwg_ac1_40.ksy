@@ -154,6 +154,7 @@ types:
             'entities::arc': entity_arc
             'entities::circle': entity_circle
             'entities::line': entity_line
+            'entities::point': entity_point
             'entities::text': entity_text
   entity_line:
     seq:
@@ -170,6 +171,14 @@ types:
         size: 8
       ## line y2
       - id: line_y2
+        size: 8
+  entity_point:
+    seq:
+      - id: entity_layer
+        type: s2
+      - id: point_x
+        size: 8
+      - id: point_y
         size: 8
   entity_circle:
     seq:
@@ -227,6 +236,7 @@ enums:
     4: architectural
   entities:
     1: line
+    2: point
     3: circle
     7: text
     8: arc
