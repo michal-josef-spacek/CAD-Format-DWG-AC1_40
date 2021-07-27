@@ -143,7 +143,6 @@ types:
         size: 8
   entity:
     seq:
-      ## 1 - line
       - id: entity_type
         type: s2
         enum: entities
