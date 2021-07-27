@@ -15,7 +15,7 @@ author_requires 'Test::Pod' => 0;
 author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 name 'CAD-Format-DWG-1_40';
-requires 'perl' => '5.8.0';
+perl_version 5.008;
 readme_from '1_40.pm';
 recursive_author_tests('xt');
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/CAD-Format-DWG-1_40/issues';
