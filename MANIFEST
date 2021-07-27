@@ -54,7 +54,6 @@ t/data/axis/AXIS_ON.DWG
 t/data/base/BASE_X.DWG
 t/data/base/BASE_Y.DWG
 t/data/blank/BLANK.DWG
-t/data/blank/BLANK.HD
 t/data/drawing/DRAWING.DWG
 t/data/fill/FILL_OFF.DWG
 t/data/fill/FILL_ON.DWG
@@ -72,9 +71,7 @@ t/data/limits/LIM2.DWG
 t/data/limits/LIM3.DWG
 t/data/limits/LIM4.DWG
 t/data/line/LINE1.DWG
-t/data/line/LINE1.HD
 t/data/line/LINE2.DWG
-t/data/line/LINE2.HD
 t/data/ortho/ORTHO_OF.DWG
 t/data/ortho/ORTHO_ON.DWG
 t/data/snap/SNAP_BIG.DWG
