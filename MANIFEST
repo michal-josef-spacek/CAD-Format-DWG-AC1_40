@@ -33,9 +33,9 @@ t/CAD-Format-DWG-1_40/14-header-insertion_base_x.t
 t/CAD-Format-DWG-1_40/15-header-insertion_base_y.t
 t/CAD-Format-DWG-1_40/16-header-layers.t
 t/CAD-Format-DWG-1_40/17-header-limits_min_x.t
-t/CAD-Format-DWG-1_40/17-header-limits_min_y.t
+t/CAD-Format-DWG-1_40/18-header-limits_min_y.t
 t/CAD-Format-DWG-1_40/19-header-limits_max_x.t
-t/CAD-Format-DWG-1_40/19-header-limits_max_y.t
+t/CAD-Format-DWG-1_40/20-header-limits_max_y.t
 t/CAD-Format-DWG-1_40/21-header-magic.t
 t/CAD-Format-DWG-1_40/22-header-number_of_digits.t
 t/CAD-Format-DWG-1_40/23-header-number_of_entities.t
