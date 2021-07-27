@@ -17,6 +17,8 @@ license 'bsd';
 name 'CAD-Format-DWG-1_40';
 perl_version 5.008;
 readme_from '1_40.pm';
+requires 'Encode' => 0;
+requires 'IO::KaitaiStruct' => 0;
 recursive_author_tests('xt');
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/CAD-Format-DWG-1_40/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/CAD-Format-DWG-1_40';
