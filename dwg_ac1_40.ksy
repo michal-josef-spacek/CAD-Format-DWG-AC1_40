@@ -32,17 +32,17 @@ types:
         size: 5
       - id: unknown1
         size: 1
-      ## 0x000c-0x0013
       - id: insertion_base_x
         size: 8
-      ## 0x0014-0x001b
+        doc: 0x000c-0x0013
       - id: insertion_base_y
         size: 8
+        doc: 0x0014-0x001b
       - id: unknown2
         size: 12
-      ## 0x0028
       - id: number_of_entities
         type: s2
+        doc: 0x0028-0x0029
       - id: drawing_first_x
         size: 8
       - id: drawing_first_y
@@ -55,18 +55,18 @@ types:
         size: 8
       - id: unknown4
         size: 8
-      # 0x005a-0x0061
       - id: limits_min_x
         size: 8
-      # 0x0062-0x0069
+        doc: 0x005a-0x0061
       - id: limits_min_y
         size: 8
-      # 0x006a-0x0071
+        doc: 0x0062-0x0069
       - id: limits_max_x
         size: 8
-      # 0x0072-0x0079
+        doc: 0x006a-0x0071
       - id: limits_max_y
         size: 8
+        doc: 0x0072-0x0079
       - id: dwgview1
         size: 8
       - id: dwgview2
@@ -75,38 +75,37 @@ types:
         size: 8
       - id: dwgview3
         size: 8
-      ## 0x009a
       - id: snap
         type: s2
-      ## 0x009c-0x00a3
+        doc: 0x009a-0x009b
       - id: snap_resolution
         size: 8
-      ## 0x00a4
+        doc: 0x009c-0x00a3
       - id: grid
         type: s2
-      ## 0x00a6-0x00ad
+        doc: 0x00a4-0x00a5
       - id: grid_value
         size: 8
-      ## 0x00ae
+        doc: 0x00a6-0x00ad
       - id: ortho
         type: s2
-      ## XXX Could be ffff
+        doc: 0x00ae-0x00af
       - id: unknown6
         size: 2
-      ## 0x00b2
-      ## XXX Could be ffff
+        doc: XXX could be ffff
       - id: fill
         type: s2
+        doc: 0x00b2-0x00b3 (XXX could be ffff)
       - id: text_size
         size: 8
       - id: trace_width
         size: 8
-      ## 0x00c4
       - id: actual_layer
         type: s2
-      ## 0x00c6
+        doc: 0x00c4-0x00c5
       - id: actual_color
         type: s2
+        doc: 0x00c6-0x00c7
       - id: unknown9
         size: 2
       - id: layers
@@ -117,28 +116,27 @@ types:
         size: 8
       - id: unknown11
         size: 8
-      ## 0x01d8
       - id: units_type
         type: s2
         enum: unit_types
-      ## 0x01da
+        doc: 0x01d8-0x01d9
       - id: number_of_digits
         type: s2
+        doc: 0x01da-0x01db
       - id: unknown12
         size: 4
-      ## 0x01e0
       - id: axis
         type: s2
-      ## 0x01e2-0x01e9
+        doc: 0x01e0-0x01e1
       - id: axis_value
         size: 8
-      ## 0.25
+        doc: 0x01e2-0x01e9
       - id: unknown13
         size: 8
-      ## 0.1
+        doc: XXX Value is 0.25 somewhere
       - id: unknown14
         size: 8
-      ## 0x8
+        doc: XXX Value is 0.1 somewhere
       - id: unknown15
         size: 8
   entity:
