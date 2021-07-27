@@ -19,16 +19,16 @@ sub from_file {
     return new($class, IO::KaitaiStruct::Stream->new($fd));
 }
 
-our $UNIT_TYPES_SCIENTIFIC = 1;
-our $UNIT_TYPES_DECIMAL = 2;
-our $UNIT_TYPES_ENGINEERING = 3;
-our $UNIT_TYPES_ARCHITECTURAL = 4;
-
 our $ENTITIES_LINE = 1;
 our $ENTITIES_POINT = 2;
 our $ENTITIES_CIRCLE = 3;
 our $ENTITIES_TEXT = 7;
 our $ENTITIES_ARC = 8;
+
+our $UNIT_TYPES_SCIENTIFIC = 1;
+our $UNIT_TYPES_DECIMAL = 2;
+our $UNIT_TYPES_ENGINEERING = 3;
+our $UNIT_TYPES_ARCHITECTURAL = 4;
 
 sub new {
     my ($class, $_io, $_parent, $_root) = @_;
