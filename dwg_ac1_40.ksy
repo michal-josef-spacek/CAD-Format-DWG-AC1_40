@@ -17,6 +17,10 @@ meta:
 seq:
   - id: header
     type: header
+  - id: entities
+    type: entity
+    repeat: expr
+    repeat-expr: header.number_of_entities
 types:
   header:
     seq:
@@ -128,9 +132,101 @@ types:
       ## 0x01e2-0x01e9
       - id: axis_value
         size: 8
+      ## 0.25
+      - id: unknown13
+        size: 8
+      ## 0.1
+      - id: unknown14
+        size: 8
+      ## 0x8
+      - id: unknown15
+        size: 8
+  entity:
+    seq:
+      ## 1 - line
+      - id: entity_type
+        type: s2
+        enum: entities
+      - id: data
+        type:
+          switch-on: entity_type
+          cases:
+            'entities::arc': entity_arc
+            'entities::circle': entity_circle
+            'entities::line': entity_line
+            'entities::text': entity_text
+  entity_line:
+    seq:
+      - id: entity_layer
+        type: s2
+      ## line x1
+      - id: line_x1
+        size: 8
+      ## line y1
+      - id: line_y1
+        size: 8
+      ## line x2
+      - id: line_x2
+        size: 8
+      ## line y2
+      - id: line_y2
+        size: 8
+  entity_circle:
+    seq:
+      - id: entity_layer
+        type: s2
+      ## circle x1
+      - id: circle_x1
+        size: 8
+      ## circle y1
+      - id: circle_y1
+        size: 8
+      ## circle x2
+      - id: circle_x2
+        size: 8
+      ## circle y2
+      - id: circle_y2
+        size: 8
+  entity_text:
+    seq:
+      - id: entity_layer
+        type: s2
+      - id: text_x
+        size: 8
+      - id: text_y
+        size: 8
+      ## TODO opravdu?
+      - id: text_height
+        size: 8
+      ## TODO opravdu?
+      - id: text_angle
+        size: 8
+      - id: text_size
+        type: s2
+      - id: text_value
+        size: text_size
+  entity_arc:
+    seq:
+      - id: entity_layer
+        type: s2
+      - id: arc_x
+        size: 8
+      - id: arc_y
+        size: 8
+      - id: arc_radius
+        size: 8
+      - id: arc_angle_from
+        size: 8
+      - id: arc_angle_to
+        size: 8
 enums:
   unit_types:
     1: scientific
     2: decimal
     3: engineering
     4: architectural
+  entities:
+    1: line
+    3: circle
+    7: text
+    8: arc

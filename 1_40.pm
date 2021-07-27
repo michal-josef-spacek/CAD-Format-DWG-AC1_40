@@ -24,6 +24,11 @@ our $UNIT_TYPES_DECIMAL = 2;
 our $UNIT_TYPES_ENGINEERING = 3;
 our $UNIT_TYPES_ARCHITECTURAL = 4;
 
+our $ENTITIES_LINE = 1;
+our $ENTITIES_CIRCLE = 3;
+our $ENTITIES_TEXT = 7;
+our $ENTITIES_ARC = 8;
+
 sub new {
     my ($class, $_io, $_parent, $_root) = @_;
     my $self = IO::KaitaiStruct::Struct->new($_io);
@@ -41,11 +46,219 @@ sub _read {
     my ($self) = @_;
 
     $self->{header} = CAD::Format::DWG::1_40::Header->new($self->{_io}, $self, $self->{_root});
+    $self->{entities} = ();
+    my $n_entities = $self->header()->number_of_entities();
+    for (my $i = 0; $i < $n_entities; $i++) {
+        $self->{entities}[$i] = CAD::Format::DWG::1_40::Entity->new($self->{_io}, $self, $self->{_root});
+    }
 }
 
 sub header {
     my ($self) = @_;
     return $self->{header};
+}
+
+sub entities {
+    my ($self) = @_;
+    return $self->{entities};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::EntityText;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{text_x} = $self->{_io}->read_bytes(8);
+    $self->{text_y} = $self->{_io}->read_bytes(8);
+    $self->{text_height} = $self->{_io}->read_bytes(8);
+    $self->{text_angle} = $self->{_io}->read_bytes(8);
+    $self->{text_size} = $self->{_io}->read_s2le();
+    $self->{text_value} = $self->{_io}->read_bytes($self->text_size());
+}
+
+sub entity_layer {
+    my ($self) = @_;
+    return $self->{entity_layer};
+}
+
+sub text_x {
+    my ($self) = @_;
+    return $self->{text_x};
+}
+
+sub text_y {
+    my ($self) = @_;
+    return $self->{text_y};
+}
+
+sub text_height {
+    my ($self) = @_;
+    return $self->{text_height};
+}
+
+sub text_angle {
+    my ($self) = @_;
+    return $self->{text_angle};
+}
+
+sub text_size {
+    my ($self) = @_;
+    return $self->{text_size};
+}
+
+sub text_value {
+    my ($self) = @_;
+    return $self->{text_value};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::EntityArc;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{arc_x} = $self->{_io}->read_bytes(8);
+    $self->{arc_y} = $self->{_io}->read_bytes(8);
+    $self->{arc_radius} = $self->{_io}->read_bytes(8);
+    $self->{arc_angle_from} = $self->{_io}->read_bytes(8);
+    $self->{arc_angle_to} = $self->{_io}->read_bytes(8);
+}
+
+sub entity_layer {
+    my ($self) = @_;
+    return $self->{entity_layer};
+}
+
+sub arc_x {
+    my ($self) = @_;
+    return $self->{arc_x};
+}
+
+sub arc_y {
+    my ($self) = @_;
+    return $self->{arc_y};
+}
+
+sub arc_radius {
+    my ($self) = @_;
+    return $self->{arc_radius};
+}
+
+sub arc_angle_from {
+    my ($self) = @_;
+    return $self->{arc_angle_from};
+}
+
+sub arc_angle_to {
+    my ($self) = @_;
+    return $self->{arc_angle_to};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::Entity;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_type} = $self->{_io}->read_s2le();
+    my $_on = $self->entity_type();
+    if ($_on == $CAD::Format::DWG::1_40::ENTITIES_ARC) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityArc->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_CIRCLE) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityCircle->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_LINE) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::1_40::ENTITIES_TEXT) {
+        $self->{data} = CAD::Format::DWG::1_40::EntityText->new($self->{_io}, $self, $self->{_root});
+    }
+}
+
+sub entity_type {
+    my ($self) = @_;
+    return $self->{entity_type};
+}
+
+sub data {
+    my ($self) = @_;
+    return $self->{data};
 }
 
 ########################################################################
@@ -123,6 +336,9 @@ sub _read {
     $self->{unknown12} = $self->{_io}->read_bytes(4);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
+    $self->{unknown13} = $self->{_io}->read_bytes(8);
+    $self->{unknown14} = $self->{_io}->read_bytes(8);
+    $self->{unknown15} = $self->{_io}->read_bytes(8);
 }
 
 sub magic {
@@ -328,6 +544,145 @@ sub axis {
 sub axis_value {
     my ($self) = @_;
     return $self->{axis_value};
+}
+
+sub unknown13 {
+    my ($self) = @_;
+    return $self->{unknown13};
+}
+
+sub unknown14 {
+    my ($self) = @_;
+    return $self->{unknown14};
+}
+
+sub unknown15 {
+    my ($self) = @_;
+    return $self->{unknown15};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::EntityCircle;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{circle_x1} = $self->{_io}->read_bytes(8);
+    $self->{circle_y1} = $self->{_io}->read_bytes(8);
+    $self->{circle_x2} = $self->{_io}->read_bytes(8);
+    $self->{circle_y2} = $self->{_io}->read_bytes(8);
+}
+
+sub entity_layer {
+    my ($self) = @_;
+    return $self->{entity_layer};
+}
+
+sub circle_x1 {
+    my ($self) = @_;
+    return $self->{circle_x1};
+}
+
+sub circle_y1 {
+    my ($self) = @_;
+    return $self->{circle_y1};
+}
+
+sub circle_x2 {
+    my ($self) = @_;
+    return $self->{circle_x2};
+}
+
+sub circle_y2 {
+    my ($self) = @_;
+    return $self->{circle_y2};
+}
+
+########################################################################
+package CAD::Format::DWG::1_40::EntityLine;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{line_x1} = $self->{_io}->read_bytes(8);
+    $self->{line_y1} = $self->{_io}->read_bytes(8);
+    $self->{line_x2} = $self->{_io}->read_bytes(8);
+    $self->{line_y2} = $self->{_io}->read_bytes(8);
+}
+
+sub entity_layer {
+    my ($self) = @_;
+    return $self->{entity_layer};
+}
+
+sub line_x1 {
+    my ($self) = @_;
+    return $self->{line_x1};
+}
+
+sub line_y1 {
+    my ($self) = @_;
+    return $self->{line_y1};
+}
+
+sub line_x2 {
+    my ($self) = @_;
+    return $self->{line_x2};
+}
+
+sub line_y2 {
+    my ($self) = @_;
+    return $self->{line_y2};
 }
 
 1;
