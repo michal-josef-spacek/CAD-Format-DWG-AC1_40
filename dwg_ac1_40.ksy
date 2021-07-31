@@ -155,7 +155,7 @@ types:
             'entities::text': entity_text
   entity_arc:
     seq:
-      - id: entity_layer
+      - id: layer
         type: s2
       - id: x
         size: 8

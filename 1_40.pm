@@ -218,7 +218,7 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{entity_layer} = $self->{_io}->read_s2le();
+    $self->{layer} = $self->{_io}->read_s2le();
     $self->{x} = $self->{_io}->read_bytes(8);
     $self->{y} = $self->{_io}->read_bytes(8);
     $self->{radius} = $self->{_io}->read_bytes(8);
@@ -226,9 +226,9 @@ sub _read {
     $self->{angle_to} = $self->{_io}->read_bytes(8);
 }
 
-sub entity_layer {
+sub layer {
     my ($self) = @_;
-    return $self->{entity_layer};
+    return $self->{layer};
 }
 
 sub x {
