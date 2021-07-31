@@ -49,7 +49,8 @@ t/CAD-Format-DWG-1_40/30-header-text_size.t
 t/CAD-Format-DWG-1_40/31-header-trace_width.t
 t/CAD-Format-DWG-1_40/32-header-units_type.t
 t/CAD-Format-DWG-1_40/33-header-zeros.t
-t/CAD-Format-DWG-1_40/34-entities-line.t
+t/CAD-Format-DWG-1_40/34-entities-circle.t
+t/CAD-Format-DWG-1_40/35-entities-line.t
 t/data/axis/AXIS_0.DWG
 t/data/axis/AXIS_1.DWG
 t/data/axis/AXIS_BIG.DWG
@@ -58,6 +59,8 @@ t/data/axis/AXIS_ON.DWG
 t/data/base/BASE_X.DWG
 t/data/base/BASE_Y.DWG
 t/data/blank/BLANK.DWG
+t/data/circle/CIRCLE1.DWG
+t/data/circle/CIRCLE2.DWG
 t/data/drawing/DRAWING.DWG
 t/data/dwgview/DWGVIEW1.DWG
 t/data/dwgview/DWGVIEW2.DWG

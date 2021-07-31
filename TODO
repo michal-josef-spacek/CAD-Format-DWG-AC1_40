@@ -2,7 +2,6 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 5. Co s display? v DXF souboru jsou tri hodnoty.
-10. Testy pro circle
 11. Testy pro text
 12. Testy pro arc
 13. Testy pro point
@@ -30,3 +29,6 @@ OK [20210729] skim
 
 9. Testy pro line
 OK [20210729] skim
+
+10. Testy pro circle
+OK [20210801] skim
