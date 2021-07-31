@@ -171,13 +171,11 @@ types:
     seq:
       - id: layer
         type: s2
-      - id: x1
+      - id: x
         size: 8
-      - id: y1
+      - id: y
         size: 8
-      - id: x2
-        size: 8
-      - id: y2
+      - id: radius
         size: 8
   entity_line:
     seq:

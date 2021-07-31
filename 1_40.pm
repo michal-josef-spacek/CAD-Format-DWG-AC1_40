@@ -646,10 +646,9 @@ sub _read {
     my ($self) = @_;
 
     $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x1} = $self->{_io}->read_bytes(8);
-    $self->{y1} = $self->{_io}->read_bytes(8);
-    $self->{x2} = $self->{_io}->read_bytes(8);
-    $self->{y2} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_bytes(8);
+    $self->{y} = $self->{_io}->read_bytes(8);
+    $self->{radius} = $self->{_io}->read_bytes(8);
 }
 
 sub layer {
@@ -657,24 +656,19 @@ sub layer {
     return $self->{layer};
 }
 
-sub x1 {
+sub x {
     my ($self) = @_;
-    return $self->{x1};
+    return $self->{x};
 }
 
-sub y1 {
+sub y {
     my ($self) = @_;
-    return $self->{y1};
+    return $self->{y};
 }
 
-sub x2 {
+sub radius {
     my ($self) = @_;
-    return $self->{x2};
-}
-
-sub y2 {
-    my ($self) = @_;
-    return $self->{y2};
+    return $self->{radius};
 }
 
 ########################################################################
