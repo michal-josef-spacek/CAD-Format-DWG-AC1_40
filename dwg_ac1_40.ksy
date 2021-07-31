@@ -148,11 +148,30 @@ types:
         type:
           switch-on: entity_type
           cases:
+            'entities::foo': entity_foo
             'entities::arc': entity_arc
+            'entities::block_begin': entity_block_begin
+            'entities::block_end': entity_block_end
+            'entities::block_insert' : entity_block_insert
             'entities::circle': entity_circle
             'entities::line': entity_line
+            'entities::load': entity_load
             'entities::point': entity_point
+            'entities::repeat_begin': entity_repeat_begin
+            'entities::repeat_end': entity_repeat_end
+            'entities::shape': entity_shape
+            'entities::solid': entity_solid
             'entities::text': entity_text
+            'entities::tmp': entity_tmp
+            'entities::trace': entity_trace
+  entity_foo:
+    seq:
+      - id: layer
+        type: s2
+      - id: x
+        size: 8
+      - id: y
+        size: 8
   entity_arc:
     seq:
       - id: layer
@@ -166,6 +185,41 @@ types:
       - id: angle_from
         size: 8
       - id: angle_to
+        size: 8
+  entity_block_begin:
+    seq:
+      - id: layer
+        type: s2
+      - id: size
+        type: s2
+      - id: value
+        size: size
+      - id: x
+        size: 8
+      - id: y
+        size: 8
+  entity_block_end:
+    seq:
+      - id: layer
+        type: s2
+  entity_block_insert:
+    seq:
+      - id: layer
+        type: s2
+      - id: size
+        type: s2
+      - id: value
+        size: size
+      - id: x1
+        size: 8
+      - id: y1
+        size: 8
+      - id: x2
+        size: 8
+      - id: y2
+        size: 8
+      ## TODO Co to je?
+      - id: z
         size: 8
   entity_circle:
     seq:
@@ -189,6 +243,14 @@ types:
         size: 8
       - id: y2
         size: 8
+  entity_load:
+    seq:
+      - id: layer
+        type: s2
+      - id: size
+        type: s2
+      - id: value
+        size: size
   entity_point:
     seq:
       - id: layer
@@ -196,6 +258,56 @@ types:
       - id: x
         size: 8
       - id: y
+        size: 8
+  entity_repeat_begin:
+    seq:
+      - id: layer
+        type: s2
+  entity_repeat_end:
+    seq:
+      - id: layer
+        type: s2
+      - id: columns
+        type: s2
+      - id: rows
+        type: s2
+      - id: column_distance
+        size: 8
+      - id: row_distance
+        size: 8
+  entity_shape:
+    seq:
+      - id: layer
+        type: s2
+      - id: x
+        size: 8
+      - id: y
+        size: 8
+      - id: height
+        size: 8
+      - id: angle
+        size: 8
+      - id: item_num
+        type: s2
+  entity_solid:
+    seq:
+      - id: layer
+        type: s2
+      - id: from_x
+        size: 8
+      - id: from_y
+        size: 8
+      - id: from_and_x
+        size: 8
+      - id: from_and_y
+        size: 8
+      - id: to_x
+        size: 8
+      - id: to_y
+        size: 8
+      - id: to_and_x
+        size: 8
+      - id: to_and_y
         size: 8
   entity_text:
     seq:
@@ -215,13 +327,58 @@ types:
         type: s2
       - id: value
         size: size
+  entity_tmp:
+    doc: Removed after redraw
+    seq:
+      - id: layer
+        type: s2
+      - id: x1
+        size: 8
+      - id: y1
+        size: 8
+      - id: x2
+        size: 8
+      - id: y2
+        size: 8
+  entity_trace:
+    seq:
+      - id: layer
+        type: s2
+      - id: from_x
+        size: 8
+      - id: from_y
+        size: 8
+      - id: from_and_x
+        size: 8
+      - id: from_and_y
+        size: 8
+      - id: to_x
+        size: 8
+      - id: to_y
+        size: 8
+      - id: to_and_x
+        size: 8
+      - id: to_and_y
+        size: 8
 enums:
   entities:
+    ## TODO Many tmps
+    -1: tmp
+    -2: foo
     1: line
     2: point
     3: circle
+    4: shape
+    5: repeat_begin
+    6: repeat_end
     7: text
     8: arc
+    9: trace
+    10: load
+    11: solid
+    12: block_begin
+    13: block_end
+    14: block_insert
   unit_types:
     1: scientific
     2: decimal
