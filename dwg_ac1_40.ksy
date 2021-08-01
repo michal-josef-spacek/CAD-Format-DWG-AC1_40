@@ -316,10 +316,8 @@ types:
         size: 8
       - id: height
         size: 8
-        doc: TODO right?
       - id: angle
         size: 8
-        doc: TODO right?
       - id: size
         type: s2
       - id: value
