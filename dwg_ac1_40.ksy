@@ -208,16 +208,15 @@ types:
         type: s2
       - id: value
         size: size
-      - id: x1
+      - id: x
         size: 8
-      - id: y1
+      - id: y
         size: 8
-      - id: x2
+      - id: x_scale
         size: 8
-      - id: y2
+      - id: y_scale
         size: 8
-      ## TODO Co to je?
-      - id: z
+      - id: rotation_angle
         size: 8
   entity_circle:
     seq:

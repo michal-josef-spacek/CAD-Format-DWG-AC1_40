@@ -467,11 +467,11 @@ sub _read {
     $self->{layer} = $self->{_io}->read_s2le();
     $self->{size} = $self->{_io}->read_s2le();
     $self->{value} = $self->{_io}->read_bytes($self->size());
-    $self->{x1} = $self->{_io}->read_bytes(8);
-    $self->{y1} = $self->{_io}->read_bytes(8);
-    $self->{x2} = $self->{_io}->read_bytes(8);
-    $self->{y2} = $self->{_io}->read_bytes(8);
-    $self->{z} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_bytes(8);
+    $self->{y} = $self->{_io}->read_bytes(8);
+    $self->{x_scale} = $self->{_io}->read_bytes(8);
+    $self->{y_scale} = $self->{_io}->read_bytes(8);
+    $self->{rotation_angle} = $self->{_io}->read_bytes(8);
 }
 
 sub layer {
@@ -489,29 +489,29 @@ sub value {
     return $self->{value};
 }
 
-sub x1 {
+sub x {
     my ($self) = @_;
-    return $self->{x1};
+    return $self->{x};
 }
 
-sub y1 {
+sub y {
     my ($self) = @_;
-    return $self->{y1};
+    return $self->{y};
 }
 
-sub x2 {
+sub x_scale {
     my ($self) = @_;
-    return $self->{x2};
+    return $self->{x_scale};
 }
 
-sub y2 {
+sub y_scale {
     my ($self) = @_;
-    return $self->{y2};
+    return $self->{y_scale};
 }
 
-sub z {
+sub rotation_angle {
     my ($self) = @_;
-    return $self->{z};
+    return $self->{rotation_angle};
 }
 
 ########################################################################
