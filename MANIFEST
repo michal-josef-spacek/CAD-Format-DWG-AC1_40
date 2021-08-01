@@ -58,10 +58,11 @@ t/CAD-Format-DWG-1_40/39-entities-line.t
 t/CAD-Format-DWG-1_40/40-entities-load.t
 t/CAD-Format-DWG-1_40/41-entities-point.t
 t/CAD-Format-DWG-1_40/42-entities-repeat_begin.t
-t/CAD-Format-DWG-1_40/43-entities-shape.t
-t/CAD-Format-DWG-1_40/44-entities-solid.t
-t/CAD-Format-DWG-1_40/45-entities-text.t
-t/CAD-Format-DWG-1_40/46-entities-trace.t
+t/CAD-Format-DWG-1_40/43-entities-repeat_end.t
+t/CAD-Format-DWG-1_40/44-entities-shape.t
+t/CAD-Format-DWG-1_40/45-entities-solid.t
+t/CAD-Format-DWG-1_40/46-entities-text.t
+t/CAD-Format-DWG-1_40/47-entities-trace.t
 t/data/blank/BLANK.DWG
 t/data/entity/arc/ARC1.DWG
 t/data/entity/block/BLOCK1.DWG
