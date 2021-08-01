@@ -15,7 +15,6 @@ TDOO
 21. Testy pro solid
 22. Testy pro trace
 23. Number of entities is a bit problematic, because contain tmp values
-24. Testy pro magic
 25.
 
 Applied
@@ -43,3 +42,6 @@ OK [20210729] skim
 
 10. Testy pro circle
 OK [20210801] skim
+
+24. Testy pro magic
+NONE [20210801] skim
