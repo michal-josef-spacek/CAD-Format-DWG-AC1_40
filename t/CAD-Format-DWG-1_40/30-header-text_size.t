@@ -7,7 +7,7 @@ use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
 # Data directory.
-my $data_dir = File::Object->new->up->dir('data/text_size')->set;
+my $data_dir = File::Object->new->up->dir('data/header/text_size')->set;
 
 # Test.
 my $obj = CAD::Format::DWG::1_40->from_file(

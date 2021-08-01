@@ -18,14 +18,14 @@ $data_dir->up;
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
-	$data_dir->dir('line')->file('LINE1.DWG')->s,
+	$data_dir->dir('entity')->dir('line')->file('LINE1.DWG')->s,
 );
 is($obj->header->number_of_entities, 1, '1 entity (one line).');
-$data_dir->up;
+$data_dir->up(2);
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
-	$data_dir->dir('line')->file('LINE2.DWG')->s,
+	$data_dir->dir('entity')->dir('line')->file('LINE2.DWG')->s,
 );
 is($obj->header->number_of_entities, 262, '262 entities (lines).');
-$data_dir->up;
+$data_dir->up(2);

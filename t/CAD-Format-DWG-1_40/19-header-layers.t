@@ -7,7 +7,7 @@ use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Data directory.
-my $data_dir = File::Object->new->up->dir('data/layer')->set;
+my $data_dir = File::Object->new->up->dir('data/header/layer')->set;
 
 # Test.
 my $obj = CAD::Format::DWG::1_40->from_file(

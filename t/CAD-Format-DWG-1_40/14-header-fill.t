@@ -7,7 +7,7 @@ use Test::More 'tests' => 3;
 use Test::NoWarnings;
 
 # Data directory.
-my $data_dir = File::Object->new->up->dir('data/fill')->set;
+my $data_dir = File::Object->new->up->dir('data/header/fill')->set;
 
 # Test.
 my $obj = CAD::Format::DWG::1_40->from_file(
@@ -20,5 +20,3 @@ $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('FILL_OFF.DWG')->s,
 );
 is($obj->header->fill, 0, 'Fill off.');
-
-# TODO Hodnota fill
