@@ -922,22 +922,22 @@ sub _read {
     $self->{trace_width} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
-    $self->{unknown9} = $self->{_io}->read_bytes(2);
+    $self->{unknown7} = $self->{_io}->read_bytes(2);
     $self->{layers} = ();
     my $n_layers = 127;
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
-    $self->{unknown10} = $self->{_io}->read_bytes(8);
-    $self->{unknown11} = $self->{_io}->read_bytes(8);
+    $self->{unknown8} = $self->{_io}->read_bytes(8);
+    $self->{unknown9} = $self->{_io}->read_bytes(8);
     $self->{units_type} = $self->{_io}->read_s2le();
     $self->{number_of_digits} = $self->{_io}->read_s2le();
-    $self->{unknown12} = $self->{_io}->read_bytes(4);
+    $self->{unknown10} = $self->{_io}->read_bytes(4);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
+    $self->{unknown11} = $self->{_io}->read_bytes(8);
+    $self->{unknown12} = $self->{_io}->read_bytes(8);
     $self->{unknown13} = $self->{_io}->read_bytes(8);
-    $self->{unknown14} = $self->{_io}->read_bytes(8);
-    $self->{unknown15} = $self->{_io}->read_bytes(8);
 }
 
 sub magic {
@@ -1100,9 +1100,9 @@ sub actual_color {
     return $self->{actual_color};
 }
 
-sub unknown9 {
+sub unknown7 {
     my ($self) = @_;
-    return $self->{unknown9};
+    return $self->{unknown7};
 }
 
 sub layers {
@@ -1110,14 +1110,14 @@ sub layers {
     return $self->{layers};
 }
 
-sub unknown10 {
+sub unknown8 {
     my ($self) = @_;
-    return $self->{unknown10};
+    return $self->{unknown8};
 }
 
-sub unknown11 {
+sub unknown9 {
     my ($self) = @_;
-    return $self->{unknown11};
+    return $self->{unknown9};
 }
 
 sub units_type {
@@ -1130,9 +1130,9 @@ sub number_of_digits {
     return $self->{number_of_digits};
 }
 
-sub unknown12 {
+sub unknown10 {
     my ($self) = @_;
-    return $self->{unknown12};
+    return $self->{unknown10};
 }
 
 sub axis {
@@ -1145,19 +1145,19 @@ sub axis_value {
     return $self->{axis_value};
 }
 
+sub unknown11 {
+    my ($self) = @_;
+    return $self->{unknown11};
+}
+
+sub unknown12 {
+    my ($self) = @_;
+    return $self->{unknown12};
+}
+
 sub unknown13 {
     my ($self) = @_;
     return $self->{unknown13};
-}
-
-sub unknown14 {
-    my ($self) = @_;
-    return $self->{unknown14};
-}
-
-sub unknown15 {
-    my ($self) = @_;
-    return $self->{unknown15};
 }
 
 ########################################################################

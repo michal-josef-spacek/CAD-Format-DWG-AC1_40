@@ -104,15 +104,15 @@ types:
       - id: actual_color
         type: s2
         doc: 0x00c6-0x00c7
-      - id: unknown9
+      - id: unknown7
         size: 2
       - id: layers
         type: s2
         repeat: expr
         repeat-expr: 127
-      - id: unknown10
+      - id: unknown8
         size: 8
-      - id: unknown11
+      - id: unknown9
         size: 8
       - id: units_type
         type: s2
@@ -121,7 +121,7 @@ types:
       - id: number_of_digits
         type: s2
         doc: 0x01da-0x01db
-      - id: unknown12
+      - id: unknown10
         size: 4
       - id: axis
         type: s2
@@ -129,13 +129,13 @@ types:
       - id: axis_value
         size: 8
         doc: 0x01e2-0x01e9
-      - id: unknown13
+      - id: unknown11
         size: 8
         doc: XXX Value is 0.25 somewhere
-      - id: unknown14
+      - id: unknown12
         size: 8
         doc: XXX Value is 0.1 somewhere
-      - id: unknown15
+      - id: unknown13
         size: 8
   entity:
     seq:
