@@ -53,6 +53,7 @@ t/CAD-Format-DWG-1_40/34-entities-circle.t
 t/CAD-Format-DWG-1_40/35-entities-line.t
 t/CAD-Format-DWG-1_40/36-entities-load.t
 t/CAD-Format-DWG-1_40/37-entities-point.t
+t/CAD-Format-DWG-1_40/38-entities-trace.t
 t/data/blank/BLANK.DWG
 t/data/entity/circle/CIRCLE1.DWG
 t/data/entity/circle/CIRCLE2.DWG
@@ -61,6 +62,7 @@ t/data/entity/line/LINE2.DWG
 t/data/entity/load/LOAD1.DWG
 t/data/entity/point/POINT1.DWG
 t/data/entity/point/POINT2.DWG
+t/data/entity/trace/TRACE1.DWG
 t/data/header/axis/AXIS_0.DWG
 t/data/header/axis/AXIS_1.DWG
 t/data/header/axis/AXIS_BIG.DWG
