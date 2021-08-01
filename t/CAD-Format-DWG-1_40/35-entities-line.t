@@ -3,7 +3,7 @@ use warnings;
 
 use CAD::Format::DWG::1_40;
 use File::Object;
-use Test::More 'tests' => 15;
+use Test::More 'tests' => 17;
 use Test::NoWarnings;
 
 # Data directory.
@@ -15,6 +15,7 @@ my $obj = CAD::Format::DWG::1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::1_40::Entity');
+is($entity1->entity_type, 1, 'Get entity type (1).');
 my $line1_data = $entity1->data;
 is($line1_data->layer, 1, 'Line layer (1).');
 my $x1 = unpack 'd<', $line1_data->x1;
@@ -34,6 +35,7 @@ $obj = CAD::Format::DWG::1_40->from_file(
 );
 $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::1_40::Entity');
+is($entity1->entity_type, 1, 'Get entity type (1).');
 $line1_data = $entity1->data;
 is($line1_data->layer, 1, 'Line layer (1).');
 $x1 = unpack 'd<', $line1_data->x1;

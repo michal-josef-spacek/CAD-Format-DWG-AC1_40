@@ -3,7 +3,7 @@ use warnings;
 
 use CAD::Format::DWG::1_40;
 use File::Object;
-use Test::More 'tests' => 7;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 
 # Data directory.
@@ -15,6 +15,7 @@ my $obj = CAD::Format::DWG::1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::1_40::Entity');
+is($entity1->entity_type, 3, 'Get entity type (3).');
 my $circle1_data = $entity1->data;
 is($circle1_data->layer, 1, 'Circle layer (1).');
 my $x1 = unpack 'd<', $circle1_data->x;

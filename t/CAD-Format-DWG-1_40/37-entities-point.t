@@ -3,7 +3,7 @@ use warnings;
 
 use CAD::Format::DWG::1_40;
 use File::Object;
-use Test::More 'tests' => 11;
+use Test::More 'tests' => 13;
 use Test::NoWarnings;
 
 # Data directory.
@@ -15,6 +15,7 @@ my $obj = CAD::Format::DWG::1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::1_40::Entity');
+is($entity1->entity_type, 2, 'Get entity type (2).');
 my $point1_data = $entity1->data;
 is($point1_data->layer, 1, 'Point layer (1).');
 my $x = unpack 'd<', $point1_data->x;
@@ -30,6 +31,7 @@ $obj = CAD::Format::DWG::1_40->from_file(
 );
 $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::1_40::Entity');
+is($entity1->entity_type, 2, 'Get entity type (2).');
 $point1_data = $entity1->data;
 is($point1_data->layer, 2, 'Point layer (2).');
 $x = unpack 'd<', $point1_data->x;
