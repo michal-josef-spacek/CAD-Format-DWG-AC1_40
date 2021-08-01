@@ -2,7 +2,6 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 5. Co s display? v DXF souboru jsou tri hodnoty.
-15. Testy pro repeat
 16. Testy pro konec repeat
 23. Number of entities is a bit problematic, because contain tmp values
 25.
@@ -65,3 +64,6 @@ OK [20210801] skim
 
 19. Testy pro insert block
 OK [20210801] skim
+
+15. Testy pro repeat
+OK [20210802] skim
