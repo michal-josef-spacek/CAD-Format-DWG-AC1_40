@@ -26,7 +26,7 @@ is($x2, 1, 'Line x2 (1).');
 my $y2 = unpack 'd<', $line1_data->y2;
 is($y2, 1, 'Line y2 (1).');
 my $entities = @{$obj->entities};
-is($entities, 1, 'Number of lines (1).');
+is($entities, 1, 'Number of entities (1).');
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
@@ -45,4 +45,4 @@ is($x2, 3.69230769230774, 'Line x2 (3.69230769230774).');
 $y2 = unpack 'd<', $line1_data->y2;
 is($y2, 4.54736842105268, 'Line y2 (4.54736842105268).');
 $entities = @{$obj->entities};
-is($entities, 262, 'Number of lines (262).');
+is($entities, 262, 'Number of entities (262).');
