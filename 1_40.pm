@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 use IO::KaitaiStruct 0.009_000;
-use Encode;
 
 ########################################################################
 package CAD::Format::DWG::1_40;
@@ -891,7 +890,7 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{magic} = Encode::decode("ascii", IO::KaitaiStruct::Stream::bytes_terminate($self->{_io}->read_bytes(6), 0, 0));
+    $self->{magic} = $self->{_io}->read_bytes(6);
     $self->{zeros} = $self->{_io}->read_bytes(5);
     $self->{unknown1} = $self->{_io}->read_bytes(1);
     $self->{insertion_base_x} = $self->{_io}->read_bytes(8);

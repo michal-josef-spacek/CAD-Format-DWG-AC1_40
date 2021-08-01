@@ -25,9 +25,7 @@ types:
   header:
     seq:
       - id: magic
-        size: 6
-        type: strz
-        encoding: ascii
+        contents: [0x41, 0x43, 0x31, 0x2e, 0x34, 0x30]
       - id: zeros
         size: 5
       - id: unknown1
