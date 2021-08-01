@@ -10,7 +10,6 @@ TDOO
 18. Testy pro konec block
 19. Testy pro insert block
 20. Testy pro shape
-21. Testy pro solid
 23. Number of entities is a bit problematic, because contain tmp values
 25.
 
@@ -50,4 +49,7 @@ OK [20210801] skim
 OK [20210801] skim
 
 22. Testy pro trace
+OK [20210801] skim
+
+21. Testy pro solid
 OK [20210801] skim
