@@ -4,7 +4,6 @@ TDOO
 5. Co s display? v DXF souboru jsou tri hodnoty.
 11. Testy pro text
 12. Testy pro arc
-14. Testy pro load
 15. Testy pro repeat
 16. Testy pro konec repeat
 17. Testy pro zacatek block
@@ -46,4 +45,7 @@ OK [20210801] skim
 NONE [20210801] skim
 
 13. Testy pro point
+OK [20210801] skim
+
+14. Testy pro load
 OK [20210801] skim
