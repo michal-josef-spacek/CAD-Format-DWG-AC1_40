@@ -90,7 +90,7 @@ types:
         doc: 0x00ae-0x00af
       - id: unknown6
         size: 2
-        doc: XXX could be ffff
+        doc: XXX could be ffff, regen mode as in AC1003?
       - id: fill
         type: s2
         doc: 0x00b2-0x00b3 (XXX could be ffff)
