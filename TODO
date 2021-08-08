@@ -3,7 +3,8 @@ TDOO
 1. Do Makefile.PL pridat build
 5. Co s display? v DXF souboru jsou tri hodnoty.
 23. Number of entities is a bit problematic, because contain tmp values
-25.
+25. Prejmenovat na AC1_40
+26.
 
 Applied
 =======
