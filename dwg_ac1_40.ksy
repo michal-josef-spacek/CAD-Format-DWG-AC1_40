@@ -65,13 +65,13 @@ types:
       - id: limits_max_y
         size: 8
         doc: 0x0072-0x0079
-      - id: dwgview1
+      - id: view_ctrl_x
         size: 8
-      - id: dwgview2
+      - id: view_ctrl_y
         size: 8
       - id: unknown5
         size: 8
-      - id: dwgview3
+      - id: view_size
         size: 8
       - id: snap
         type: s2
