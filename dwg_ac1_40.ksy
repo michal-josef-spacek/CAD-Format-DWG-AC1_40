@@ -118,9 +118,9 @@ types:
         type: s2
         enum: unit_types
         doc: 0x01d8-0x01d9, $LUNITS
-      - id: number_of_digits
+      - id: linear_units_precision
         type: s2
-        doc: 0x01da-0x01db
+        doc: 0x01da-0x01db, $LUPREC
       - id: unknown10
         size: 4
       - id: axis

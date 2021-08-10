@@ -931,7 +931,7 @@ sub _read {
     $self->{unknown8} = $self->{_io}->read_bytes(8);
     $self->{unknown9} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
-    $self->{number_of_digits} = $self->{_io}->read_s2le();
+    $self->{linear_units_precision} = $self->{_io}->read_s2le();
     $self->{unknown10} = $self->{_io}->read_bytes(4);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
@@ -1125,9 +1125,9 @@ sub linear_units_format {
     return $self->{linear_units_format};
 }
 
-sub number_of_digits {
+sub linear_units_precision {
     my ($self) = @_;
-    return $self->{number_of_digits};
+    return $self->{linear_units_precision};
 }
 
 sub unknown10 {
