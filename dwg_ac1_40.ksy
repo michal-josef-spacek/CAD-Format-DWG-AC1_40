@@ -82,7 +82,7 @@ types:
       - id: grid
         type: s2
         doc: 0x00a4-0x00a5
-      - id: grid_value
+      - id: grid_unit
         size: 8
         doc: 0x00a6-0x00ad
       - id: ortho

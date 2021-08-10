@@ -914,7 +914,7 @@ sub _read {
     $self->{snap} = $self->{_io}->read_s2le();
     $self->{snap_resolution} = $self->{_io}->read_bytes(8);
     $self->{grid} = $self->{_io}->read_s2le();
-    $self->{grid_value} = $self->{_io}->read_bytes(8);
+    $self->{grid_unit} = $self->{_io}->read_bytes(8);
     $self->{ortho} = $self->{_io}->read_s2le();
     $self->{unknown6} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
@@ -1060,9 +1060,9 @@ sub grid {
     return $self->{grid};
 }
 
-sub grid_value {
+sub grid_unit {
     my ($self) = @_;
-    return $self->{grid_value};
+    return $self->{grid_unit};
 }
 
 sub ortho {
