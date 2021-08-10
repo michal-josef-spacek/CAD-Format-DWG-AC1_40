@@ -899,10 +899,10 @@ sub _read {
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{drawing_first_x} = $self->{_io}->read_bytes(8);
     $self->{drawing_first_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown3} = $self->{_io}->read_bytes(8);
+    $self->{drawing_first_z} = $self->{_io}->read_bytes(8);
     $self->{drawing_second_x} = $self->{_io}->read_bytes(8);
     $self->{drawing_second_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown4} = $self->{_io}->read_bytes(8);
+    $self->{drawing_second_z} = $self->{_io}->read_bytes(8);
     $self->{limits_min_x} = $self->{_io}->read_bytes(8);
     $self->{limits_min_y} = $self->{_io}->read_bytes(8);
     $self->{limits_max_x} = $self->{_io}->read_bytes(8);
@@ -985,9 +985,9 @@ sub drawing_first_y {
     return $self->{drawing_first_y};
 }
 
-sub unknown3 {
+sub drawing_first_z {
     my ($self) = @_;
-    return $self->{unknown3};
+    return $self->{drawing_first_z};
 }
 
 sub drawing_second_x {
@@ -1000,9 +1000,9 @@ sub drawing_second_y {
     return $self->{drawing_second_y};
 }
 
-sub unknown4 {
+sub drawing_second_z {
     my ($self) = @_;
-    return $self->{unknown4};
+    return $self->{drawing_second_z};
 }
 
 sub limits_min_x {
