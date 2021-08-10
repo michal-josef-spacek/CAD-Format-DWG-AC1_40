@@ -13,22 +13,22 @@ my $data_dir = File::Object->new->up->dir('data/header/units')->set;
 my $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('UNITS1.DWG')->s,
 );
-is($obj->header->units_type, 1, 'Units type is 1.');
+is($obj->header->linear_units_format, 1, 'Linear units format (1 - scientific).');
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('UNITS2.DWG')->s,
 );
-is($obj->header->units_type, 2, 'Units type is 2.');
+is($obj->header->linear_units_format, 2, 'Linear units format (2 - decimal).');
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('UNITS3.DWG')->s,
 );
-is($obj->header->units_type, 3, 'Units type is 3.');
+is($obj->header->linear_units_format, 3, 'Linear units format (3 - engineering).');
 
 # Test.
 $obj = CAD::Format::DWG::1_40->from_file(
 	$data_dir->file('UNITS4.DWG')->s,
 );
-is($obj->header->units_type, 4, 'Units type is 4.');
+is($obj->header->linear_units_format, 4, 'Linear units format (4 - architectural).');

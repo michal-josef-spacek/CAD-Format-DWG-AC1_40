@@ -114,10 +114,10 @@ types:
         size: 8
       - id: unknown9
         size: 8
-      - id: units_type
+      - id: linear_units_format
         type: s2
         enum: unit_types
-        doc: 0x01d8-0x01d9
+        doc: 0x01d8-0x01d9, $LUNITS
       - id: number_of_digits
         type: s2
         doc: 0x01da-0x01db
