@@ -113,10 +113,11 @@ types:
         type: s2
         repeat: expr
         repeat-expr: 127
-      - id: unknown8
+      - id: dim_arrowsize
         size: 8
       - id: unknown9
         size: 8
+        doc: dim?
       - id: linear_units_format
         type: s2
         enum: unit_types

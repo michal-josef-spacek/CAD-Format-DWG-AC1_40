@@ -929,7 +929,7 @@ sub _read {
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
-    $self->{unknown8} = $self->{_io}->read_bytes(8);
+    $self->{dim_arrowsize} = $self->{_io}->read_bytes(8);
     $self->{unknown9} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
@@ -1117,9 +1117,9 @@ sub layers {
     return $self->{layers};
 }
 
-sub unknown8 {
+sub dim_arrowsize {
     my ($self) = @_;
-    return $self->{unknown8};
+    return $self->{dim_arrowsize};
 }
 
 sub unknown9 {
