@@ -36,8 +36,11 @@ types:
       - id: insertion_base_y
         size: 8
         doc: 0x0014-0x001b
+      - id: insertion_base_z
+        size: 8
+        doc: 0x001c-0x0023
       - id: unknown2
-        size: 12
+        size: 4
       - id: number_of_entities
         type: s2
         doc: 0x0028-0x0029
@@ -122,20 +125,22 @@ types:
         type: s2
         doc: 0x01da-0x01db, $LUPREC
       - id: unknown10
-        size: 4
+        size: 2
+      - id: unknown11
+        size: 2
       - id: axis
         type: s2
         doc: 0x01e0-0x01e1
       - id: axis_value
         size: 8
         doc: 0x01e2-0x01e9
-      - id: unknown11
-        size: 8
-        doc: XXX Value is 0.25 somewhere
       - id: unknown12
         size: 8
-        doc: XXX Value is 0.1 somewhere
+        doc: XXX Value is 0.25 somewhere
       - id: unknown13
+        size: 8
+        doc: XXX Value is 0.1 somewhere
+      - id: unknown14
         size: 8
   entity:
     seq:

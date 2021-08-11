@@ -895,7 +895,8 @@ sub _read {
     $self->{unknown1} = $self->{_io}->read_bytes(1);
     $self->{insertion_base_x} = $self->{_io}->read_bytes(8);
     $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
-    $self->{unknown2} = $self->{_io}->read_bytes(12);
+    $self->{insertion_base_z} = $self->{_io}->read_bytes(8);
+    $self->{unknown2} = $self->{_io}->read_bytes(4);
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{drawing_first_x} = $self->{_io}->read_bytes(8);
     $self->{drawing_first_y} = $self->{_io}->read_bytes(8);
@@ -932,12 +933,13 @@ sub _read {
     $self->{unknown9} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
-    $self->{unknown10} = $self->{_io}->read_bytes(4);
+    $self->{unknown10} = $self->{_io}->read_bytes(2);
+    $self->{unknown11} = $self->{_io}->read_bytes(2);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
-    $self->{unknown11} = $self->{_io}->read_bytes(8);
     $self->{unknown12} = $self->{_io}->read_bytes(8);
     $self->{unknown13} = $self->{_io}->read_bytes(8);
+    $self->{unknown14} = $self->{_io}->read_bytes(8);
 }
 
 sub magic {
@@ -963,6 +965,11 @@ sub insertion_base_x {
 sub insertion_base_y {
     my ($self) = @_;
     return $self->{insertion_base_y};
+}
+
+sub insertion_base_z {
+    my ($self) = @_;
+    return $self->{insertion_base_z};
 }
 
 sub unknown2 {
@@ -1135,6 +1142,11 @@ sub unknown10 {
     return $self->{unknown10};
 }
 
+sub unknown11 {
+    my ($self) = @_;
+    return $self->{unknown11};
+}
+
 sub axis {
     my ($self) = @_;
     return $self->{axis};
@@ -1145,11 +1157,6 @@ sub axis_value {
     return $self->{axis_value};
 }
 
-sub unknown11 {
-    my ($self) = @_;
-    return $self->{unknown11};
-}
-
 sub unknown12 {
     my ($self) = @_;
     return $self->{unknown12};
@@ -1158,6 +1165,11 @@ sub unknown12 {
 sub unknown13 {
     my ($self) = @_;
     return $self->{unknown13};
+}
+
+sub unknown14 {
+    my ($self) = @_;
+    return $self->{unknown14};
 }
 
 ########################################################################
