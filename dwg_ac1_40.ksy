@@ -27,9 +27,7 @@ types:
       - id: magic
         contents: [0x41, 0x43, 0x31, 0x2e, 0x34, 0x30]
       - id: zeros
-        size: 5
-      - id: unknown1
-        size: 1
+        size: 6
       - id: insertion_base_x
         size: 8
         doc: 0x000c-0x0013

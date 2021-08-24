@@ -891,8 +891,7 @@ sub _read {
     my ($self) = @_;
 
     $self->{magic} = $self->{_io}->read_bytes(6);
-    $self->{zeros} = $self->{_io}->read_bytes(5);
-    $self->{unknown1} = $self->{_io}->read_bytes(1);
+    $self->{zeros} = $self->{_io}->read_bytes(6);
     $self->{insertion_base_x} = $self->{_io}->read_bytes(8);
     $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
     $self->{insertion_base_z} = $self->{_io}->read_bytes(8);
@@ -950,11 +949,6 @@ sub magic {
 sub zeros {
     my ($self) = @_;
     return $self->{zeros};
-}
-
-sub unknown1 {
-    my ($self) = @_;
-    return $self->{unknown1};
 }
 
 sub insertion_base_x {
