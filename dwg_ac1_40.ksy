@@ -39,8 +39,8 @@ types:
       - id: insertion_base_z
         size: 8
         doc: 0x001c-0x0023
-      - id: unknown2
-        size: 4
+      - id: number_of_bytes
+        type: s4
       - id: number_of_entities
         type: s2
         doc: 0x0028-0x0029
