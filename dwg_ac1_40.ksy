@@ -139,7 +139,7 @@ types:
       - id: unknown5
         size: 8
         doc: XXX Value is 0.1 somewhere
-      - id: unknown6
+      - id: fillet_radius
         size: 8
   entity:
     seq:

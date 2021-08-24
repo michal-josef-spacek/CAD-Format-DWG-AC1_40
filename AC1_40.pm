@@ -938,7 +938,7 @@ sub _read {
     $self->{axis_value} = $self->{_io}->read_bytes(8);
     $self->{unknown4} = $self->{_io}->read_bytes(8);
     $self->{unknown5} = $self->{_io}->read_bytes(8);
-    $self->{unknown6} = $self->{_io}->read_bytes(8);
+    $self->{fillet_radius} = $self->{_io}->read_bytes(8);
 }
 
 sub magic {
@@ -1161,9 +1161,9 @@ sub unknown5 {
     return $self->{unknown5};
 }
 
-sub unknown6 {
+sub fillet_radius {
     my ($self) = @_;
-    return $self->{unknown6};
+    return $self->{fillet_radius};
 }
 
 ########################################################################
