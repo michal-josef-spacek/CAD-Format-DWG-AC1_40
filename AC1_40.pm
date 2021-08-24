@@ -932,8 +932,8 @@ sub _read {
     $self->{unknown3} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
-    $self->{unknown10} = $self->{_io}->read_bytes(2);
-    $self->{unknown11} = $self->{_io}->read_bytes(2);
+    $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
+    $self->{dim_text_outside_of_dimension} = $self->{_io}->read_s2le();
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
     $self->{unknown4} = $self->{_io}->read_bytes(8);
@@ -1131,14 +1131,14 @@ sub linear_units_precision {
     return $self->{linear_units_precision};
 }
 
-sub unknown10 {
+sub dim_text_within_dimension {
     my ($self) = @_;
-    return $self->{unknown10};
+    return $self->{dim_text_within_dimension};
 }
 
-sub unknown11 {
+sub dim_text_outside_of_dimension {
     my ($self) = @_;
-    return $self->{unknown11};
+    return $self->{dim_text_outside_of_dimension};
 }
 
 sub axis {

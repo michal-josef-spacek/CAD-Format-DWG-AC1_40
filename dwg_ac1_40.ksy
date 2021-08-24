@@ -123,10 +123,10 @@ types:
       - id: linear_units_precision
         type: s2
         doc: 0x01da-0x01db, $LUPREC
-      - id: unknown10
-        size: 2
-      - id: unknown11
-        size: 2
+      - id: dim_text_within_dimension
+        type: s2
+      - id: dim_text_outside_of_dimension
+        type: s2
       - id: axis
         type: s2
         doc: 0x01e0-0x01e1
