@@ -916,29 +916,29 @@ sub _read {
     $self->{grid} = $self->{_io}->read_s2le();
     $self->{grid_unit} = $self->{_io}->read_bytes(8);
     $self->{ortho} = $self->{_io}->read_s2le();
-    $self->{unknown6} = $self->{_io}->read_bytes(2);
+    $self->{unknown1} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
     $self->{text_size} = $self->{_io}->read_bytes(8);
     $self->{trace_width} = $self->{_io}->read_bytes(8);
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
-    $self->{unknown7} = $self->{_io}->read_bytes(2);
+    $self->{unknown2} = $self->{_io}->read_bytes(2);
     $self->{layers} = ();
     my $n_layers = 127;
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
     $self->{dim_arrowsize} = $self->{_io}->read_bytes(8);
-    $self->{unknown9} = $self->{_io}->read_bytes(8);
+    $self->{unknown3} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
     $self->{unknown10} = $self->{_io}->read_bytes(2);
     $self->{unknown11} = $self->{_io}->read_bytes(2);
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
-    $self->{unknown12} = $self->{_io}->read_bytes(8);
-    $self->{unknown13} = $self->{_io}->read_bytes(8);
-    $self->{unknown14} = $self->{_io}->read_bytes(8);
+    $self->{unknown4} = $self->{_io}->read_bytes(8);
+    $self->{unknown5} = $self->{_io}->read_bytes(8);
+    $self->{unknown6} = $self->{_io}->read_bytes(8);
 }
 
 sub magic {
@@ -1071,9 +1071,9 @@ sub ortho {
     return $self->{ortho};
 }
 
-sub unknown6 {
+sub unknown1 {
     my ($self) = @_;
-    return $self->{unknown6};
+    return $self->{unknown1};
 }
 
 sub fill {
@@ -1101,9 +1101,9 @@ sub actual_color {
     return $self->{actual_color};
 }
 
-sub unknown7 {
+sub unknown2 {
     my ($self) = @_;
-    return $self->{unknown7};
+    return $self->{unknown2};
 }
 
 sub layers {
@@ -1116,9 +1116,9 @@ sub dim_arrowsize {
     return $self->{dim_arrowsize};
 }
 
-sub unknown9 {
+sub unknown3 {
     my ($self) = @_;
-    return $self->{unknown9};
+    return $self->{unknown3};
 }
 
 sub linear_units_format {
@@ -1151,19 +1151,19 @@ sub axis_value {
     return $self->{axis_value};
 }
 
-sub unknown12 {
+sub unknown4 {
     my ($self) = @_;
-    return $self->{unknown12};
+    return $self->{unknown4};
 }
 
-sub unknown13 {
+sub unknown5 {
     my ($self) = @_;
-    return $self->{unknown13};
+    return $self->{unknown5};
 }
 
-sub unknown14 {
+sub unknown6 {
     my ($self) = @_;
-    return $self->{unknown14};
+    return $self->{unknown6};
 }
 
 ########################################################################

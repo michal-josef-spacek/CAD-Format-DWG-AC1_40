@@ -89,7 +89,7 @@ types:
       - id: ortho
         type: s2
         doc: 0x00ae-0x00af
-      - id: unknown6
+      - id: unknown1
         size: 2
         doc: XXX could be ffff, regen mode as in AC1003?
       - id: fill
@@ -105,7 +105,7 @@ types:
       - id: actual_color
         type: s2
         doc: 0x00c6-0x00c7
-      - id: unknown7
+      - id: unknown2
         size: 2
       - id: layers
         type: s2
@@ -113,7 +113,7 @@ types:
         repeat-expr: 127
       - id: dim_arrowsize
         size: 8
-      - id: unknown9
+      - id: unknown3
         size: 8
         doc: dim?
       - id: linear_units_format
@@ -133,13 +133,13 @@ types:
       - id: axis_value
         size: 8
         doc: 0x01e2-0x01e9
-      - id: unknown12
+      - id: unknown4
         size: 8
         doc: XXX Value is 0.25 somewhere
-      - id: unknown13
+      - id: unknown5
         size: 8
         doc: XXX Value is 0.1 somewhere
-      - id: unknown14
+      - id: unknown6
         size: 8
   entity:
     seq:
