@@ -72,7 +72,7 @@ types:
         size: 8
       - id: view_ctrl_y
         size: 8
-      - id: unknown5
+      - id: view_ctrl_z
         size: 8
       - id: view_size
         size: 8
