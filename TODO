@@ -2,8 +2,7 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 23. Number of entities is a bit problematic, because contain tmp values
-25. Prejmenovat na AC1_40
-26.
+26. 
 
 Applied
 =======
@@ -72,3 +71,6 @@ OK [20210802] skim
 
 5. Co s display? v DXF souboru jsou tri hodnoty.
 OK [20210808] skim
+
+25. Prejmenovat na AC1_40
+OK [20210824] skim
