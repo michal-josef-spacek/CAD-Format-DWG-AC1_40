@@ -135,5 +135,5 @@ t/data/header/units/UNITS3.DWG
 t/data/header/units/UNITS4.DWG
 t/data/header/view/VIEW1.DWG
 t/data/header/view/VIEW2.DWG
-xt/CAD-Format-DWG-1_40/01-pod_coverage.t
-xt/CAD-Format-DWG-1_40/02-pod.t
+xt/CAD-Format-DWG-AC1_40/01-pod_coverage.t
+xt/CAD-Format-DWG-AC1_40/02-pod.t
