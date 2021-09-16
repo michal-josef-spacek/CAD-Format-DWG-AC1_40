@@ -16,7 +16,7 @@ CAD::Format::DWG::AC1_40 - Read AutoCAD 1.40 DWG file.
  my $entities_hr = $dwg->entities;
 
 =head1 DESCRIPTION
- 
+
 In distribution is kaitai structure definition file dwg_ac1_40.ksy which
 described AutoCAD DWG format version AC1.40.
 
