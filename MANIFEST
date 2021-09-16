@@ -1,4 +1,5 @@
 AC1_40.pm
+AC1_40.pod
 Changes
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm

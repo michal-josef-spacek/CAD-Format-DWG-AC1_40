@@ -16,7 +16,7 @@ author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 name 'CAD-Format-DWG-1_40';
 perl_version 5.008;
-readme_from 'AC1_40.pm';
+readme_from 'AC1_40.pod';
 requires 'Encode' => 0;
 requires 'IO::KaitaiStruct' => 0;
 recursive_author_tests('xt');
