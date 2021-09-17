@@ -150,7 +150,6 @@ types:
         type:
           switch-on: entity_type
           cases:
-            'entities::foo': entity_foo
             'entities::arc': entity_arc
             'entities::block_begin': entity_block_begin
             'entities::block_end': entity_block_end
@@ -164,16 +163,8 @@ types:
             'entities::shape': entity_shape
             'entities::solid': entity_solid
             'entities::text': entity_text
-            'entities::tmp': entity_tmp
             'entities::trace': entity_trace
-  entity_foo:
-    seq:
-      - id: layer
-        type: s2
-      - id: x
-        size: 8
-      - id: y
-        size: 8
+            _: entity_tmp
   entity_arc:
     seq:
       - id: layer
@@ -361,9 +352,6 @@ types:
         size: 8
 enums:
   entities:
-    ## TODO Many tmps
-    -1: tmp
-    -2: foo
     1: line
     2: point
     3: circle

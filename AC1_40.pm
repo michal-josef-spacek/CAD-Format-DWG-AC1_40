@@ -18,8 +18,6 @@ sub from_file {
     return new($class, IO::KaitaiStruct::Stream->new($fd));
 }
 
-our $ENTITIES_FOO = -2;
-our $ENTITIES_TMP = -1;
 our $ENTITIES_LINE = 1;
 our $ENTITIES_POINT = 2;
 our $ENTITIES_CIRCLE = 3;
@@ -651,56 +649,6 @@ sub y {
 }
 
 ########################################################################
-package CAD::Format::DWG::AC1_40::EntityFoo;
-
-our @ISA = 'IO::KaitaiStruct::Struct';
-
-sub from_file {
-    my ($class, $filename) = @_;
-    my $fd;
-
-    open($fd, '<', $filename) or return undef;
-    binmode($fd);
-    return new($class, IO::KaitaiStruct::Stream->new($fd));
-}
-
-sub new {
-    my ($class, $_io, $_parent, $_root) = @_;
-    my $self = IO::KaitaiStruct::Struct->new($_io);
-
-    bless $self, $class;
-    $self->{_parent} = $_parent;
-    $self->{_root} = $_root || $self;;
-
-    $self->_read();
-
-    return $self;
-}
-
-sub _read {
-    my ($self) = @_;
-
-    $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x} = $self->{_io}->read_bytes(8);
-    $self->{y} = $self->{_io}->read_bytes(8);
-}
-
-sub layer {
-    my ($self) = @_;
-    return $self->{layer};
-}
-
-sub x {
-    my ($self) = @_;
-    return $self->{x};
-}
-
-sub y {
-    my ($self) = @_;
-    return $self->{y};
-}
-
-########################################################################
 package CAD::Format::DWG::AC1_40::EntityArc;
 
 our @ISA = 'IO::KaitaiStruct::Struct';
@@ -821,9 +769,6 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_LOAD) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLoad->new($self->{_io}, $self, $self->{_root});
     }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_FOO) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityFoo->new($self->{_io}, $self, $self->{_root});
-    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TEXT) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityText->new($self->{_io}, $self, $self->{_root});
     }
@@ -845,7 +790,7 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TRACE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityTrace->new($self->{_io}, $self, $self->{_root});
     }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP) {
+    else {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityTmp->new($self->{_io}, $self, $self->{_root});
     }
 }
