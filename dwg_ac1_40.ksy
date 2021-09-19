@@ -84,7 +84,7 @@ types:
         type: s2
         doc: 0x00a4-0x00a5
       - id: grid_unit
-        size: 8
+        type: f8
         doc: 0x00a6-0x00ad
       - id: ortho
         type: s2

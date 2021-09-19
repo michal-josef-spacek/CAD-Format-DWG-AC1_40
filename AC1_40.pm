@@ -859,7 +859,7 @@ sub _read {
     $self->{snap} = $self->{_io}->read_s2le();
     $self->{snap_resolution} = $self->{_io}->read_f8le();
     $self->{grid} = $self->{_io}->read_s2le();
-    $self->{grid_unit} = $self->{_io}->read_bytes(8);
+    $self->{grid_unit} = $self->{_io}->read_f8le();
     $self->{ortho} = $self->{_io}->read_s2le();
     $self->{unknown1} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
