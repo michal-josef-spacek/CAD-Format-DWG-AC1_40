@@ -96,7 +96,7 @@ types:
         type: s2
         doc: 0x00b2-0x00b3 (XXX could be ffff)
       - id: text_size
-        size: 8
+        type: f8
       - id: trace_width
         size: 8
       - id: actual_layer
