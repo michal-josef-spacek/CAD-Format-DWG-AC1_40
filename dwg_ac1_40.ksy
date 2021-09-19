@@ -112,7 +112,7 @@ types:
         repeat: expr
         repeat-expr: 127
       - id: dim_arrowsize
-        size: 8
+        type: f8
       - id: unknown3
         type: f8
         doc: dim?

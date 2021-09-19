@@ -873,7 +873,7 @@ sub _read {
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
-    $self->{dim_arrowsize} = $self->{_io}->read_bytes(8);
+    $self->{dim_arrowsize} = $self->{_io}->read_f8le();
     $self->{unknown3} = $self->{_io}->read_f8le();
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
