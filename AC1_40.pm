@@ -857,7 +857,7 @@ sub _read {
     $self->{view_ctrl_z} = $self->{_io}->read_f8le();
     $self->{view_size} = $self->{_io}->read_f8le();
     $self->{snap} = $self->{_io}->read_s2le();
-    $self->{snap_resolution} = $self->{_io}->read_bytes(8);
+    $self->{snap_resolution} = $self->{_io}->read_f8le();
     $self->{grid} = $self->{_io}->read_s2le();
     $self->{grid_unit} = $self->{_io}->read_bytes(8);
     $self->{ortho} = $self->{_io}->read_s2le();

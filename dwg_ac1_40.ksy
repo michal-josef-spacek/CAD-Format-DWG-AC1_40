@@ -78,7 +78,7 @@ types:
         type: s2
         doc: 0x009a-0x009b
       - id: snap_resolution
-        size: 8
+        type: f8
         doc: 0x009c-0x00a3
       - id: grid
         type: s2
