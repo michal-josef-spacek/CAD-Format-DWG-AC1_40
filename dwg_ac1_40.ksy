@@ -306,13 +306,13 @@ types:
       - id: layer
         type: s2
       - id: x
-        size: 8
+        type: f8
       - id: y
-        size: 8
+        type: f8
       - id: height
-        size: 8
+        type: f8
       - id: angle
-        size: 8
+        type: f8
       - id: size
         type: s2
       - id: value
