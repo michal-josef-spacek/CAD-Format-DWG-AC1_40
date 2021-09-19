@@ -874,15 +874,15 @@ sub _read {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
     $self->{dim_arrowsize} = $self->{_io}->read_bytes(8);
-    $self->{unknown3} = $self->{_io}->read_bytes(8);
+    $self->{unknown3} = $self->{_io}->read_f8le();
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
     $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
     $self->{dim_text_outside_of_dimension} = $self->{_io}->read_s2le();
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_bytes(8);
-    $self->{unknown4} = $self->{_io}->read_bytes(8);
-    $self->{unknown5} = $self->{_io}->read_bytes(8);
+    $self->{unknown4} = $self->{_io}->read_f8le();
+    $self->{unknown5} = $self->{_io}->read_f8le();
     $self->{fillet_radius} = $self->{_io}->read_bytes(8);
 }
 

@@ -114,7 +114,7 @@ types:
       - id: dim_arrowsize
         size: 8
       - id: unknown3
-        size: 8
+        type: f8
         doc: dim?
       - id: linear_units_format
         type: s2
@@ -134,10 +134,10 @@ types:
         size: 8
         doc: 0x01e2-0x01e9
       - id: unknown4
-        size: 8
+        type: f8
         doc: Default value is 0.25
       - id: unknown5
-        size: 8
+        type: f8
         doc: Default value is 0.1
       - id: fillet_radius
         size: 8
