@@ -67,11 +67,11 @@ types:
         type: f8
         doc: 0x0072-0x0079
       - id: view_ctrl_x
-        size: 8
+        type: f8
       - id: view_ctrl_y
-        size: 8
+        type: f8
       - id: view_ctrl_z
-        size: 8
+        type: f8
       - id: view_size
         size: 8
       - id: snap

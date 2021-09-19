@@ -13,12 +13,10 @@ my $data_dir = File::Object->new->up->dir('data/header/view')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('VIEW1.DWG')->s,
 );
-my $view_ctrl_y = unpack 'd<', $obj->header->view_ctrl_y;
-is($view_ctrl_y, 4.63481781376518, 'View ctrl y (4.63481781376518).');
+is($obj->header->view_ctrl_y, 4.63481781376518, 'View ctrl y (4.63481781376518).');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('VIEW2.DWG')->s,
 );
-$view_ctrl_y = unpack 'd<', $obj->header->view_ctrl_y;
-is($view_ctrl_y, 95366620.9098977, 'View ctrl y (95366620.9098977).');
+is($obj->header->view_ctrl_y, 95366620.9098977, 'View ctrl y (95366620.9098977).');
