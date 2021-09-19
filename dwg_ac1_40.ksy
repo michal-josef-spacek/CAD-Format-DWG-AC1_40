@@ -140,7 +140,7 @@ types:
         type: f8
         doc: Default value is 0.1
       - id: fillet_radius
-        size: 8
+        type: f8
   entity:
     seq:
       - id: entity_type

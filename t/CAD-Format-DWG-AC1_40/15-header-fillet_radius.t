@@ -13,12 +13,10 @@ my $data_dir = File::Object->new->up->dir('data/header/fillet_radius')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('FILLET1.DWG')->s,
 );
-my $fillet_radius = unpack 'd<', $obj->header->fillet_radius;
-is($fillet_radius, 0, 'Fillet radius (0 - default).');
+is($obj->header->fillet_radius, 0, 'Fillet radius (0 - default).');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('FILLET2.DWG')->s,
 );
-$fillet_radius = unpack 'd<', $obj->header->fillet_radius;
-is($fillet_radius, 1.2345, 'Fillet radius (1.2345).');
+is($obj->header->fillet_radius, 1.2345, 'Fillet radius (1.2345).');

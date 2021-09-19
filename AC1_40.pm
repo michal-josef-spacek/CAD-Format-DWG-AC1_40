@@ -883,7 +883,7 @@ sub _read {
     $self->{axis_value} = $self->{_io}->read_bytes(8);
     $self->{unknown4} = $self->{_io}->read_f8le();
     $self->{unknown5} = $self->{_io}->read_f8le();
-    $self->{fillet_radius} = $self->{_io}->read_bytes(8);
+    $self->{fillet_radius} = $self->{_io}->read_f8le();
 }
 
 sub magic {
