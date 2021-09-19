@@ -73,7 +73,7 @@ types:
       - id: view_ctrl_z
         type: f8
       - id: view_size
-        size: 8
+        type: f8
       - id: snap
         type: s2
         doc: 0x009a-0x009b
