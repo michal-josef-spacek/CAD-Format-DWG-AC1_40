@@ -880,7 +880,7 @@ sub _read {
     $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
     $self->{dim_text_outside_of_dimension} = $self->{_io}->read_s2le();
     $self->{axis} = $self->{_io}->read_s2le();
-    $self->{axis_value} = $self->{_io}->read_bytes(8);
+    $self->{axis_value} = $self->{_io}->read_f8le();
     $self->{unknown4} = $self->{_io}->read_f8le();
     $self->{unknown5} = $self->{_io}->read_f8le();
     $self->{fillet_radius} = $self->{_io}->read_f8le();

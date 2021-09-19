@@ -131,7 +131,7 @@ types:
         type: s2
         doc: 0x01e0-0x01e1
       - id: axis_value
-        size: 8
+        type: f8
         doc: 0x01e2-0x01e9
       - id: unknown4
         type: f8
