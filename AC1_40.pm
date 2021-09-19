@@ -864,7 +864,7 @@ sub _read {
     $self->{unknown1} = $self->{_io}->read_bytes(2);
     $self->{fill} = $self->{_io}->read_s2le();
     $self->{text_size} = $self->{_io}->read_f8le();
-    $self->{trace_width} = $self->{_io}->read_bytes(8);
+    $self->{trace_width} = $self->{_io}->read_f8le();
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
     $self->{unknown2} = $self->{_io}->read_bytes(2);

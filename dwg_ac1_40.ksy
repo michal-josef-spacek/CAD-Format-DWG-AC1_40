@@ -98,7 +98,7 @@ types:
       - id: text_size
         type: f8
       - id: trace_width
-        size: 8
+        type: f8
       - id: actual_layer
         type: s2
         doc: 0x00c4-0x00c5
