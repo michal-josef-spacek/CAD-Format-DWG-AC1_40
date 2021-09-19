@@ -43,17 +43,17 @@ types:
         type: s2
         doc: 0x0028-0x0029
       - id: drawing_first_x
-        size: 8
+        type: f8
       - id: drawing_first_y
-        size: 8
+        type: f8
       - id: drawing_first_z
-        size: 8
+        type: f8
       - id: drawing_second_x
-        size: 8
+        type: f8
       - id: drawing_second_y
-        size: 8
+        type: f8
       - id: drawing_second_z
-        size: 8
+        type: f8
       - id: limits_min_x
         size: 8
         doc: 0x005a-0x0061

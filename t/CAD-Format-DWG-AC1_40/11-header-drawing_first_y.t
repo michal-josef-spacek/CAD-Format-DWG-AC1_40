@@ -13,5 +13,4 @@ my $data_dir = File::Object->new->up->dir('data/header/drawing')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('DRAWING.DWG')->s,
 );
-my $drawing_first_y = unpack 'd<', $obj->header->drawing_first_y;
-is($drawing_first_y, 2, 'Drawing first y (2).');
+is($obj->header->drawing_first_y, 2, 'Drawing first y (2).');
