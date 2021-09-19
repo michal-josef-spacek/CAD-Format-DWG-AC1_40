@@ -264,9 +264,9 @@ types:
       - id: rows
         type: s2
       - id: column_distance
-        size: 8
+        type: f8
       - id: row_distance
-        size: 8
+        type: f8
   entity_shape:
     seq:
       - id: layer

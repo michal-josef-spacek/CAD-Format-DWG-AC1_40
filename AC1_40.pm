@@ -1330,8 +1330,8 @@ sub _read {
     $self->{layer} = $self->{_io}->read_s2le();
     $self->{columns} = $self->{_io}->read_s2le();
     $self->{rows} = $self->{_io}->read_s2le();
-    $self->{column_distance} = $self->{_io}->read_bytes(8);
-    $self->{row_distance} = $self->{_io}->read_bytes(8);
+    $self->{column_distance} = $self->{_io}->read_f8le();
+    $self->{row_distance} = $self->{_io}->read_f8le();
 }
 
 sub layer {
