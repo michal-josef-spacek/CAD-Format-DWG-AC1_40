@@ -55,16 +55,16 @@ types:
       - id: drawing_second_z
         type: f8
       - id: limits_min_x
-        size: 8
+        type: f8
         doc: 0x005a-0x0061
       - id: limits_min_y
-        size: 8
+        type: f8
         doc: 0x0062-0x0069
       - id: limits_max_x
-        size: 8
+        type: f8
         doc: 0x006a-0x0071
       - id: limits_max_y
-        size: 8
+        type: f8
         doc: 0x0072-0x0079
       - id: view_ctrl_x
         size: 8
