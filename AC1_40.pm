@@ -465,11 +465,11 @@ sub _read {
     $self->{layer} = $self->{_io}->read_s2le();
     $self->{size} = $self->{_io}->read_s2le();
     $self->{value} = $self->{_io}->read_bytes($self->size());
-    $self->{x} = $self->{_io}->read_bytes(8);
-    $self->{y} = $self->{_io}->read_bytes(8);
-    $self->{x_scale} = $self->{_io}->read_bytes(8);
-    $self->{y_scale} = $self->{_io}->read_bytes(8);
-    $self->{rotation_angle} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_f8le();
+    $self->{y} = $self->{_io}->read_f8le();
+    $self->{x_scale} = $self->{_io}->read_f8le();
+    $self->{y_scale} = $self->{_io}->read_f8le();
+    $self->{rotation_angle} = $self->{_io}->read_f8le();
 }
 
 sub layer {
