@@ -141,10 +141,10 @@ sub _read {
     my ($self) = @_;
 
     $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x1} = $self->{_io}->read_bytes(8);
-    $self->{y1} = $self->{_io}->read_bytes(8);
-    $self->{x2} = $self->{_io}->read_bytes(8);
-    $self->{y2} = $self->{_io}->read_bytes(8);
+    $self->{x1} = $self->{_io}->read_f8le();
+    $self->{y1} = $self->{_io}->read_f8le();
+    $self->{x2} = $self->{_io}->read_f8le();
+    $self->{y2} = $self->{_io}->read_f8le();
 }
 
 sub layer {
