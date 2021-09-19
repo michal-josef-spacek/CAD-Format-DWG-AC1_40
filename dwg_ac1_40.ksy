@@ -228,13 +228,13 @@ types:
       - id: layer
         type: s2
       - id: x1
-        size: 8
+        type: f8
       - id: y1
-        size: 8
+        type: f8
       - id: x2
-        size: 8
+        type: f8
       - id: y2
-        size: 8
+        type: f8
   entity_load:
     seq:
       - id: layer
