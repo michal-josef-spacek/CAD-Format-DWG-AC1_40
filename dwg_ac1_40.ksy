@@ -188,9 +188,9 @@ types:
       - id: value
         size: size
       - id: x
-        size: 8
+        type: f8
       - id: y
-        size: 8
+        type: f8
   entity_block_end:
     seq:
       - id: layer
