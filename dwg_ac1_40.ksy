@@ -248,9 +248,9 @@ types:
       - id: layer
         type: s2
       - id: x
-        size: 8
+        type: f8
       - id: y
-        size: 8
+        type: f8
   entity_repeat_begin:
     seq:
       - id: layer
