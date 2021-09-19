@@ -272,13 +272,13 @@ types:
       - id: layer
         type: s2
       - id: x
-        size: 8
+        type: f8
       - id: y
-        size: 8
+        type: f8
       - id: height
-        size: 8
+        type: f8
       - id: angle
-        size: 8
+        type: f8
       - id: item_num
         type: s2
   entity_solid:

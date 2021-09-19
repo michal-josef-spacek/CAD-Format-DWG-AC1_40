@@ -1198,10 +1198,10 @@ sub _read {
     my ($self) = @_;
 
     $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x} = $self->{_io}->read_bytes(8);
-    $self->{y} = $self->{_io}->read_bytes(8);
-    $self->{height} = $self->{_io}->read_bytes(8);
-    $self->{angle} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_f8le();
+    $self->{y} = $self->{_io}->read_f8le();
+    $self->{height} = $self->{_io}->read_f8le();
+    $self->{angle} = $self->{_io}->read_f8le();
     $self->{item_num} = $self->{_io}->read_s2le();
 }
 
