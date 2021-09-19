@@ -1142,9 +1142,9 @@ sub _read {
     my ($self) = @_;
 
     $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x} = $self->{_io}->read_bytes(8);
-    $self->{y} = $self->{_io}->read_bytes(8);
-    $self->{radius} = $self->{_io}->read_bytes(8);
+    $self->{x} = $self->{_io}->read_f8le();
+    $self->{y} = $self->{_io}->read_f8le();
+    $self->{radius} = $self->{_io}->read_f8le();
 }
 
 sub layer {
