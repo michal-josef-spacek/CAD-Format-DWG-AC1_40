@@ -29,13 +29,13 @@ types:
       - id: zeros
         size: 6
       - id: insertion_base_x
-        size: 8
+        type: f8
         doc: 0x000c-0x0013
       - id: insertion_base_y
-        size: 8
+        type: f8
         doc: 0x0014-0x001b
       - id: insertion_base_z
-        size: 8
+        type: f8
         doc: 0x001c-0x0023
       - id: number_of_bytes
         type: s4

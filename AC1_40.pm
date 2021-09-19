@@ -837,9 +837,9 @@ sub _read {
 
     $self->{magic} = $self->{_io}->read_bytes(6);
     $self->{zeros} = $self->{_io}->read_bytes(6);
-    $self->{insertion_base_x} = $self->{_io}->read_bytes(8);
-    $self->{insertion_base_y} = $self->{_io}->read_bytes(8);
-    $self->{insertion_base_z} = $self->{_io}->read_bytes(8);
+    $self->{insertion_base_x} = $self->{_io}->read_f8le();
+    $self->{insertion_base_y} = $self->{_io}->read_f8le();
+    $self->{insertion_base_z} = $self->{_io}->read_f8le();
     $self->{number_of_bytes} = $self->{_io}->read_s4le();
     $self->{number_of_entities} = $self->{_io}->read_s2le();
     $self->{drawing_first_x} = $self->{_io}->read_bytes(8);
