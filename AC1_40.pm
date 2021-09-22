@@ -861,13 +861,13 @@ sub _read {
     $self->{grid} = $self->{_io}->read_s2le();
     $self->{grid_unit} = $self->{_io}->read_f8le();
     $self->{ortho} = $self->{_io}->read_s2le();
-    $self->{unknown1} = $self->{_io}->read_bytes(2);
+    $self->{unknown1} = $self->{_io}->read_s2le();
     $self->{fill} = $self->{_io}->read_s2le();
     $self->{text_size} = $self->{_io}->read_f8le();
     $self->{trace_width} = $self->{_io}->read_f8le();
     $self->{actual_layer} = $self->{_io}->read_s2le();
     $self->{actual_color} = $self->{_io}->read_s2le();
-    $self->{unknown2} = $self->{_io}->read_bytes(2);
+    $self->{unknown2} = $self->{_io}->read_s2le();
     $self->{layers} = ();
     my $n_layers = 127;
     for (my $i = 0; $i < $n_layers; $i++) {

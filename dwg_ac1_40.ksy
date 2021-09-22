@@ -90,7 +90,7 @@ types:
         type: s2
         doc: 0x00ae-0x00af
       - id: unknown1
-        size: 2
+        type: s2
         doc: XXX could be ffff, regen mode as in AC1003?
       - id: fill
         type: s2
@@ -106,7 +106,7 @@ types:
         type: s2
         doc: 0x00c6-0x00c7
       - id: unknown2
-        size: 2
+        type: s2
       - id: layers
         type: s2
         repeat: expr
