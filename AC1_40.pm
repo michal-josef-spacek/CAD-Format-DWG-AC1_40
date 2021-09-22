@@ -882,7 +882,7 @@ sub _read {
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_f8le();
     $self->{unknown4} = $self->{_io}->read_f8le();
-    $self->{unknown5} = $self->{_io}->read_f8le();
+    $self->{sketch_increment} = $self->{_io}->read_f8le();
     $self->{fillet_radius} = $self->{_io}->read_f8le();
 }
 
@@ -1101,9 +1101,9 @@ sub unknown4 {
     return $self->{unknown4};
 }
 
-sub unknown5 {
+sub sketch_increment {
     my ($self) = @_;
-    return $self->{unknown5};
+    return $self->{sketch_increment};
 }
 
 sub fillet_radius {

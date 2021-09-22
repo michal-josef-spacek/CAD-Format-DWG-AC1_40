@@ -136,7 +136,7 @@ types:
       - id: unknown4
         type: f8
         doc: Default value is 0.25
-      - id: unknown5
+      - id: sketch_increment
         type: f8
         doc: Default value is 0.1
       - id: fillet_radius

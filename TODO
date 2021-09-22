@@ -2,7 +2,8 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 23. Number of entities is a bit problematic, because contain tmp values
-27.
+27. Tests for sketch_increment
+28.
 
 Applied
 =======
