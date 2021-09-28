@@ -2,7 +2,6 @@ TDOO
 ====
 1. Do Makefile.PL pridat build
 23. Number of entities is a bit problematic, because contain tmp values
-27. Tests for sketch_increment
 28.
 
 Applied
@@ -78,3 +77,6 @@ OK [20210824] skim
 
 26. Number of bytes need check - is ffff or ffffffff?
 OK [20210824] skim
+
+27. Tests for sketch_increment
+OK [20210928] skim
