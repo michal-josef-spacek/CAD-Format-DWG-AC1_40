@@ -25,6 +25,6 @@ is($solid1_data->from_and_y, 1, 'Solid from and y (1).');
 is($solid1_data->to_x, 2, 'Solid to x (2).');
 is($solid1_data->to_y, 2, 'Solid to y (2).');
 is($solid1_data->to_and_x, 2, 'Solid to and x (2).');
-is($solid1_data->to_and_x, 2, 'Solid to and y (2).');
+is($solid1_data->to_and_y, 2, 'Solid to and y (2).');
 my $entities = @{$obj->entities};
 is($entities, 1, 'Number of entities (1).');
