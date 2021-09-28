@@ -164,7 +164,20 @@ types:
             'entities::solid': entity_solid
             'entities::text': entity_text
             'entities::trace': entity_trace
-            _: entity_tmp
+            'entities::tmp_arc': entity_arc
+            'entities::tmp_block_begin': entity_block_begin
+            'entities::tmp_block_end': entity_block_end
+            'entities::tmp_block_insert' : entity_block_insert
+            'entities::tmp_circle': entity_circle
+            'entities::tmp_line': entity_line
+            'entities::tmp_load': entity_load
+            'entities::tmp_point': entity_point
+            'entities::tmp_repeat_begin': entity_repeat_begin
+            'entities::tmp_repeat_end': entity_repeat_end
+            'entities::tmp_shape': entity_shape
+            'entities::tmp_solid': entity_solid
+            'entities::tmp_text': entity_text
+            'entities::tmp_trace': entity_trace
   entity_arc:
     seq:
       - id: layer
@@ -317,19 +330,6 @@ types:
         type: s2
       - id: value
         size: size
-  entity_tmp:
-    doc: Removed after redraw
-    seq:
-      - id: layer
-        type: s2
-      - id: x1
-        type: f8
-      - id: y1
-        type: f8
-      - id: x2
-        type: f8
-      - id: y2
-        type: f8
   entity_trace:
     seq:
       - id: layer
@@ -352,6 +352,20 @@ types:
         type: f8
 enums:
   entities:
+    -1: tmp_line
+    -2: tmp_point
+    -3: tmp_circle
+    -4: tmp_shape
+    -5: tmp_repeat_begin
+    -6: tmp_repeat_end
+    -7: tmp_text
+    -8: tmp_arc
+    -9: tmp_trace
+    -10: tmp_load
+    -11: tmp_solid
+    -12: tmp_block_begin
+    -13: tmp_block_end
+    -14: tmp_block_insert
     1: line
     2: point
     3: circle

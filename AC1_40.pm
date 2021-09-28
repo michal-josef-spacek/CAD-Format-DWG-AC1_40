@@ -18,6 +18,20 @@ sub from_file {
     return new($class, IO::KaitaiStruct::Stream->new($fd));
 }
 
+our $ENTITIES_TMP_BLOCK_INSERT = -14;
+our $ENTITIES_TMP_BLOCK_END = -13;
+our $ENTITIES_TMP_BLOCK_BEGIN = -12;
+our $ENTITIES_TMP_SOLID = -11;
+our $ENTITIES_TMP_LOAD = -10;
+our $ENTITIES_TMP_TRACE = -9;
+our $ENTITIES_TMP_ARC = -8;
+our $ENTITIES_TMP_TEXT = -7;
+our $ENTITIES_TMP_REPEAT_END = -6;
+our $ENTITIES_TMP_REPEAT_BEGIN = -5;
+our $ENTITIES_TMP_SHAPE = -4;
+our $ENTITIES_TMP_CIRCLE = -3;
+our $ENTITIES_TMP_POINT = -2;
+our $ENTITIES_TMP_LINE = -1;
 our $ENTITIES_LINE = 1;
 our $ENTITIES_POINT = 2;
 our $ENTITIES_CIRCLE = 3;
@@ -108,68 +122,6 @@ sub _read {
 sub layer {
     my ($self) = @_;
     return $self->{layer};
-}
-
-########################################################################
-package CAD::Format::DWG::AC1_40::EntityTmp;
-
-our @ISA = 'IO::KaitaiStruct::Struct';
-
-sub from_file {
-    my ($class, $filename) = @_;
-    my $fd;
-
-    open($fd, '<', $filename) or return undef;
-    binmode($fd);
-    return new($class, IO::KaitaiStruct::Stream->new($fd));
-}
-
-sub new {
-    my ($class, $_io, $_parent, $_root) = @_;
-    my $self = IO::KaitaiStruct::Struct->new($_io);
-
-    bless $self, $class;
-    $self->{_parent} = $_parent;
-    $self->{_root} = $_root || $self;;
-
-    $self->_read();
-
-    return $self;
-}
-
-sub _read {
-    my ($self) = @_;
-
-    $self->{layer} = $self->{_io}->read_s2le();
-    $self->{x1} = $self->{_io}->read_f8le();
-    $self->{y1} = $self->{_io}->read_f8le();
-    $self->{x2} = $self->{_io}->read_f8le();
-    $self->{y2} = $self->{_io}->read_f8le();
-}
-
-sub layer {
-    my ($self) = @_;
-    return $self->{layer};
-}
-
-sub x1 {
-    my ($self) = @_;
-    return $self->{x1};
-}
-
-sub y1 {
-    my ($self) = @_;
-    return $self->{y1};
-}
-
-sub x2 {
-    my ($self) = @_;
-    return $self->{x2};
-}
-
-sub y2 {
-    my ($self) = @_;
-    return $self->{y2};
 }
 
 ########################################################################
@@ -751,11 +703,20 @@ sub _read {
     if ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_SOLID) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntitySolid->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_SOLID) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntitySolid->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_SHAPE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityShape->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_CIRCLE) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityCircle->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_REPEAT_BEGIN) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatBegin->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_TRACE) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityTrace->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_BLOCK_BEGIN) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockBegin->new($self->{_io}, $self, $self->{_root});
@@ -763,11 +724,29 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_LINE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_LOAD) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityLoad->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_REPEAT_BEGIN) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatBegin->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_LINE) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_REPEAT_END) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatEnd->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_LOAD) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLoad->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_BEGIN) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockBegin->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_SHAPE) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityShape->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_ARC) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityArc->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TEXT) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityText->new($self->{_io}, $self, $self->{_root});
@@ -778,8 +757,14 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_CIRCLE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityCircle->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_POINT) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityPoint->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_ARC) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityArc->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_INSERT) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockInsert->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_BLOCK_END) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockEnd->new($self->{_io}, $self, $self->{_root});
@@ -787,11 +772,17 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_POINT) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityPoint->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_REPEAT_END) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatEnd->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TRACE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityTrace->new($self->{_io}, $self, $self->{_root});
     }
-    else {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityTmp->new($self->{_io}, $self, $self->{_root});
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_TEXT) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityText->new($self->{_io}, $self, $self->{_root});
+    }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_END) {
+        $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockEnd->new($self->{_io}, $self, $self->{_root});
     }
 }
 
