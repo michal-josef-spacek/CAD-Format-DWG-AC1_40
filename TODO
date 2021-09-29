@@ -1,7 +1,6 @@
 TDOO
 ====
 1. Do Makefile.PL pridat build
-23. Number of entities is a bit problematic, because contain tmp values
 28. Test for tmp entity
 29. Test for potentional *_z header values.
 30.
@@ -82,3 +81,7 @@ OK [20210824] skim
 
 27. Tests for sketch_increment
 OK [20210928] skim
+
+23. Number of entities is a bit problematic, because contain tmp values
+Important for status, not for this module.
+NONE [20210929] skim
