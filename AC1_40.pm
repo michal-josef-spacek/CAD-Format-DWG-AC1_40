@@ -19,15 +19,10 @@ sub from_file {
 }
 
 our $ENTITIES_TMP_BLOCK_INSERT = -14;
-our $ENTITIES_TMP_BLOCK_END = -13;
-our $ENTITIES_TMP_BLOCK_BEGIN = -12;
 our $ENTITIES_TMP_SOLID = -11;
-our $ENTITIES_TMP_LOAD = -10;
 our $ENTITIES_TMP_TRACE = -9;
 our $ENTITIES_TMP_ARC = -8;
 our $ENTITIES_TMP_TEXT = -7;
-our $ENTITIES_TMP_REPEAT_END = -6;
-our $ENTITIES_TMP_REPEAT_BEGIN = -5;
 our $ENTITIES_TMP_SHAPE = -4;
 our $ENTITIES_TMP_CIRCLE = -3;
 our $ENTITIES_TMP_POINT = -2;
@@ -724,12 +719,6 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_LINE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
     }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_LOAD) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityLoad->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_REPEAT_BEGIN) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatBegin->new($self->{_io}, $self, $self->{_root});
-    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_LINE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLine->new($self->{_io}, $self, $self->{_root});
     }
@@ -738,9 +727,6 @@ sub _read {
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_LOAD) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityLoad->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_BEGIN) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockBegin->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_SHAPE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityShape->new($self->{_io}, $self, $self->{_root});
@@ -772,17 +758,11 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_POINT) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityPoint->new($self->{_io}, $self, $self->{_root});
     }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_REPEAT_END) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityRepeatEnd->new($self->{_io}, $self, $self->{_root});
-    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TRACE) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityTrace->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_TEXT) {
         $self->{data} = CAD::Format::DWG::AC1_40::EntityText->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_END) {
-        $self->{data} = CAD::Format::DWG::AC1_40::EntityBlockEnd->new($self->{_io}, $self, $self->{_root});
     }
 }
 
