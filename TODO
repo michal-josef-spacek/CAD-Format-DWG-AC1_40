@@ -3,7 +3,8 @@ TDOO
 1. Do Makefile.PL pridat build
 28. Test for tmp entity
 29. Test for potentional *_z header values.
-30.
+30. Improve doc for methods.
+31.
 
 Applied
 =======
