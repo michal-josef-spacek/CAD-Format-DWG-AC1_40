@@ -1,6 +1,5 @@
 TDOO
 ====
-1. Do Makefile.PL pridat build
 28. Test for tmp entity
 29. Test for potentional *_z header values.
 31.
@@ -87,4 +86,7 @@ Important for status, not for this module.
 NONE [20210929] skim
 
 30. Improve doc for methods.
+OK [20210930] skim
+
+1. Do Makefile.PL pridat build
 OK [20210930] skim
