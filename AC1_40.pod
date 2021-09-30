@@ -44,7 +44,7 @@ Returns instance of object.
 
 Get header of DWG file.
 
-Returns instance of CAD::Format::DWG::AC1_2::Header object.
+Returns instance of CAD::Format::DWG::AC1_40::Header object.
 
 =head2 C<entities>
 
@@ -52,7 +52,7 @@ Returns instance of CAD::Format::DWG::AC1_2::Header object.
 
 Get list of entities in DWG file.
 
-Returns reference to array with CAD::Format::DWG::AC1_2::Entity instances.
+Returns reference to array with CAD::Format::DWG::AC1_40::Entity instances.
 
 =head1 DEPENDENCIES
 

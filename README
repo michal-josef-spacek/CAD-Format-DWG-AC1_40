@@ -33,14 +33,14 @@ METHODS
 
     Get header of DWG file.
 
-    Returns instance of CAD::Format::DWG::AC1_2::Header object.
+    Returns instance of CAD::Format::DWG::AC1_40::Header object.
 
   "entities"
      my $entities_ar = $dwg->entities;
 
     Get list of entities in DWG file.
 
-    Returns reference to array with CAD::Format::DWG::AC1_2::Entity
+    Returns reference to array with CAD::Format::DWG::AC1_40::Entity
     instances.
 
 DEPENDENCIES
