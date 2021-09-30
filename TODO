@@ -1,6 +1,5 @@
 TDOO
 ====
-28. Test for tmp entity
 29. Test for potentional *_z header values.
 31.
 
@@ -89,4 +88,7 @@ NONE [20210929] skim
 OK [20210930] skim
 
 1. Do Makefile.PL pridat build
+OK [20210930] skim
+
+28. Test for tmp entity
 OK [20210930] skim
