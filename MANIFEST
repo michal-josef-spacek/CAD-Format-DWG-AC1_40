@@ -70,7 +70,8 @@ t/CAD-Format-DWG-AC1_40/49-entities-repeat_end.t
 t/CAD-Format-DWG-AC1_40/50-entities-shape.t
 t/CAD-Format-DWG-AC1_40/51-entities-solid.t
 t/CAD-Format-DWG-AC1_40/52-entities-text.t
-t/CAD-Format-DWG-AC1_40/53-entities-trace.t
+t/CAD-Format-DWG-AC1_40/53-entities-tmp_arc.t
+t/CAD-Format-DWG-AC1_40/54-entities-trace.t
 t/data/blank/BLANK.DWG
 t/data/entity/arc/ARC1.DWG
 t/data/entity/block/BLOCK1.DWG
@@ -86,6 +87,7 @@ t/data/entity/repeat/REPEAT1.DWG
 t/data/entity/shape/SHAPE1.DWG
 t/data/entity/solid/SOLID1.DWG
 t/data/entity/text/TEXT1.DWG
+t/data/entity/tmp_arc/TMP_ARC.DWG
 t/data/entity/trace/TRACE1.DWG
 t/data/header/axis/AXIS_0.DWG
 t/data/header/axis/AXIS_1.DWG
