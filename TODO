@@ -1,6 +1,5 @@
 TDOO
 ====
-29. Test for potentional *_z header values.
 31.
 
 Applied
@@ -92,3 +91,6 @@ OK [20210930] skim
 
 28. Test for tmp entity
 OK [20210930] skim
+
+29. Test for potentional *_z header values.
+OK [20211003] skim
