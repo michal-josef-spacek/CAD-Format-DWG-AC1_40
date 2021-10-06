@@ -4,7 +4,8 @@ TDOO
 32. What mean unknown2? Default value is 0. Tablet?
 33. What mean unknown3? Default value is 1.2945492662473794.
 34. What mean unknown4? Default value is 0.25
-35.
+35. integer types? number of entities is probably unsigned int
+36.
 
 Applied
 =======
