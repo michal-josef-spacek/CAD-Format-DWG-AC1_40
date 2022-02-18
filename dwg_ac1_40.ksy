@@ -75,10 +75,10 @@ types:
         type: f8
       - id: trace_width
         type: f8
-      - id: actual_layer
+      - id: current_layer
         type: s2
         doc: 0x00c4-0x00c5
-      - id: actual_color
+      - id: current_color
         type: s2
         doc: 0x00c6-0x00c7
       - id: unknown2

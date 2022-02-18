@@ -20,10 +20,10 @@ META.yml
 README
 t/CAD-Format-DWG-AC1_40/01-use.t
 t/CAD-Format-DWG-AC1_40/02-version.t
-t/CAD-Format-DWG-AC1_40/03-header-actual_color.t
-t/CAD-Format-DWG-AC1_40/04-header-actual_layer.t
-t/CAD-Format-DWG-AC1_40/05-header-axis.t
-t/CAD-Format-DWG-AC1_40/06-header-axis_value.t
+t/CAD-Format-DWG-AC1_40/03-header-axis.t
+t/CAD-Format-DWG-AC1_40/04-header-axis_value.t
+t/CAD-Format-DWG-AC1_40/05-header-current_color.t
+t/CAD-Format-DWG-AC1_40/06-header-current_layer.t
 t/CAD-Format-DWG-AC1_40/07-header-dim_arrowsize.t
 t/CAD-Format-DWG-AC1_40/08-header-dim_text_outside_of_dimension.t
 t/CAD-Format-DWG-AC1_40/09-header-dim_text_within_dimension.t
