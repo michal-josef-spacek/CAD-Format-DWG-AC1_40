@@ -65,9 +65,9 @@ types:
       - id: ortho
         type: s2
         doc: 0x00ae-0x00af
-      - id: unknown1
+      - id: regen
         type: s2
-        doc: 0x00b0-0x00b1, (XXX could be ffff, regen mode as in AC1003?)
+        doc: 0x00b0-0x00b1 (XXX could be ffff)
       - id: fill
         type: s2
         doc: 0x00b2-0x00b3 (XXX could be ffff)

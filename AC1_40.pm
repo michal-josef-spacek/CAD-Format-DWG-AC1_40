@@ -916,7 +916,7 @@ sub _read {
     $self->{grid} = $self->{_io}->read_s2le();
     $self->{grid_unit} = $self->{_io}->read_f8le();
     $self->{ortho} = $self->{_io}->read_s2le();
-    $self->{unknown1} = $self->{_io}->read_s2le();
+    $self->{regen} = $self->{_io}->read_s2le();
     $self->{fill} = $self->{_io}->read_s2le();
     $self->{text_size} = $self->{_io}->read_f8le();
     $self->{trace_width} = $self->{_io}->read_f8le();
@@ -1021,9 +1021,9 @@ sub ortho {
     return $self->{ortho};
 }
 
-sub unknown1 {
+sub regen {
     my ($self) = @_;
-    return $self->{unknown1};
+    return $self->{regen};
 }
 
 sub fill {
