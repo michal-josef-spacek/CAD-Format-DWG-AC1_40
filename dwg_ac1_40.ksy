@@ -83,15 +83,18 @@ types:
         doc: 0x00c6-0x00c7
       - id: unknown1
         type: s2
+        doc: 0x00c8-0x00c9
       - id: layers
         type: s2
         repeat: expr
         repeat-expr: 127
+        doc: 0x00ca-0x01c7
       - id: dim_arrowsize
         type: f8
+        doc: 0x01c8-0x01cf
       - id: unknown2
         type: f8
-        doc: dim?
+        doc: 0x01d0-0x01d7, dim?
       - id: linear_units_format
         type: s2
         enum: unit_types
@@ -101,8 +104,10 @@ types:
         doc: 0x01da-0x01db, $LUPREC
       - id: dim_text_within_dimension
         type: s2
+        doc: 0x01dc-0x01dd
       - id: dim_text_outside_of_dimension
         type: s2
+        doc: 0x01de-0x01df
       - id: axis
         type: s2
         doc: 0x01e0-0x01e1
@@ -115,8 +120,10 @@ types:
       - id: sketch_increment
         type: f8
         doc: Default value is 0.1
+        doc: 0x01f2-0x01f9, Default value is 0.1
       - id: fillet_radius
         type: f8
+        doc: 0x01fa-0x0202
   entity:
     seq:
       - id: entity_type
