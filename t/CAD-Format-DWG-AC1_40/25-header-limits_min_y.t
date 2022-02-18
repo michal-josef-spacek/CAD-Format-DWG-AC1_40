@@ -13,22 +13,22 @@ my $data_dir = File::Object->new->up->dir('data/header/limits')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('LIM1.DWG')->s,
 );
-is($obj->header->limits_min_y, 0, 'Limits min y (0).');
+is($obj->header->limits_min->y, 0, 'Limits min y (0).');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('LIM2.DWG')->s,
 );
-is($obj->header->limits_min_y, -123456789.1234, 'Limits min y (-123456789.1234).');
+is($obj->header->limits_min->y, -123456789.1234, 'Limits min y (-123456789.1234).');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('LIM3.DWG')->s,
 );
-is($obj->header->limits_min_y, -1, 'Limits min y (-1).');
+is($obj->header->limits_min->y, -1, 'Limits min y (-1).');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('LIM4.DWG')->s,
 );
-is($obj->header->limits_min_y, -1, 'Limits min y (-1).');
+is($obj->header->limits_min->y, -1, 'Limits min y (-1).');

@@ -13,4 +13,4 @@ my $data_dir = File::Object->new->up->dir('data/header/drawing')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('DRAWING.DWG')->s,
 );
-is($obj->header->drawing_second_x, 3, 'Drawing second x (3).');
+is($obj->header->drawing_second->x, 3, 'Drawing second x (3).');

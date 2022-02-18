@@ -13,10 +13,10 @@ my $data_dir = File::Object->new->up->dir('data/header/base')->set;
 my $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('BASE_Y.DWG')->s,
 );
-is($obj->header->insertion_base_z, 0, 'Insertion base (z) (0)');
+is($obj->header->insertion_base->z, 0, 'Insertion base (z) (0)');
 
 # Test.
 $obj = CAD::Format::DWG::AC1_40->from_file(
 	$data_dir->file('BASE_X.DWG')->s,
 );
-is($obj->header->insertion_base_z, 0, 'Insertion base (z) (0)');
+is($obj->header->insertion_base->z, 0, 'Insertion base (z) (0)');

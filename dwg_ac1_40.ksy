@@ -28,50 +28,26 @@ types:
         contents: [0x41, 0x43, 0x31, 0x2e, 0x34, 0x30]
       - id: zeros
         size: 6
-      - id: insertion_base_x
-        type: f8
-        doc: 0x000c-0x0013
-      - id: insertion_base_y
-        type: f8
-        doc: 0x0014-0x001b
-      - id: insertion_base_z
-        type: f8
-        doc: 0x001c-0x0023
+      - id: insertion_base
+        type: point_3d
+        doc: 0x000c-0x0023
       - id: number_of_bytes
         type: s4
       - id: number_of_entities
         type: s2
         doc: 0x0028-0x0029
-      - id: drawing_first_x
-        type: f8
-      - id: drawing_first_y
-        type: f8
-      - id: drawing_first_z
-        type: f8
-      - id: drawing_second_x
-        type: f8
-      - id: drawing_second_y
-        type: f8
-      - id: drawing_second_z
-        type: f8
-      - id: limits_min_x
-        type: f8
-        doc: 0x005a-0x0061
-      - id: limits_min_y
-        type: f8
-        doc: 0x0062-0x0069
-      - id: limits_max_x
-        type: f8
-        doc: 0x006a-0x0071
-      - id: limits_max_y
-        type: f8
-        doc: 0x0072-0x0079
-      - id: view_ctrl_x
-        type: f8
-      - id: view_ctrl_y
-        type: f8
-      - id: view_ctrl_z
-        type: f8
+      - id: drawing_first
+        type: point_3d
+      - id: drawing_second
+        type: point_3d
+      - id: limits_min
+        type: point_2d
+        doc: 0x005a-0x0069
+      - id: limits_max
+        type: point_2d
+        doc: 0x006a-0x0079
+      - id: view_ctrl
+        type: point_3d
       - id: view_size
         type: f8
       - id: snap
@@ -344,6 +320,20 @@ types:
       - id: to_and_x
         type: f8
       - id: to_and_y
+        type: f8
+  point_2d:
+    seq:
+      - id: x
+        type: f8
+      - id: y
+        type: f8
+  point_3d:
+    seq:
+      - id: x
+        type: f8
+      - id: y
+        type: f8
+      - id: z
         type: f8
 enums:
   entities:
