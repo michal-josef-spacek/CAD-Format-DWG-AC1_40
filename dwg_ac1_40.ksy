@@ -112,14 +112,10 @@ types:
         type: s2
         doc: 0x01e0-0x01e1
       - id: axis_value
-        type: f8
-        doc: 0x01e2-0x01e9
-      - id: unknown3
-        type: f8
-        doc: Default value is 0.25
+        type: point_2d
+        doc: 0x01e2-0x01f1
       - id: sketch_increment
         type: f8
-        doc: Default value is 0.1
         doc: 0x01f2-0x01f9, Default value is 0.1
       - id: fillet_radius
         type: f8

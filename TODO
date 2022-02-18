@@ -2,7 +2,6 @@ TDOO
 ====
 32. What mean unknown1? Default value is 0. Tablet?
 33. What mean unknown2? Default value is 1.2945492662473794.
-34. What mean unknown3? Default value is 0.25
 35. integer types? number of entities is probably unsigned int
 36.
 
@@ -100,4 +99,7 @@ OK [20210930] skim
 OK [20211003] skim
 
 31. What mean unknown1? Default value is 1. Regen?
+OK [20220218] skim
+
+34. What mean unknown3? Default value is 0.25
 OK [20220218] skim

@@ -935,8 +935,7 @@ sub _read {
     $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
     $self->{dim_text_outside_of_dimension} = $self->{_io}->read_s2le();
     $self->{axis} = $self->{_io}->read_s2le();
-    $self->{axis_value} = $self->{_io}->read_f8le();
-    $self->{unknown3} = $self->{_io}->read_f8le();
+    $self->{axis_value} = CAD::Format::DWG::AC1_40::Point2d->new($self->{_io}, $self, $self->{_root});
     $self->{sketch_increment} = $self->{_io}->read_f8le();
     $self->{fillet_radius} = $self->{_io}->read_f8le();
 }
@@ -1099,11 +1098,6 @@ sub axis {
 sub axis_value {
     my ($self) = @_;
     return $self->{axis_value};
-}
-
-sub unknown3 {
-    my ($self) = @_;
-    return $self->{unknown3};
 }
 
 sub sketch_increment {
