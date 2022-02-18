@@ -81,7 +81,7 @@ types:
       - id: current_color
         type: s2
         doc: 0x00c6-0x00c7
-      - id: unknown2
+      - id: unknown1
         type: s2
       - id: layers
         type: s2
@@ -89,7 +89,7 @@ types:
         repeat-expr: 127
       - id: dim_arrowsize
         type: f8
-      - id: unknown3
+      - id: unknown2
         type: f8
         doc: dim?
       - id: linear_units_format
@@ -109,7 +109,7 @@ types:
       - id: axis_value
         type: f8
         doc: 0x01e2-0x01e9
-      - id: unknown4
+      - id: unknown3
         type: f8
         doc: Default value is 0.25
       - id: sketch_increment

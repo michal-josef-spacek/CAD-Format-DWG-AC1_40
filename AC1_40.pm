@@ -922,21 +922,21 @@ sub _read {
     $self->{trace_width} = $self->{_io}->read_f8le();
     $self->{current_layer} = $self->{_io}->read_s2le();
     $self->{current_color} = $self->{_io}->read_s2le();
-    $self->{unknown2} = $self->{_io}->read_s2le();
+    $self->{unknown1} = $self->{_io}->read_s2le();
     $self->{layers} = ();
     my $n_layers = 127;
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
     $self->{dim_arrowsize} = $self->{_io}->read_f8le();
-    $self->{unknown3} = $self->{_io}->read_f8le();
+    $self->{unknown2} = $self->{_io}->read_f8le();
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
     $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
     $self->{dim_text_outside_of_dimension} = $self->{_io}->read_s2le();
     $self->{axis} = $self->{_io}->read_s2le();
     $self->{axis_value} = $self->{_io}->read_f8le();
-    $self->{unknown4} = $self->{_io}->read_f8le();
+    $self->{unknown3} = $self->{_io}->read_f8le();
     $self->{sketch_increment} = $self->{_io}->read_f8le();
     $self->{fillet_radius} = $self->{_io}->read_f8le();
 }
@@ -1051,9 +1051,9 @@ sub current_color {
     return $self->{current_color};
 }
 
-sub unknown2 {
+sub unknown1 {
     my ($self) = @_;
-    return $self->{unknown2};
+    return $self->{unknown1};
 }
 
 sub layers {
@@ -1066,9 +1066,9 @@ sub dim_arrowsize {
     return $self->{dim_arrowsize};
 }
 
-sub unknown3 {
+sub unknown2 {
     my ($self) = @_;
-    return $self->{unknown3};
+    return $self->{unknown2};
 }
 
 sub linear_units_format {
@@ -1101,9 +1101,9 @@ sub axis_value {
     return $self->{axis_value};
 }
 
-sub unknown4 {
+sub unknown3 {
     my ($self) = @_;
-    return $self->{unknown4};
+    return $self->{unknown3};
 }
 
 sub sketch_increment {
