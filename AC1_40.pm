@@ -922,9 +922,8 @@ sub _read {
     $self->{trace_width} = $self->{_io}->read_f8le();
     $self->{current_layer} = $self->{_io}->read_s2le();
     $self->{current_color} = $self->{_io}->read_s2le();
-    $self->{unknown1} = $self->{_io}->read_s2le();
     $self->{layers} = ();
-    my $n_layers = 127;
+    my $n_layers = 128;
     for (my $i = 0; $i < $n_layers; $i++) {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
@@ -1048,11 +1047,6 @@ sub current_layer {
 sub current_color {
     my ($self) = @_;
     return $self->{current_color};
-}
-
-sub unknown1 {
-    my ($self) = @_;
-    return $self->{unknown1};
 }
 
 sub layers {
