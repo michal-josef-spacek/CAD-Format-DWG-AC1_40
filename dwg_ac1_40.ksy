@@ -89,9 +89,9 @@ types:
       - id: dim_arrowsize
         type: f8
         doc: 0x01c8-0x01cf
-      - id: unknown2
+      - id: unknown1
         type: f8
-        doc: 0x01d0-0x01d7, dim?
+        doc: 0x01d0-0x01d7
       - id: linear_units_format
         type: s2
         enum: unit_types
