@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, -7, 'Get entity type (-7).');
+my $text1_common = $entity1->entity_common;
+is($text1_common->entity_type, -7, 'Get entity type (-7).');
+is($text1_common->layer, 1, 'Text layer (1).');
 my $text1_data = $entity1->data;
-is($text1_data->layer, 1, 'Text layer (1).');
 is($text1_data->x, 0, 'Text x (0).');
 is($text1_data->y, 0, 'Text y (0).');
 is($text1_data->height, 0.674965563859886, 'Text height (0.674965563859886).');

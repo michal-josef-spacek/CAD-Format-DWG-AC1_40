@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity3 = $obj->entities->[2];
 isa_ok($entity3, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity3->entity_type, 6, 'Get entity type (6).');
+my $repeat1_common = $entity3->entity_common;
+is($repeat1_common->entity_type, 6, 'Get entity type (6).');
+is($repeat1_common->layer, 1, 'Repeat end layer (1).');
 my $repeat1_data = $entity3->data;
-is($repeat1_data->layer, 1, 'Repeat end layer (1).');
 my $repeat1_columns = $repeat1_data->columns;
 is($repeat1_columns, 3, 'Repeat end columns (3).');
 my $repeat1_rows = $repeat1_data->rows;

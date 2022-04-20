@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 12, 'Get entity type (12).');
+my $block_begin1_common = $entity1->entity_common;
+is($block_begin1_common->entity_type, 12, 'Get entity type (12).');
+is($block_begin1_common->layer, 1, 'Block begin layer (1).');
 my $block_begin1_data = $entity1->data;
-is($block_begin1_data->layer, 1, 'Block begin layer (1).');
 my $size = $block_begin1_data->size;
 is($size, 5, 'Block begin name size (5).');
 my $value = $block_begin1_data->value;

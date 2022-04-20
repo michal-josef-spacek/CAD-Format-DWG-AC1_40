@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 2, 'Get entity type (2).');
+my $point1_common = $entity1->entity_common;
+is($point1_common->entity_type, 2, 'Get entity type (2).');
+is($point1_common->layer, 1, 'Point layer (1).');
 my $point1_data = $entity1->data;
-is($point1_data->layer, 1, 'Point layer (1).');
 is($point1_data->x, 3, 'Point x (3).');
 is($point1_data->y, 4, 'Point y (4).');
 my $entities = @{$obj->entities};
@@ -29,9 +30,10 @@ $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 2, 'Get entity type (2).');
+$point1_common = $entity1->entity_common;
+is($point1_common->entity_type, 2, 'Get entity type (2).');
+is($point1_common->layer, 2, 'Point layer (2).');
 $point1_data = $entity1->data;
-is($point1_data->layer, 2, 'Point layer (2).');
 is($point1_data->x, 1.1234, 'Point x (1.1234).');
 is($point1_data->y, 2.3456, 'Point y (2.3456).');
 $entities = @{$obj->entities};

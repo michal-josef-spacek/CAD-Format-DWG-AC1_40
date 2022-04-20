@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 1, 'Get entity type (1).');
+my $line1_common = $entity1->entity_common;
+is($line1_common->entity_type, 1, 'Get entity type (1).');
+is($line1_common->layer, 1, 'Line layer (1).');
 my $line1_data = $entity1->data;
-is($line1_data->layer, 1, 'Line layer (1).');
 is($line1_data->x1, 0, 'Line x1 (0).');
 is($line1_data->y1, 0, 'Line y1 (0).');
 is($line1_data->x2, 1, 'Line x2 (1).');
@@ -31,9 +32,10 @@ $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 1, 'Get entity type (1).');
+$line1_common = $entity1->entity_common;
+is($line1_common->entity_type, 1, 'Get entity type (1).');
+is($line1_common->layer, 1, 'Line layer (1).');
 $line1_data = $entity1->data;
-is($line1_data->layer, 1, 'Line layer (1).');
 is($line1_data->x1, 1.11740890688264, 'Line x1 (1.11740890688264).');
 is($line1_data->y1, 3.49797570850207, 'Line y1 (3.49797570850207).');
 is($line1_data->x2, 3.69230769230774, 'Line x2 (3.69230769230774).');

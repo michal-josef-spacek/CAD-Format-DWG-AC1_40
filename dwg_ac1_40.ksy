@@ -119,22 +119,21 @@ types:
         doc: 0x01fa-0x0202
   entity:
     seq:
-      - id: entity_type
-        type: s2
-        enum: entities
+      - id: entity_common
+        type: entity_common
       - id: data
         type:
-          switch-on: entity_type
+          switch-on: entity_common.entity_type
           cases:
             'entities::arc': entity_arc
             'entities::block_begin': entity_block_begin
-            'entities::block_end': entity_block_end
+            # 'entities::block_end': entity_block_end
             'entities::block_insert' : entity_block_insert
             'entities::circle': entity_circle
             'entities::line': entity_line
             'entities::load': entity_load
             'entities::point': entity_point
-            'entities::repeat_begin': entity_repeat_begin
+            # 'entities::repeat_begin': entity_repeat_begin
             'entities::repeat_end': entity_repeat_end
             'entities::shape': entity_shape
             'entities::solid': entity_solid
@@ -149,10 +148,19 @@ types:
             'entities::tmp_solid': entity_solid
             'entities::tmp_text': entity_text
             'entities::tmp_trace': entity_trace
+  entity_common:
+    seq:
+      - id: entity_type
+        type: s1
+        enum: entities
+      - id: flag
+        type: s1
+      - id: layer
+        type: s1
+      - id: flag2
+        type: s1
   entity_arc:
     seq:
-      - id: layer
-        type: s2
       - id: x
         type: f8
       - id: y
@@ -165,8 +173,6 @@ types:
         type: f8
   entity_block_begin:
     seq:
-      - id: layer
-        type: s2
       - id: size
         type: s2
       - id: value
@@ -175,14 +181,8 @@ types:
         type: f8
       - id: y
         type: f8
-  entity_block_end:
-    seq:
-      - id: layer
-        type: s2
   entity_block_insert:
     seq:
-      - id: layer
-        type: s2
       - id: size
         type: s2
       - id: value
@@ -199,8 +199,6 @@ types:
         type: f8
   entity_circle:
     seq:
-      - id: layer
-        type: s2
       - id: x
         type: f8
       - id: y
@@ -209,8 +207,6 @@ types:
         type: f8
   entity_line:
     seq:
-      - id: layer
-        type: s2
       - id: x1
         type: f8
       - id: y1
@@ -221,28 +217,18 @@ types:
         type: f8
   entity_load:
     seq:
-      - id: layer
-        type: s2
       - id: size
         type: s2
       - id: value
         size: size
   entity_point:
     seq:
-      - id: layer
-        type: s2
       - id: x
         type: f8
       - id: y
         type: f8
-  entity_repeat_begin:
-    seq:
-      - id: layer
-        type: s2
   entity_repeat_end:
     seq:
-      - id: layer
-        type: s2
       - id: columns
         type: s2
       - id: rows
@@ -253,8 +239,6 @@ types:
         type: f8
   entity_shape:
     seq:
-      - id: layer
-        type: s2
       - id: x
         type: f8
       - id: y
@@ -267,8 +251,6 @@ types:
         type: s2
   entity_solid:
     seq:
-      - id: layer
-        type: s2
       - id: from_x
         type: f8
       - id: from_y
@@ -287,8 +269,6 @@ types:
         type: f8
   entity_text:
     seq:
-      - id: layer
-        type: s2
       - id: x
         type: f8
       - id: y
@@ -303,8 +283,6 @@ types:
         size: size
   entity_trace:
     seq:
-      - id: layer
-        type: s2
       - id: from_x
         type: f8
       - id: from_y

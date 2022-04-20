@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 9, 'Get entity type (9).');
+my $trace1_common = $entity1->entity_common;
+is($trace1_common->entity_type, 9, 'Get entity type (9).');
+is($trace1_common->layer, 1, 'Trace layer (1).');
 my $trace1_data = $entity1->data;
-is($trace1_data->layer, 1, 'Trace layer (1).');
 is($trace1_data->from_x, 0.292893218813453, 'Trace from x (0.292893218813453).');
 is($trace1_data->from_y, 2.70710678118655, 'Trace from y (2.70710678118655).');
 is($trace1_data->from_and_x, 1.70710678118655, 'Trace from and x (1.70710678118655).');

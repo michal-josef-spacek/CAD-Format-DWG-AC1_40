@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[3];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 14, 'Get entity type (14).');
+my $insert1_common = $entity1->entity_common;
+is($insert1_common->entity_type, 14, 'Get entity type (14).');
+is($insert1_common->layer, 1, 'Insert layer (1).');
 my $insert1_data = $entity1->data;
-is($insert1_data->layer, 1, 'Insert layer (1).');
 my $size = $insert1_data->size;
 is($size, 5, 'Insert name size (5).');
 my $value = $insert1_data->value;

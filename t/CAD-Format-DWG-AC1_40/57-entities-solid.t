@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 11, 'Get entity type (11).');
+my $solid1_common = $entity1->entity_common;
+is($solid1_common->entity_type, 11, 'Get entity type (11).');
+is($solid1_common->layer, 1, 'Solid layer (1).');
 my $solid1_data = $entity1->data;
-is($solid1_data->layer, 1, 'Solid layer (1).');
 is($solid1_data->from_x, 0, 'Solid from x (0).');
 is($solid1_data->from_y, 0, 'Solid from y (0).');
 is($solid1_data->from_and_x, 1, 'Solid from and x (1).');

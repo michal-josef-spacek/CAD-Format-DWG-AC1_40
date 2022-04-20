@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity2 = $obj->entities->[1];
 isa_ok($entity2, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity2->entity_type, -4, 'Get entity type (-4).');
+my $shape1_common = $entity2->entity_common;
+is($shape1_common->entity_type, -4, 'Get entity type (-4).');
+is($shape1_common->layer, 1, 'Shape layer (1).');
 my $shape1_data = $entity2->data;
-is($shape1_data->layer, 1, 'Shape layer (1).');
 is($shape1_data->x, 0, 'Shape from x (0).');
 is($shape1_data->y, 0, 'Shape from y (0).');
 is($shape1_data->height, 12, 'Shape height (12).');

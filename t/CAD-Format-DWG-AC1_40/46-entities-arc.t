@@ -15,9 +15,10 @@ my $obj = CAD::Format::DWG::AC1_40->from_file(
 );
 my $entity1 = $obj->entities->[0];
 isa_ok($entity1, 'CAD::Format::DWG::AC1_40::Entity');
-is($entity1->entity_type, 8, 'Get entity type (8).');
+my $arc1_common = $entity1->entity_common;
+is($arc1_common->entity_type, 8, 'Get entity type (8).');
+is($arc1_common->layer, 1, 'Arc layer (1).');
 my $arc1_data = $entity1->data;
-is($arc1_data->layer, 1, 'Arc layer (1).');
 is($arc1_data->x, 5, 'Arc x (5).');
 is($arc1_data->y, 5, 'Arc y (5).');
 is($arc1_data->radius, 5, 'Arc radius (5).');
