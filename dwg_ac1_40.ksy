@@ -90,7 +90,7 @@ types:
         type: f8
         doc: 0x01c8-0x01cf
       - id: unknown1
-        type: f8
+        size: 8
         doc: 0x01d0-0x01d7
       - id: linear_units_format
         type: s2

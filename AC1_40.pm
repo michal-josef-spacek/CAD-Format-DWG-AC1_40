@@ -140,7 +140,7 @@ sub _read {
         $self->{layers}[$i] = $self->{_io}->read_s2le();
     }
     $self->{dim_arrowsize} = $self->{_io}->read_f8le();
-    $self->{unknown1} = $self->{_io}->read_f8le();
+    $self->{unknown1} = $self->{_io}->read_bytes(8);
     $self->{linear_units_format} = $self->{_io}->read_s2le();
     $self->{linear_units_precision} = $self->{_io}->read_s2le();
     $self->{dim_text_within_dimension} = $self->{_io}->read_s2le();
