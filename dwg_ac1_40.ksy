@@ -260,22 +260,14 @@ types:
         type: s2
   entity_solid:
     seq:
-      - id: from_x
-        type: f8
-      - id: from_y
-        type: f8
-      - id: from_and_x
-        type: f8
-      - id: from_and_y
-        type: f8
-      - id: to_x
-        type: f8
-      - id: to_y
-        type: f8
-      - id: to_and_x
-        type: f8
-      - id: to_and_y
-        type: f8
+      - id: corner1
+        type: point_2d
+      - id: corner2
+        type: point_2d
+      - id: corner3
+        type: point_2d
+      - id: corner4
+        type: point_2d
   entity_text:
     seq:
       - id: x
