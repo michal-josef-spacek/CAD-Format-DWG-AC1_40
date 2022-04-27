@@ -362,54 +362,30 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{from_x} = $self->{_io}->read_f8le();
-    $self->{from_y} = $self->{_io}->read_f8le();
-    $self->{from_and_x} = $self->{_io}->read_f8le();
-    $self->{from_and_y} = $self->{_io}->read_f8le();
-    $self->{to_x} = $self->{_io}->read_f8le();
-    $self->{to_y} = $self->{_io}->read_f8le();
-    $self->{to_and_x} = $self->{_io}->read_f8le();
-    $self->{to_and_y} = $self->{_io}->read_f8le();
+    $self->{corner1} = CAD::Format::DWG::AC1_40::Point2d->new($self->{_io}, $self, $self->{_root});
+    $self->{corner2} = CAD::Format::DWG::AC1_40::Point2d->new($self->{_io}, $self, $self->{_root});
+    $self->{corner3} = CAD::Format::DWG::AC1_40::Point2d->new($self->{_io}, $self, $self->{_root});
+    $self->{corner4} = CAD::Format::DWG::AC1_40::Point2d->new($self->{_io}, $self, $self->{_root});
 }
 
-sub from_x {
+sub corner1 {
     my ($self) = @_;
-    return $self->{from_x};
+    return $self->{corner1};
 }
 
-sub from_y {
+sub corner2 {
     my ($self) = @_;
-    return $self->{from_y};
+    return $self->{corner2};
 }
 
-sub from_and_x {
+sub corner3 {
     my ($self) = @_;
-    return $self->{from_and_x};
+    return $self->{corner3};
 }
 
-sub from_and_y {
+sub corner4 {
     my ($self) = @_;
-    return $self->{from_and_y};
-}
-
-sub to_x {
-    my ($self) = @_;
-    return $self->{to_x};
-}
-
-sub to_y {
-    my ($self) = @_;
-    return $self->{to_y};
-}
-
-sub to_and_x {
-    my ($self) = @_;
-    return $self->{to_and_x};
-}
-
-sub to_and_y {
-    my ($self) = @_;
-    return $self->{to_and_y};
+    return $self->{corner4};
 }
 
 ########################################################################
