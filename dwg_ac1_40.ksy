@@ -148,153 +148,154 @@ types:
             'entities::tmp_solid': entity_solid
             'entities::tmp_text': entity_text
             'entities::tmp_trace': entity_trace
-  entity_common:
-    seq:
-      - id: entity_type
-        type: s1
-        enum: entities
-      - id: flag
-        type: s1
-      - id: layer
-        type: s1
-      - id: flag2
-        type: s1
-  entity_arc:
-    seq:
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-      - id: radius
-        type: f8
-      - id: angle_from
-        type: f8
-      - id: angle_to
-        type: f8
-  entity_block_begin:
-    seq:
-      - id: name_size
-        type: s2
-      - id: name
-        size: name_size
-        type: str
-        encoding: ASCII
-        terminator: 0x00
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-  entity_block_insert:
-    seq:
-      - id: size
-        type: s2
-      - id: value
-        size: size
-        type: str
-        encoding: ASCII
-        terminator: 0x00
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-      - id: x_scale
-        type: f8
-      - id: y_scale
-        type: f8
-      - id: rotation_angle
-        type: f8
-  entity_circle:
-    seq:
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-      - id: radius
-        type: f8
-  entity_line:
-    seq:
-      - id: x1
-        type: f8
-      - id: y1
-        type: f8
-      - id: x2
-        type: f8
-      - id: y2
-        type: f8
-  entity_load:
-    seq:
-      - id: size
-        type: s2
-      - id: value
-        size: size
-        type: str
-        encoding: ASCII
-        terminator: 0x00
-  entity_point:
-    seq:
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-  entity_repeat_end:
-    seq:
-      - id: columns
-        type: s2
-      - id: rows
-        type: s2
-      - id: column_distance
-        type: f8
-      - id: row_distance
-        type: f8
-  entity_shape:
-    seq:
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-      - id: height
-        type: f8
-      - id: angle
-        type: f8
-      - id: item_num
-        type: s2
-  entity_solid:
-    seq:
-      - id: corner1
-        type: point_2d
-      - id: corner2
-        type: point_2d
-      - id: corner3
-        type: point_2d
-      - id: corner4
-        type: point_2d
-  entity_text:
-    seq:
-      - id: x
-        type: f8
-      - id: y
-        type: f8
-      - id: height
-        type: f8
-      - id: angle
-        type: f8
-      - id: size
-        type: s2
-      - id: value
-        size: size
-        type: str
-        encoding: ASCII
-        terminator: 0x00
-  entity_trace:
-    seq:
-      - id: corner1
-        type: point_2d
-      - id: corner2
-        type: point_2d
-      - id: corner3
-        type: point_2d
-      - id: corner4
-        type: point_2d
+    types:
+      entity_common:
+        seq:
+          - id: entity_type
+            type: s1
+            enum: entities
+          - id: flag
+            type: s1
+          - id: layer
+            type: s1
+          - id: flag2
+            type: s1
+      entity_arc:
+        seq:
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+          - id: radius
+            type: f8
+          - id: angle_from
+            type: f8
+          - id: angle_to
+            type: f8
+      entity_block_begin:
+        seq:
+          - id: name_size
+            type: s2
+          - id: name
+            size: name_size
+            type: str
+            encoding: ASCII
+            terminator: 0x00
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+      entity_block_insert:
+        seq:
+          - id: size
+            type: s2
+          - id: value
+            size: size
+            type: str
+            encoding: ASCII
+            terminator: 0x00
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+          - id: x_scale
+            type: f8
+          - id: y_scale
+            type: f8
+          - id: rotation_angle
+            type: f8
+      entity_circle:
+        seq:
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+          - id: radius
+            type: f8
+      entity_line:
+        seq:
+          - id: x1
+            type: f8
+          - id: y1
+            type: f8
+          - id: x2
+            type: f8
+          - id: y2
+            type: f8
+      entity_load:
+        seq:
+          - id: size
+            type: s2
+          - id: value
+            size: size
+            type: str
+            encoding: ASCII
+            terminator: 0x00
+      entity_point:
+        seq:
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+      entity_repeat_end:
+        seq:
+          - id: columns
+            type: s2
+          - id: rows
+            type: s2
+          - id: column_distance
+            type: f8
+          - id: row_distance
+            type: f8
+      entity_shape:
+        seq:
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+          - id: height
+            type: f8
+          - id: angle
+            type: f8
+          - id: item_num
+            type: s2
+      entity_solid:
+        seq:
+          - id: corner1
+            type: point_2d
+          - id: corner2
+            type: point_2d
+          - id: corner3
+            type: point_2d
+          - id: corner4
+            type: point_2d
+      entity_text:
+        seq:
+          - id: x
+            type: f8
+          - id: y
+            type: f8
+          - id: height
+            type: f8
+          - id: angle
+            type: f8
+          - id: size
+            type: s2
+          - id: value
+            size: size
+            type: str
+            encoding: ASCII
+            terminator: 0x00
+      entity_trace:
+        seq:
+          - id: corner1
+            type: point_2d
+          - id: corner2
+            type: point_2d
+          - id: corner3
+            type: point_2d
+          - id: corner4
+            type: point_2d
   point_2d:
     seq:
       - id: x
