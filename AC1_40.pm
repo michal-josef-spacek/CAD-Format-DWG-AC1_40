@@ -68,7 +68,7 @@ sub _read {
     $self->{entities} = ();
     my $n_entities = $self->header()->number_of_entities();
     for (my $i = 0; $i < $n_entities; $i++) {
-        $self->{entities}[$i] = CAD::Format::DWG::AC1_40::Entity->new($self->{_io}, $self, $self->{_root});
+        push @{$self->{entities}}, CAD::Format::DWG::AC1_40::Entity->new($self->{_io}, $self, $self->{_root});
     }
 }
 
@@ -137,7 +137,7 @@ sub _read {
     $self->{layers} = ();
     my $n_layers = 128;
     for (my $i = 0; $i < $n_layers; $i++) {
-        $self->{layers}[$i] = $self->{_io}->read_s2le();
+        push @{$self->{layers}}, $self->{_io}->read_s2le();
     }
     $self->{dim_arrowsize} = $self->{_io}->read_f8le();
     $self->{unknown1} = $self->{_io}->read_bytes(8);
