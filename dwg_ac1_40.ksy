@@ -89,8 +89,8 @@ types:
       - id: dim_arrowsize
         type: f8
         doc: 0x01c8-0x01cf
-      - id: unknown1
-        size: 8
+      - id: aspect_ratio
+        type: f8
         doc: 0x01d0-0x01d7
       - id: linear_units_format
         type: s2
