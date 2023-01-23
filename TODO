@@ -1,7 +1,5 @@
 TDOO
 ====
-33. What mean unknown1? Default value is 1.2945492662473794.
-It's converting to new DWG format, but still unknown.
 35. integer types? number of entities is probably unsigned int
 36.
 
@@ -107,3 +105,7 @@ OK [20220218] skim
 32. What mean unknown1? Default value is 0. Tablet?
 Layer 0 color
 OK [20220411] skim
+
+33. What mean unknown1? Default value is 1.2945492662473794.
+It's converting to new DWG format, but still unknown.
+OK [20230123] skim
