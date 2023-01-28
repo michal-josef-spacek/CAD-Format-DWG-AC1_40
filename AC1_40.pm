@@ -19,7 +19,7 @@ sub from_file {
     return new($class, IO::KaitaiStruct::Stream->new($fd));
 }
 
-our $ENTITIES_TMP_BLOCK_INSERT = -14;
+our $ENTITIES_TMP_INSERT = -14;
 our $ENTITIES_TMP_SOLID = -11;
 our $ENTITIES_TMP_TRACE = -9;
 our $ENTITIES_TMP_ARC = -8;
@@ -41,7 +41,7 @@ our $ENTITIES_LOAD = 10;
 our $ENTITIES_SOLID = 11;
 our $ENTITIES_BLOCK_BEGIN = 12;
 our $ENTITIES_BLOCK_END = 13;
-our $ENTITIES_BLOCK_INSERT = 14;
+our $ENTITIES_INSERT = 14;
 
 our $UNIT_TYPES_SCIENTIFIC = 1;
 our $UNIT_TYPES_DECIMAL = 2;
@@ -363,6 +363,9 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_TRACE) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityTrace->new($self->{_io}, $self, $self->{_root});
     }
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_INSERT) {
+        $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityInsert->new($self->{_io}, $self, $self->{_root});
+    }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_BLOCK_BEGIN) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityBlockBegin->new($self->{_io}, $self, $self->{_root});
     }
@@ -387,8 +390,8 @@ sub _read {
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TEXT) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityText->new($self->{_io}, $self, $self->{_root});
     }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_BLOCK_INSERT) {
-        $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityBlockInsert->new($self->{_io}, $self, $self->{_root});
+    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_INSERT) {
+        $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityInsert->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_CIRCLE) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityCircle->new($self->{_io}, $self, $self->{_root});
@@ -398,9 +401,6 @@ sub _read {
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_ARC) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityArc->new($self->{_io}, $self, $self->{_root});
-    }
-    elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_TMP_BLOCK_INSERT) {
-        $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityBlockInsert->new($self->{_io}, $self, $self->{_root});
     }
     elsif ($_on == $CAD::Format::DWG::AC1_40::ENTITIES_POINT) {
         $self->{data} = CAD::Format::DWG::AC1_40::Entity::EntityPoint->new($self->{_io}, $self, $self->{_root});
@@ -477,6 +477,80 @@ sub corner3 {
 sub corner4 {
     my ($self) = @_;
     return $self->{corner4};
+}
+
+########################################################################
+package CAD::Format::DWG::AC1_40::Entity::EntityInsert;
+
+our @ISA = 'IO::KaitaiStruct::Struct';
+
+sub from_file {
+    my ($class, $filename) = @_;
+    my $fd;
+
+    open($fd, '<', $filename) or return undef;
+    binmode($fd);
+    return new($class, IO::KaitaiStruct::Stream->new($fd));
+}
+
+sub new {
+    my ($class, $_io, $_parent, $_root) = @_;
+    my $self = IO::KaitaiStruct::Struct->new($_io);
+
+    bless $self, $class;
+    $self->{_parent} = $_parent;
+    $self->{_root} = $_root || $self;;
+
+    $self->_read();
+
+    return $self;
+}
+
+sub _read {
+    my ($self) = @_;
+
+    $self->{size} = $self->{_io}->read_s2le();
+    $self->{value} = Encode::decode("ASCII", IO::KaitaiStruct::Stream::bytes_terminate($self->{_io}->read_bytes($self->size()), 0, 0));
+    $self->{x} = $self->{_io}->read_f8le();
+    $self->{y} = $self->{_io}->read_f8le();
+    $self->{x_scale} = $self->{_io}->read_f8le();
+    $self->{y_scale} = $self->{_io}->read_f8le();
+    $self->{rotation_angle} = $self->{_io}->read_f8le();
+}
+
+sub size {
+    my ($self) = @_;
+    return $self->{size};
+}
+
+sub value {
+    my ($self) = @_;
+    return $self->{value};
+}
+
+sub x {
+    my ($self) = @_;
+    return $self->{x};
+}
+
+sub y {
+    my ($self) = @_;
+    return $self->{y};
+}
+
+sub x_scale {
+    my ($self) = @_;
+    return $self->{x_scale};
+}
+
+sub y_scale {
+    my ($self) = @_;
+    return $self->{y_scale};
+}
+
+sub rotation_angle {
+    my ($self) = @_;
+    return $self->{rotation_angle};
 }
 
 ########################################################################
@@ -633,80 +707,6 @@ sub corner3 {
 sub corner4 {
     my ($self) = @_;
     return $self->{corner4};
-}
-
-########################################################################
-package CAD::Format::DWG::AC1_40::Entity::EntityBlockInsert;
-
-our @ISA = 'IO::KaitaiStruct::Struct';
-
-sub from_file {
-    my ($class, $filename) = @_;
-    my $fd;
-
-    open($fd, '<', $filename) or return undef;
-    binmode($fd);
-    return new($class, IO::KaitaiStruct::Stream->new($fd));
-}
-
-sub new {
-    my ($class, $_io, $_parent, $_root) = @_;
-    my $self = IO::KaitaiStruct::Struct->new($_io);
-
-    bless $self, $class;
-    $self->{_parent} = $_parent;
-    $self->{_root} = $_root || $self;;
-
-    $self->_read();
-
-    return $self;
-}
-
-sub _read {
-    my ($self) = @_;
-
-    $self->{size} = $self->{_io}->read_s2le();
-    $self->{value} = Encode::decode("ASCII", IO::KaitaiStruct::Stream::bytes_terminate($self->{_io}->read_bytes($self->size()), 0, 0));
-    $self->{x} = $self->{_io}->read_f8le();
-    $self->{y} = $self->{_io}->read_f8le();
-    $self->{x_scale} = $self->{_io}->read_f8le();
-    $self->{y_scale} = $self->{_io}->read_f8le();
-    $self->{rotation_angle} = $self->{_io}->read_f8le();
-}
-
-sub size {
-    my ($self) = @_;
-    return $self->{size};
-}
-
-sub value {
-    my ($self) = @_;
-    return $self->{value};
-}
-
-sub x {
-    my ($self) = @_;
-    return $self->{x};
-}
-
-sub y {
-    my ($self) = @_;
-    return $self->{y};
-}
-
-sub x_scale {
-    my ($self) = @_;
-    return $self->{x_scale};
-}
-
-sub y_scale {
-    my ($self) = @_;
-    return $self->{y_scale};
-}
-
-sub rotation_angle {
-    my ($self) = @_;
-    return $self->{rotation_angle};
 }
 
 ########################################################################

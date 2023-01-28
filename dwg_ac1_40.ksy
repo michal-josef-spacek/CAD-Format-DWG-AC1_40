@@ -128,7 +128,7 @@ types:
             'entities::arc': entity_arc
             'entities::block_begin': entity_block_begin
             # 'entities::block_end': entity_block_end
-            'entities::block_insert' : entity_block_insert
+            'entities::insert' : entity_insert
             'entities::circle': entity_circle
             'entities::line': entity_line
             'entities::load': entity_load
@@ -140,7 +140,7 @@ types:
             'entities::text': entity_text
             'entities::trace': entity_trace
             'entities::tmp_arc': entity_arc
-            'entities::tmp_block_insert' : entity_block_insert
+            'entities::tmp_insert' : entity_insert
             'entities::tmp_circle': entity_circle
             'entities::tmp_line': entity_line
             'entities::tmp_point': entity_point
@@ -185,7 +185,7 @@ types:
             type: f8
           - id: y
             type: f8
-      entity_block_insert:
+      entity_insert:
         seq:
           - id: size
             type: s2
@@ -320,7 +320,7 @@ enums:
     -8: tmp_arc
     -9: tmp_trace
     -11: tmp_solid
-    -14: tmp_block_insert
+    -14: tmp_insert
     1: line
     2: point
     3: circle
@@ -334,7 +334,7 @@ enums:
     11: solid
     12: block_begin
     13: block_end
-    14: block_insert
+    14: insert
   unit_types:
     1: scientific
     2: decimal
