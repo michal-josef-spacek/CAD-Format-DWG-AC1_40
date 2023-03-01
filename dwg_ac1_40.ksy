@@ -1,5 +1,5 @@
 meta:
-  id: dwg_0140
+  id: dwg_ac1_40
   title: AutoCAD drawing (AC1.40)
   application: AutoCAD
   file-extension:

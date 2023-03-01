@@ -38,8 +38,8 @@ my $KSY_FILE = 'dwg_ac1_40.ksy';
 my $OUTPUT_PM_FILE = 'AC1_40.pm';
 
 system "ksc -t perl $KSY_FILE";
-system "mv Dwg0140.pm $OUTPUT_PM_FILE";
-system "sed -i s/Dwg0140/CAD::Format::DWG::AC1_40/g $OUTPUT_PM_FILE";
+system "mv DwgAc140.pm $OUTPUT_PM_FILE";
+system "sed -i s/DwgAc140/CAD::Format::DWG::AC1_40/g $OUTPUT_PM_FILE";
 
 # Run.
 WriteAll();
