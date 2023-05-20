@@ -1,7 +1,8 @@
 TDOO
 ====
 35. integer types? number of entities is probably unsigned int
-36.
+36. Move header variables to variables type same as greater versions?
+37.
 
 Applied
 =======
