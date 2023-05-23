@@ -88,7 +88,7 @@ types:
         doc: 0x00c8-0x01c7
       - id: dim_arrowsize
         type: f8
-        doc: 0x01c8-0x01cf
+        doc: 0x01c8-0x01cf, $DIMARROW
       - id: aspect_ratio
         type: f8
         doc: 0x01d0-0x01d7
