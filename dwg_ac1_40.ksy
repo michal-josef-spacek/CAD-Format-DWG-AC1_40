@@ -25,9 +25,11 @@ types:
   header:
     seq:
       - id: magic
-        contents: [0x41, 0x43, 0x31, 0x2e, 0x34, 0x30]
-      - id: zeros
-        size: 6
+        size: 12
+        type: str
+        encoding: ASCII
+        terminator: 0x00
+        doc: 0x0000-0x000b
       - id: insertion_base
         type: point_3d
         doc: 0x000c-0x0023

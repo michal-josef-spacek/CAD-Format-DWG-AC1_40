@@ -112,8 +112,7 @@ sub new {
 sub _read {
     my ($self) = @_;
 
-    $self->{magic} = $self->{_io}->read_bytes(6);
-    $self->{zeros} = $self->{_io}->read_bytes(6);
+    $self->{magic} = Encode::decode("ASCII", IO::KaitaiStruct::Stream::bytes_terminate($self->{_io}->read_bytes(12), 0, 0));
     $self->{insertion_base} = CAD::Format::DWG::AC1_40::Point3d->new($self->{_io}, $self, $self->{_root});
     $self->{number_of_bytes} = $self->{_io}->read_s4le();
     $self->{number_of_entities} = $self->{_io}->read_s2le();
@@ -154,11 +153,6 @@ sub _read {
 sub magic {
     my ($self) = @_;
     return $self->{magic};
-}
-
-sub zeros {
-    my ($self) = @_;
-    return $self->{zeros};
 }
 
 sub insertion_base {
